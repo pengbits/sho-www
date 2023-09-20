@@ -1,0 +1,18 @@
+// overrides for global-banner, 
+// only used to fix a layout issue in the schedule page stemming from the
+// use of some complex absolutely positioned elements in the ui
+.schedule .global-banner {
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  z-index: 100;
+
+  & + .site-container {
+    margin-top: $global-banner-height;
+  }
+  
+  & +.site-container > .global-navigation--sticky {
+    top:$global-banner-height
+  }
+}

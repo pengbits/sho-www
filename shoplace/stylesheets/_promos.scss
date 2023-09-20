@@ -1,0 +1,64 @@
+// this component was already defined int the styleguide
+// so there isn't much here other than setting the headline color 
+// and adding some margin tweaks
+.promo {
+  margin-right: $size-s;
+  margin-left: $size-s;
+
+  &__body {
+    margin-top: $size-m;
+    padding-left  : 0;
+    padding-right : 0; 
+  }
+  
+  &__headline {
+    @include header('epsilon');
+    margin-bottom: $size-s;
+    text-transform: capitalize !important ;
+    font-weight: 600 !important;
+  }
+
+  &__copy {
+    color: $colors-pure-white ;
+    line-height: $size-l !important;
+  }
+  
+  &__headline,
+  &__tune-in {
+    color: $colors-accent-primary !important;
+  }
+  
+  &__tune-in {
+    margin-bottom: $size-s;
+  }
+  
+  &__lead,
+  &__aside {
+    color: $colors-text-dark;
+  }
+}
+
+.promo__image::before {
+  background: none;
+}
+
+.promo--tune-in {
+  .promo__body {
+    padding-left  : 0;
+    padding-right : 0; 
+  }
+  
+  .promo__headline {
+    margin-bottom: 0;
+  }
+  
+  .promo__copy {
+    margin-bottom: $size-s;
+  }
+}
+
+.promo--all-caps {
+  .promo__headline {
+    text-transform: uppercase !important;
+  }
+}

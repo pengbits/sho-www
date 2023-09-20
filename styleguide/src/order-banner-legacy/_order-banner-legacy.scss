@@ -1,0 +1,178 @@
+.order-banner {
+  margin-top: 0;
+  margin-bottom: $size-xl;
+
+  @include from-medium {
+    margin-bottom: $size-xl * 3;
+  }
+
+  &__inner {
+  	padding: ($size-l + $size-s) $size-l;
+    background-color: $colors-red;
+    text-align: center;
+
+  	@include from-small {
+  		padding: ($size-l + $size-s);
+  	}
+
+  	@include from-large {
+  		@include display(flex);
+      padding: $size-xl;
+      text-align: left;
+  	}
+  }
+
+	&__body {
+    margin: 0 auto;
+
+    @include from-large {
+      width: 50%;
+    }
+
+    @include from-extra-large {
+      width: 55%;
+    }
+	}
+  
+  &__logo {
+    margin-bottom: $size-l
+  }
+  
+	&__headline {
+		@include header--beta;
+		@include upcase;
+		margin-bottom: $size-l;
+
+		@include at-small {
+			br {
+			  display: none;
+			}
+		}
+	}
+
+	&__copy {
+		@include body-text;
+		display: none;
+
+		@include from-large {
+      display: block;
+			margin-bottom: $size-l;
+		}
+	}
+
+	&__button {
+    @include button;
+		@include button--solid($colors-pure-white);
+
+		@include until-small {
+      width: 100%;
+			max-width: 250px;
+		}
+
+		@include from-medium {
+			margin-bottom: 0;
+      max-width: ($size-xxl * 4);
+		}
+	}
+
+  &__image {
+		display: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+		@include from-large {
+      display: block;
+      width: 50%;
+		}
+
+    @include from-extra-large {
+      width: 45%;
+    }
+	}
+}
+
+//order banner for mma ballator using a class name for trigger
+.sports-home .hero .order-banner--bellator.order-banner {
+  display: block !important;
+}
+
+.order-banner--bellator .order-banner {
+    &__inner {
+      background-color: #ffffff;
+      background-size: 40%;
+      background-repeat: no-repeat;
+      background-position: left 45px;
+      padding-top: 10px;
+      color: #000000;
+
+      @include from-small {
+        background-size: 50%; 
+        background-position: -40px 55px
+      }
+
+      @include from-medium {
+        background-size: 30%; 
+        background-position: 50px 55px;
+      }
+
+      @include from-large {
+        background-size: 29%;
+        background-position: 82% center;
+        padding: 40px 30px 40px 30px;
+      }
+
+      @include from-extra-large {
+        background-size: 25%;
+      }
+
+      @include from-extra-extra-large {
+        background-size: 20%;
+      }
+    }
+
+    &__headline {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      @include icon-image('sports-mma_logo');
+      height: 35px;
+      text-indent: -2000px;
+      @include from-large {
+        margin-top: 20px;
+        background-position: left center;
+      }
+    }
+
+    &__image {
+      //display: none;
+      @include from-large {
+        display: block;
+      }
+    }
+
+    &__copy {
+      color: #000000;
+      display: block;
+      margin: 8% 5% 7% 50%;
+
+      @include from-medium {
+        margin: 8% 15% 7% 40%;   
+      }
+
+      @include from-large {
+        margin: 0;        
+      }
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+
+.order-banner.order-banner--bellator {
+  margin-bottom: $size-l;
+  @include from-medium  {
+    margin-bottom: $size-xxl; // override standard margin-bottom for tighter fit
+  }
+}

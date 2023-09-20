@@ -1,0 +1,198 @@
+// styles for alternate order page
+.stream-showtime.stream-showtime--alternate {
+  .hero-preamble {
+    position: absolute;
+    top:0;
+    width: 100%;
+    z-index:3
+  }
+
+  .hero-preamble__logo {
+    display: block;
+    margin: $size-m auto;
+    width: 110px;
+    @include from-small {
+      width: 140px;
+    } 
+    @include from-medium {
+      width: 180px;
+    }
+  }
+
+  .refresh-hero__body {
+    @include from-medium {
+      padding-top: 0;
+    }
+  }
+  
+  // attempt to center headline and description vertically within the refresh-hero across breakpoints 
+  .refresh-hero__inner {
+    margin-bottom: 0;
+    
+    @include from-medium { //768
+      margin-top:    20vmin;
+      margin-bottom: 20vmin; 
+    }
+    @include mq($from: 992px) { // need this because the hero__inner width is set to 60% at this breakpoint, resulting in shorter hero overall
+      margin-top:    18vmin;
+      margin-bottom: 18vmin; 
+    }
+    @include mq($from: 1200px) {
+      margin-top: 21vmin;
+      margin-bottom: 22vmin;
+    }
+    @include mq($from:1300px) {
+      margin-top:    23vmin;
+      margin-bottom: 23vmin; 
+    }
+    @include mq($from:1400px) {
+      margin-top:    25vmin;
+      margin-bottom: 25vmin; 
+    }
+    @include mq($from:1600px){
+      margin-top:    30vmin;
+      margin-bottom: 30vmin; 
+    }
+    @include mq($from: 1800px) {
+      margin-top:    35vmin;
+      margin-bottom: 35vmin; 
+    }
+    @include mq($from: 2000px) {
+      margin-top: 37vmin;
+      margin-bottom: 37vmin;
+    }
+    @include mq($from: 2200px) {
+      margin-top: 40vmin;
+      margin-bottom: 40vmin;
+    }
+    @include mq($from: 2400px) {
+      margin-top: 45vmin;
+      margin-bottom: 45vmin;
+    }
+  }
+  .refresh-hero__image::before {
+    // background: purple;
+  }
+  .pseudo-table {
+    padding: 0;
+  }
+
+  .pseudo-table__header {
+    margin-top: $size-l;
+    margin-bottom: 0;
+
+    @include from-medium {
+      position: relative;
+      top:-25px;
+    }
+    @include mq($from: 992px, $until: 1126px) { // 992-1200 companion rule for 60% width on inner container resulting in shorter hero overall
+      top:-40px
+    }
+    @include mq($from:1200px){
+      top:-55px
+    }
+    @include mq($from:1500px) {
+      top:-35px
+    }
+    @include mq($from:1600px) {
+      top:-65px
+    }
+    @include mq($from: 1700px) {
+      top: -40px
+    }
+    @include mq($from: 1800px, $until:1950px) {
+      top: -80px
+    }
+  }
+
+  .pseudo-table-container {
+    background-color: $colors-pure-black;
+  }
+
+  .pseudo-table__header,
+  .pseudo-table--primary {
+    border-bottom: 0;
+  }
+
+  .pseudo-table--primary {
+    margin-bottom: $size-l;
+  }
+
+  .pseudo-table__header,
+  .pseudo-table__toggle-button {
+    color: $colors-pure-white !important;
+  }
+  .refresh-hero__image::before {
+    z-index: 4;
+  }
+
+  .refresh-hero__cta.button--secondary {
+    @include button--primary
+  }
+
+  .pt-provider--primary:first-child {
+    padding-top: 0;
+  }
+  
+  @include from-medium {
+    .pt-provider--primary {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  .pt-provider__copy {
+    color: $colors-pure-white
+  }
+
+  .stream-showtime__footer {
+    padding-bottom: 45px;
+  }
+ 
+  .video-background__audio-controls {
+    display: none;
+  }
+
+  .promo__link {
+    cursor:default
+  }
+
+  .pseudo-table__toggle--top .pseudo-table__toggle-button:after {
+    @include icon('down-arrow-white', 'small');
+  }
+  
+  .pseudo-table__toggle--bottom .pseudo-table__toggle-button:after {
+    @include icon('up-arrow-white', 'small');
+  }
+} // end .stream-showtime--alternate
+
+.stream-showtime__footer {
+  padding: 80px 0;
+
+  .stream-showtime__legal h5 {
+    @include header('epsilon');
+  }
+  .stream-showtime__legal p {
+    @include header('zeta');  
+    margin-top: 25px;
+  }
+}
+
+.stream-showtime__legal-notice-link {
+  text-decoration: underline;
+}
+
+.stream-showtime__footer-links {
+  float:left;
+  margin: 20px 0;
+  font-size:12px;
+  
+  a {
+    text-decoration: underline;
+  }
+
+
+  &__alt {
+    @include header('zeta');
+    margin: 10px 5px 0 1px;
+  }
+}

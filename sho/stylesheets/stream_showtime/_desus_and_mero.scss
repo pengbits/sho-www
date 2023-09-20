@@ -1,0 +1,174 @@
+
+.the-hive {
+  .stream-showtime__logo {
+    position: absolute;
+    z-index: 999;
+    width: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 10px;
+    @include from-small {
+      width: 140px;
+    }
+    @include from-medium {
+      width: 180px;
+    }
+  }
+  
+  .hero__image:before {
+    background: none;
+  }
+
+  .hero {
+    padding: 0 0 65px;
+  }
+  
+  .hero--no-description {
+  }
+
+  &__hero-copy {
+    color: $colors-pure-black;
+    margin: -5px 25px 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    @include from-small {
+      display: none;
+    }
+  }
+
+  .hero__image {
+    background-image: url("https://www.sho.com/assets/images/promotions/desus-and-mero/Hero_image/Mobile_Hero_375x430.png");
+    padding-top: 115%!important;
+    position: initial!important;
+  }
+
+  .hero__inner,
+  .hero__offer { 
+    display: none; 
+  }
+
+  .peek-a-boo--banner__button {
+    float: right;
+  }
+  
+  .peek-a-boo--banner__button-text {
+    float: left;
+    padding-right: 15px;
+    padding-top: 12px;
+    display: none;
+  }
+  
+  .secure--arrow {
+    width: 24px;
+    position: absolute;
+    padding-left: 7px;
+  }
+
+  .hero__offer {
+    position: relative;
+    margin: 0 auto;
+    width: 75%;
+  }
+  
+  .stream-showtime__red-banner {
+    background-color: #411411;
+    background-image: url("https://www.sho.com/assets/images/promotions/desus-and-mero/alley.jpg");
+    background-size: cover;
+    
+    &__sub-header {
+      color: $colors-pure-white;
+    }
+  }
+  
+
+  .stream-showtime__video-section__header {
+    font-weight: 600;
+    @include from-medium {
+      width: 75%;
+    }
+  }
+    
+  .section--hive-primary .header {
+    @include from-small {
+      display: none;
+    }
+  }
+  
+  .section--hive-secondary .header {
+    display: none;
+    
+    @include from-small {
+      display:block;
+      margin:$size-l auto 0 auto;
+      max-width: 850px;
+      @include font(20,24,600);
+      color: $colors-pure-black;
+    }
+  }
+
+  .hive--reg {
+    font-size: 15px;
+    position: relative;
+    top: -3px;
+    @include from-small {
+      top: -6px;
+    }
+  }
+  
+  // presumably a shim to ensure items with shorter text
+  // don't collide with items with longer ones (ie "quiet storm: the ron artest story" currently in jsp)
+  .catalog-grid__image p {
+    min-height: 35px;
+  }
+
+  .stream-showtime__hero-copy {
+    position: relative;
+    width: 75%;
+    margin: 0 auto;
+  }
+  
+  @include from-small {
+    .hero {
+      padding: 0;
+    }
+    .hero__image {
+      background-image: url("https://www.sho.com/assets/images/promotions/desus-and-mero/Hero_image/Hero_Image_Desktop_1700x1063.jpg");
+      height: auto;
+      padding-top: 55%!important;
+      position: absolute!important;
+      margin: 0 auto;
+    }
+    .hero__inner {
+      margin-top: 40vmin
+    }
+    .hero__inner,
+    .hero__offer {
+      display: block;
+    }
+
+    // uncomment if we restore the arrow in cta
+    // .secure--arrow {
+    //   width: 32px;
+    //   position: absolute;
+    //   padding-left: 10px;
+    // }
+
+  }
+  
+  @include from-medium {
+    .peek-a-boo--banner__button-text {
+      display: block;
+    }
+
+    .catalog-grid__image:first-child {
+      margin-left: 0;
+    }
+
+    .catalog-grid__image:last-child {
+      margin-right: 0;
+    }
+  }
+}

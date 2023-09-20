@@ -1,0 +1,38 @@
+html, body, .site-container {
+  height: auto;
+  background-color: $global-bgcolor;
+}
+
+.site-container {
+  @include full-width-container;
+  position: relative;
+}
+
+// global elements
+.entire-sho-library {
+  padding-top: $size-l;
+
+  @include from-medium {
+    padding: $size-l 0 ($size-s + $size-xl);
+  }
+
+  & > * {
+    @include full-width-container__inner;
+  }
+
+  .promo-group {
+    margin-bottom: 0;
+  }
+}
+
+.section-header,
+.promo-group-header {
+  @include full-width-container__inner;
+}
+
+.footer, footer {
+  sup {
+    font-size: inherit;
+    position: static;
+  }
+}

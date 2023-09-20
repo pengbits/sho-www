@@ -1,0 +1,20 @@
+.variation-controls {
+  padding: $size-m;
+  background-color: $colors-dark-grey;
+  border-radius: $size-border-radius-l;
+  
+  &__header {
+    @include header('gamma');
+  }
+  
+  &__toggle {
+    @include button;
+    @include button--outline($colors-mid-grey);
+    min-width: 100px; // undo strange compression at mobile
+  }
+  
+  &__toggle--on {
+    @include button;
+    @include button--solid($colors-pure-white);
+  }
+}

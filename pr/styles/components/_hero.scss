@@ -1,0 +1,74 @@
+.hero__inner {
+  display: block;
+  @include section--large;
+
+  @include from-extra-large {
+    @include hero-offset(40vmin);
+  }
+
+  .hero__body {
+    padding-bottom: 30px;
+    width: 100%;
+  }
+
+  .hero__notes {
+    @include body-text;
+    margin: $size-m 0 $size-l;
+  }
+
+  .hero__aside {
+    @include body-text;
+  }
+
+  @include from-large {
+    @include display(flex);
+    @include flex-wrap(wrap);
+
+    .hero__top-line, .hero__headline {
+      width: 100%;
+    }
+
+    .hero__body {
+      width: 75%;
+      padding-right: 8%;
+    }
+
+    .hero__aside {
+      margin-top: 0;
+      width: 25%;
+    }
+  }
+
+  @include from-extra-large {
+    .hero__body {
+      width: 66.6666%;
+    }
+
+    .hero__aside {
+      width: 33.3333%;
+    }
+  }
+}
+
+.hero__image {
+  opacity: 1;
+  transition: opacity .1s ease-in-out;
+}
+
+.hero__image.lazyloading,
+.hero__image.lazyload {
+  opacity: 0;
+}
+
+
+.hero__ctas {
+  margin-top: $size-l;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  border-width: thin;
+}
+
+.hero__cta:after {
+  display: none;
+  // kill the '>' icon 'til we figure out what's going on
+}

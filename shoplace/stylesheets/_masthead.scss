@@ -1,0 +1,58 @@
+.masthead {
+  padding: $size-xl 0;
+  text-align: center;
+  width: 100%;
+  
+  &__title {
+    margin-bottom: $size-s;
+    @include header('beta');
+    color: $colors-accent-primary;  
+    padding-left: 20%;
+    padding-right: 20%;
+    width: 100%;
+  }
+  
+  &__copy {
+    @include header('epsilon');
+    padding-right: 20%;
+    padding-left: 20%;
+    width: 100%; //needed for IE
+  }  
+
+  &__inner {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include full-width-container__inner;
+  }
+}
+
+ .masthead__img {
+
+    &--directv { 
+      width: 120px;
+      height: 70px;
+      background-image: url($assets-shoplace-base-new + "/directv-now-logo-shoplace.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--cox {
+      width: 160px;
+      height: 55px;
+      background-image: url($assets-shoplace-base-new + "/showtime-logo.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-bottom: $size-m;
+      margin-top: $size-xs;
+    }
+
+    &--showtime-anytime {
+      width: 216px;
+      height: 70px;
+      background-image: url($assets-shoplace-base-new + "/showtimeAnytime_headerlogo.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }

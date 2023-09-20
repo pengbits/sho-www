@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 24 24"
+   fill="none"
+   stroke="currentColor"
+   stroke-width="2"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   class="sho-icon sho-icon-camera"
+   version="1.1"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   sodipodi:docname="text-document-out.svg"
+   id="svg1021"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs650" />
+  <sodipodi:namedview
+     id="namedview429"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="9.8333333"
+     inkscape:cx="11.949153"
+     inkscape:cy="26.59322"
+     inkscape:window-width="1280"
+     inkscape:window-height="1387"
+     inkscape:window-x="1280"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1021" />
+  <ellipse
+     cx="9.0381355"
+     cy="19.944916"
+     style="display:inline;opacity:0.25;fill:#000000;stroke:none;stroke-width:1.18812"
+     rx="11.40594"
+     ry="11.405939"
+     id="ellipse653"
+     sodipodi:insensitive="true"
+     transform="translate(2.9618642,-7.944915)" />
+  <path
+     id="ellipse653-9-3"
+     style="color:#000000;fill:#ffffff;stroke-width:0;stroke-dasharray:none"
+     d="m 9.0381356,7.9449153 c -6.6203674,0 -12,5.3796327 -12,11.9999997 0,6.620366 5.3796326,12 12,12 6.6203674,0 12.0000004,-5.379634 12.0000004,-12 0,-2.597326 -0.829241,-5.002809 -2.235352,-6.968261 l -0.846679,0.846679 c 1.195486,1.739703 1.894043,3.847921 1.894043,6.121582 0,5.97826 -4.833751,10.812012 -10.8120124,10.812012 -5.9782609,0 -10.8120117,-4.833752 -10.8120117,-10.812012 0,-5.97826 4.8337508,-10.8120114 10.8120117,-10.8120114 2.2274664,0 4.2957064,0.6709068 6.0146484,1.8222654 l 0.84961,-0.849609 C 13.956412,8.744374 11.589636,7.9449153 9.0381356,7.9449153 Z"
+     transform="translate(2.9618642,-7.944915)" />
+  <line
+     x1="15.654661"
+     y1="13.32839"
+     x2="20.548729"
+     y2="8.4343224"
+     id="line291"
+     style="display:inline;stroke:#ffffff;stroke-width:0.978814"
+     sodipodi:insensitive="true"
+     transform="translate(2.9618642,-7.944915)" />
+  <polyline
+     points="7 7 17 7 17 17"
+     id="polyline293"
+     transform="matrix(0.48940678,0,0,0.48940678,15.190679,-2.9364404)"
+     style="display:inline;stroke:#ffffff"
+     sodipodi:insensitive="true" />
+  <rect
+     x="6"
+     y="4.5"
+     width="12"
+     height="15"
+     rx="1.5"
+     ry="1.5"
+     id="rect423"
+     style="stroke:#ffffff;stroke-width:1.5"
+     transform="matrix(0.7781202,0,0,0.7781202,2.6625578,2.6625578)" />
+  <line
+     x1="14.745763"
+     y1="10.754237"
+     x2="8.7457628"
+     y2="10.754237"
+     id="line240"
+     style="stroke:#ffffff;stroke-width:1.5"
+     transform="matrix(0.7781202,0,0,0.7781202,2.8603849,2.6625578)" />
+  <line
+     x1="14.745763"
+     y1="7.7542372"
+     x2="8.7457628"
+     y2="7.7542372"
+     id="line242"
+     style="stroke:#ffffff;stroke-width:1.5"
+     transform="matrix(0.7781202,0,0,0.7781202,2.8603849,2.6625578)" />
+  <polyline
+     points="10 9 9 9 8 9"
+     id="polyline244"
+     transform="matrix(0.58359014,0,0,-0.58359014,4.9969183,18.617318)"
+     style="stroke:#ffffff" />
+</svg>

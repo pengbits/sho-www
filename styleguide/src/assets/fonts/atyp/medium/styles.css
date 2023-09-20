@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Atyp';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url(./ShowtimeAtypText-Medium.eot);
+  src: local('ShowtimeAtypText-Medium'),
+       url(./ShowtimeAtypText-Medium.eot?#iefix) format('embedded-opentype'),
+       url(./ShowtimeAtypText-Medium.woff2) format('woff2'),
+       url(./ShowtimeAtypText-Medium.woff) format('woff'),
+       url(./ShowtimeAtypText-Medium.ttf) format('truetype'),
+       url(./ShowtimeAtypText-Medium.svg#ShowtimeAtypText-Medium) format('svg');
+}

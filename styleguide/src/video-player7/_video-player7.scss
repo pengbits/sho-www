@@ -1,0 +1,142 @@
+.video-play7r {
+  position: relative;
+  cursor: pointer; // initial state only
+
+  &,
+  &__poster { 
+    max-width: 100%;
+  }
+  &__poster {
+    // this element is actually a blank/spacer png at true 16:9, the video poster asset is slightly different aspect,
+    // so we use background-size:cover to avoid bars at top and botton
+    width: 100%;
+    height: auto;
+    background-size: cover;
+  }
+  
+  // styles for the faux big-play-button used in placeholder/modal modes
+  // this implementation does not rely on videojs symbol font
+  $play-button-size:48px;
+  $play-button-triangle-height:28px; 
+  $play-button-triangle-width: 20px;
+  $play-button-icon-margin: ($play-button-size/2);
+
+  &__big-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include size($play-button-size);
+    border-radius: 50%;
+    border-width: .15rem;
+    border-color: $colors-pure-white;
+    border-style: solid;
+    background: rgba(0, 0, 0, .15);
+    transform: translate(-50%, -50%);
+    cursor: pointer
+    ;
+    @include icon-before('triangle-right-white-outline-stroke', 'medium') &::before {
+      top: ($play-button-icon-margin - ($play-button-triangle-height/2)); 
+      left:($play-button-icon-margin - ($play-button-triangle-width/2));
+    }
+  }
+
+
+  &__error {} // see video-play7r-modal__error below
+  &__error__message {}
+  
+  &-modal{
+    width: 90vw;
+    padding-top: 56.25%;
+  }
+
+  &-modal__placeholder,
+  &__age-gate-container {
+    @include pin-cover;
+    background-color: $colors-pure-black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__age-gate-container {
+    background: transparent;
+  }
+
+  // Removes the title and description 
+  .vjs-title-bar {
+    display: none;
+  }
+  // Increases the size of the control bar
+  .vjs-control-bar {
+    font-size: 1em !important;
+    background-color: rgba(0, 0, 0, 1)
+  }
+  // Progress bar background 
+  .vjs-slider {
+    background-color: rgba(0, 0, 0, .25);
+  }
+
+  // Set red accent color for progress bar, volume and captions
+  .vjs-play-progress,
+  .vjs-volume-level,
+  .vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected {
+    background-color: $colors-red;
+  }
+
+  // restore grey translucent background
+  .vjs-control-bar {
+    background-color: rgba(43, 51, 63, .7)  ;
+  }  
+  
+  // styles for the actual big-play-button inside the brightcove player
+  // this implementation has access to the videojs font for the triangle outline shape 
+  .vjs-big-play-button {
+    color:$colors-pure-white;
+    background-color: rgba(0, 0, 0, .15);
+    opacity: 1;
+    border: solid $colors-pure-white .15rem;
+    @include size($play-button-size);
+    font-size: 28px;
+    line-height: 46px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: .1rem;
+    -webkit-text-stroke-color: $colors-pure-white;
+  }
+  
+  .vjs-error-display {
+    display: none;//hiding errors player gives as we have our own error handling
+  }
+
+  &.vjs-fluid {
+    cursor: auto;// undo force cursor pointer once player is decorated could also use .vjs-controls-enabled or similar
+  }
+}
+
+// brightcove authors these styles with the player id as part of the selector
+// TODO put in variable name
+.bc-player-7JuE5DqUiM_default,
+.bc-player-WAPuItek9_default {
+  &:hover .vjs-big-play-button {
+    background-color: rgba(0, 0, 0, .15);
+  }
+}
+
+// TODO update to video-play7r namespace
+.video-playr__age-gate {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.video-play7r__error,
+.video-play7r-modal__error {
+  @include pin-cover
+}
+
+.video-play7r__error__message,
+.video-play7r-modal__error__message {
+  position: absolute;
+  top:50%;
+  width: 100%;
+  transform:translateY(-0.5em);
+  @include body-text;
+  text-align: center;
+}

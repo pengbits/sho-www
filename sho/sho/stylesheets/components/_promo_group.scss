@@ -1,0 +1,65 @@
+/* This is turning of the border and padding that results in mobile view of the sports all fights page */
+
+.promo.promo--list-view {
+  padding: 0px;
+  border-top: 0;
+}
+
+@include until-medium {
+	.order-promo-container {
+		.order-promo {
+		    margin-bottom: 0 !important;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 890px) {
+	.order-promo-container {
+		.order-promo {
+			padding: $size-m;
+		}
+		
+		.order-promo__headline {
+			font-size: 18px;
+			line-height: 22px;
+		}
+	}
+}
+
+@media (min-width: 891px) and (max-width: 1035px) {
+	.order-promo-container {
+		.order-promo__headline {
+			font-size: 22px;
+			line-height: 24px;
+		}
+	}
+}
+
+@include from-medium {
+	.order-promo-container {
+	  width: 100%;
+	  display: inline-block;
+	  position: relative;
+  
+	  .order-promo {
+	  	position: absolute;
+	  	top: 0;
+	  	bottom: 0;
+	  	right: 0;
+	  	left: 0;
+	  	margin-bottom: 0;
+	  }
+	  
+	  .order-promo__headline {
+		  padding-bottom: 0;
+	  }
+	}
+
+	.order-promo-container:after {
+		display: block;
+		content: '';
+		@include proportions--landscape;
+	}
+}
+
+

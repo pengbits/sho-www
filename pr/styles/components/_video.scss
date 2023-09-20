@@ -1,0 +1,323 @@
+
+.video-section {
+  background-color: $colors-bg-med;
+
+  .video-section__inner {
+    @include full-width-container__inner;
+    @include body-text();
+    padding-bottom: $size-xl;
+
+    @include from-medium {
+      padding: $size-xxl 0 $size-xl;
+    }
+  }
+
+  .video-player {
+    padding: $size-m 0 $size-xl 0;
+
+    @include from-extra-large {
+      padding: 0 ($size-xxl*2) $size-xxl ($size-xxl*2);
+    }
+
+    &--disabled .video-player__inner * {
+      pointer-events: none;
+    }
+  }
+
+  .video-player__inner {
+    position: relative;
+    padding-top: 56.25%;
+    display: block;
+    height: 0;
+    background: #000;
+
+    .video-player__embed {
+      position:absolute;
+      top:0;
+      bottom:0;
+      right:0;
+      left:0;
+      width:100%;
+      height:100%;
+    }
+    
+    .cta--button {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 99;
+      @include transform(translate(-50%, -50%));
+      margin: 0;
+      
+      &[hidden] {
+        display: none;
+      }
+    }
+  }
+  
+  .video-player__overlay {
+    @include align-items(center);
+    @include justify-content(center);
+    @include body-text;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 $size-l;  
+    text-align: center;
+    text-transform: uppercase;
+    display: none;
+    z-index: 1;
+    background-color: black;
+    background-size: cover;
+  }
+  
+  .video-player__message {
+    color: #2DA3E6;
+    background-color: rgba(0, 0, 0, .75);
+  }
+
+  .video-player--show-overlay {
+    @include display(flex);
+  }
+
+  .video-player__loading-animation-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+  }
+
+  .video-player__loading-animation {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+  }
+
+  .video__title {
+    @include upcase;
+    @include header--beta;
+    margin-bottom: $size-s;
+  }
+
+  .video__airdate {
+    margin-bottom: $size-m;
+    color: $colors-text-med;
+  }
+
+  .video__ctas {
+    margin-top: 25px;
+
+    &--hide-enter-btn {
+      .cta--button {
+        display: none !important;
+      }
+      .cta--item:nth-child(2) {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
+  .video__metadata__secondary {
+    @include body-text();
+    color: $colors-text-med;
+    margin-top: $size-m * 2;
+  }
+
+  .video__notes {
+    @include body-text();
+    margin: $size-m 0 $size-l;
+  }
+
+  .video__metadata {
+    @include from-large {
+      @include display(flex);
+      @include flex-wrap(wrap);
+
+      .video__title {
+        width: 100%;
+      }
+
+      .video__metadata__primary {
+        width: 75%;
+        padding-right: 9%;
+      }
+
+      .video__metadata__secondary {
+        width: 25%;
+
+      }
+    }
+
+    @include from-extra-large {
+      .video__metadata__primary {
+        width: 66.6666%;
+        padding-right: 9%;
+      }
+
+      .video__metadata__secondary {
+        width: 33.3333%;
+      }
+    }
+  }
+
+  .video__description {
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  .video-js {
+    .vjs-control:focus,
+    .vjs-subs-caps-button:focus {
+       outline: none;
+     }
+
+     .vjs-dock-text {
+       display: none;
+     }
+
+     .vjs-progress-control .vjs-play-progress .vjs-time-tooltip {
+       // tooltip behavior was buggy in new player
+       display: none !important;
+       visibility: hidden;
+     }
+     
+     .vjs-fullscreen-control.vjs-disabled {
+       cursor: default;
+     } 
+
+     @include from-large {
+       .vjs-current-time,
+       .vjs-time-divider,
+       .vjs-duration {
+         display: block;
+       }
+
+       .vjs-remaining-time {
+         display: none;
+       }
+     }
+  }
+
+  #video-player .vjs-big-play-button {
+    width: $size-xl * 3;
+    height: $size-xl * 3;
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: $size-xxl * 2;
+    -moz-border-radius: $size-xxl * 2;
+    border-radius: $size-xxl * 2;
+    outline: none;
+
+    span:before {
+      width: $size-m * 2;
+      height: $size-xl;
+      margin: $size-xl;
+      font-size: $size-xl;
+      line-height: $size-xl;
+    }
+  }
+
+   #video-player .vjs-play-progress,
+   #video-player .vjs-volume-level {
+    background-image: none;
+    background-color: $colors-red;
+  }
+
+  .vjs-play-control {
+    cursor: pointer; // for firefox bug
+  }
+
+  .video-player__overlay .vjs-big-play-button {
+    width: $size-xl * 3;
+    height: $size-xl * 3;
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: $size-xxl * 2;
+    -moz-border-radius: $size-xxl * 2;
+    border-radius: $size-xxl * 2;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+
+    .vjs-big-play-icon::after {
+      content: '';
+      display: inline-block;
+      position: relative;
+      top: 1px;
+      left: 3px;
+      border-style: solid;
+      border-width: 12px 0 12px 20px;
+      border-color: transparent transparent transparent #fff;
+    }
+  }
+
+  .vjs-control-bar .bc-player-skip-btn {
+    min-width: 2em;
+    cursor: pointer;
+    background: transparent no-repeat url('#{$icon-base-path}/skip-back.svg') center center;
+    background-size: 25px 25px;
+
+    &--skip-fwd {
+      background-image:  url('#{$icon-base-path}/skip-fwd.svg')
+    }
+  }
+
+  
+  @media only screen and (max-width:430px){
+    .video-js .vjs-control {
+    width: 2.4em;
+  }
+    .video-js .vjs-time-control {
+      padding-left: 0;
+    }
+  }
+
+
+  /* These styles were added due to Brightcove's embedded styles making controls invisible on iOS11 */
+  .bc-player-HY2FHiiCm_default.vjs-has-started .vjs-control-bar,
+  .bc-player-cUceny8PI_default.vjs-has-started .vjs-control-bar {
+    visibility: visible;
+  }
+
+  .bc-player-HY2FHiiCm_default.vjs-native:not(.vjs-has-started) .vjs-big-play-button,
+  .bc-player-cUceny8PI_default.vjs-native:not(.vjs-has-started) .vjs-big-play-button {
+    display: block !important;
+  }
+}
+
+/* See also _collection-streamlined.scss for adjustments made to video layout in alternate version */
+
+/* Need to remove native play button in favor of Brightcove element, to avoid having two play buttons
+
+/* This used to work for the parent element of button divs */
+/* But it does not work with newer browsers, the below doesn't hide the play button parent div */
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+*::-webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}

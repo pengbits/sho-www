@@ -1,0 +1,119 @@
+/* About styles
+ */
+  
+.about {
+  .hero__headline__link::after {
+    background: none; 
+  }
+}
+.about-bio {
+  @include full-width-container__inner;
+
+  @include from-medium {
+    @include display(flex);
+  }
+
+  &:last-child {
+    margin-top: $size-m;
+
+    @include from-large {
+      margin-top: $size-l;
+    }
+  
+    @include at-extra-large {
+      margin-top: 25px;
+    } 
+  }
+
+  &__person {
+    @include from-medium {
+      width: 30%;
+      img {
+        width:100%;
+      } 
+    }
+   }
+
+  &__name {
+    @include header--gamma;
+  }
+    
+  &__details {
+    @include body-text;
+    padding-top: ($size-m * 2);
+    @include from-medium {
+      padding-top: 0;
+      padding-left: ($size-m * 2);
+      float:left;
+      width: 70%;
+    }
+  }
+   
+  &__title {
+    margin-top: $size-xs !important;
+    margin-bottom: $size-m * 2 !important;
+  }
+    
+  &__description {
+    margin-bottom: $size-l !important; 
+    color: $colors-pure-white !important;
+  }  
+ } 
+
+.channel-row { 
+  @include full-width-container__inner;
+  padding-top: $size-l * 2;
+  @include from-large {
+    padding-top: $size-xl *2;
+  }
+   
+  &--first-item {
+    padding-top: $size-l;
+  }
+
+  &__logo {
+    display: block;
+    height: 40px;
+  }
+  
+  &__body {
+    float: left;
+    line-height: $size-l;
+    @include from-medium {
+      @include span-columns(8);
+    }
+  }
+
+  &__body__available {
+    display: block;
+    margin: $size-m 0 $size-m 0;
+    @include from-medium {
+      display: none;
+    }
+  }
+
+  &__body__desc {
+    @include body-text;        
+    @include from-medium {
+      padding-top: $size-m * 2;
+      padding-right: $size-xxl;
+    }    
+  }
+
+  &__meta {
+    float: left;
+    padding-left: 100px; 
+    display: none;
+
+    @include from-medium {
+      display: block;
+      @include span-columns(4);
+      margin-top: $size-m *2;
+    }
+  }
+
+  &__meta__type {
+    display: block;
+    line-height: 20px;
+  } 
+}

@@ -1,0 +1,23 @@
+.container {
+  @include full-width-container;
+  position: relative;
+}
+
+.container__outer {
+  width: 100%;
+  background-color: $colors-pure-black;
+}
+ 
+.container__inner {
+  @include full-width-container__inner;
+  background-color: $colors-pure-black;
+  padding-top: $size-l + $size-s;
+  padding-bottom: $size-xl;
+} 
+
+.container__inner--one-of-many{
+  padding-bottom: 0; 
+  &:last-of-type {
+    padding-bottom:  $size-xl;
+  }
+}

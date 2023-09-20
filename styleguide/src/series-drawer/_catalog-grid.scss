@@ -1,0 +1,61 @@
+
+.catalog-grid { 
+  &__row {
+    margin-top: 15px;
+    @include clearfix;
+  }
+
+  &__image {
+    display: block;
+    float: left;
+    margin: 12px 1%;
+    width: 48%;
+    color: $colors-pure-black;
+    text-align: center;
+
+    figure {
+      margin: 0
+    }
+    
+    // added this variant for series and schedule drawer contexts in global nav,
+    // where the images are treated as spans with background-image properties in order to stop them from being fetched until needed.
+    // in stream-showtime aka order pages, they are still img elements
+    &-shim {
+      display: block;
+      background-color: $colors-dark-grey;
+      @include proportions--catalog-image;
+      background-size:contain;
+      background-position: center center;
+    }
+
+    @include until-medium {
+      &:nth-child(odd) { clear:both }
+    }
+    
+    @include from-medium {
+      width: 31%;
+    }
+    
+    @include from-large {
+      width: 14.5%;
+      &:nth-child(6n+1) {
+        clear: both
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // was p, 'headline' might make more sense here, but the entire grid has a headline in stream-showtime context
+  &__copy {
+    margin: 10px 8px;
+    @include header('zeta');
+    @include from-medium {
+      @include font(16,19,400);
+    }
+    
+    color: $colors-pure-white;
+  } 
+}

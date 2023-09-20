@@ -1,0 +1,17 @@
+.social-connections {
+  @include unstyled-list;
+  @include clearfix;
+  padding: $size-m 0;
+    
+  &__item,
+  &__item a {
+    margin-right: $size-xs;
+    float: left;
+    display: block;
+  }
+}
+
+.social-connections-title {
+  text-transform: uppercase;
+  color: $colors-crisp-grey;
+}

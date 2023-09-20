@@ -1,0 +1,41 @@
+.footer {
+  padding: $size-xl 0 0 0;
+  background-color: transparent;
+  color: $colors-crisp-grey;
+  font-size: $size-m - $size-xxs;
+  
+  &__inner {
+    @include full-width-container__inner;
+  }
+  
+  &__section {
+    @include from-small {
+      @include span-columns(4);
+    }
+    padding-left: $size-m;
+  }
+  
+  p {
+    margin-bottom: $size-m
+  }
+
+  a,
+  a:link,
+  a:visited {
+    color: $colors-crisp-grey;
+    text-decoration: none;
+  }
+  a:hover,
+  a:active {
+    color: $colors-pure-white;
+  }
+  
+  &__legal p {
+    @include header('zeta');
+    padding: $size-m;
+    color: $colors-crisp-grey;
+    &:last-child {
+      margin-bottom: 0
+    }
+  }  
+}

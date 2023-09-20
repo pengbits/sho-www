@@ -1,0 +1,29 @@
+{
+  "headline": "Press Video Preview",
+  "subheadline": "Welcome to the SHOWTIME Press Video Preview site.",
+  "APIkey": "SHO_PR",
+  "trackingPrefix": "pr:sho:",
+  "defaultImagePath": "https://www.sho.com/site/image-bin/images/0_0_0/0_0_0_01",
+  "brightcove": {
+    "accountId": 1924997946001,
+    "playerId": "cUceny8PI",
+    "playerName": "showtime pr"
+  },
+  "codeInputRequired": false,
+  "authorizationRequired": true,
+  "streamlinedTitleInfo": false,
+  "largePromos": false,
+  "hasCategoriesPage": true,
+  "hasEntireShoLibrary": false,
+  "legal": "&copy; 2023 Showtime Networks Inc. All rights reserved. SHOWTIME and related marks are trademarks of Showtime Networks Inc., a CBS Company. The Affair &copy; Showtime Networks Inc. All rights reserved. Billions &copy; Showtime Networks Inc. All rights reserved. DICE &copy; 2017 Twentieth Century Fox Film Corporation. All rights reserved. Episodes &copy; Hat Trick Productions Ltd. All rights reserved. Homeland &copy; Twentieth Century Fox Film Corporation. All rights reserved. I'm Dying Up Here &copy; Showtime Networks Inc. All rights reserved. Ray Donovan &copy; Showtime Networks Inc. All rights reserved. Shameless &copy; Warner Bros. Entertainment Inc. All rights reserved. SMILF &copy; ABC Signature Productions, Inc. and Showtime Networks Inc. All rights reserved. Twin Peaks &copy; Twin Peaks Productions, Inc. All rights reserved. White Famous &copy; Lions Gate Television, Inc. and Showtime Networks Inc. All Rights Reserved. <a href=\"https://www.sho.com/closedcaptioning\">Closed Captioning.</a> <a href=\"/pr/showtime/terms\">Terms.</a><br><br>This website is intended for viewing solely in the United States and its territories and possessions.",
+  "header": {
+    "siteName": "Showtime",
+    "siteTagLine": "",
+    "help": {
+      "emailAddress": "shoprhelp@showtime.net",
+      "subject": "Help with SHOWTIME Press Review Website"
+    },
+    "logOutLink": "/pr/showtime/logout",
+    "bannerOnly": false
+  }
+}

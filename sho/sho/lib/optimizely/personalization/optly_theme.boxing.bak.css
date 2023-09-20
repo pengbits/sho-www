@@ -1,0 +1,77 @@
+@media (max-width: 480px) {
+
+   .hero__image {
+     background-image: url(https://www.sho.com/site/image-bin/images/46_3_0/46_3_0_web13_568x426.jpg)!important;
+     height: 530px!important;
+     background-position: inherit!important;
+     background-size: 100%!important;
+     background-repeat: no-repeat; 
+   }
+
+/**  .stream-showtime__red-banner {
+  	background-image: url(http://downloads.sho.com/stream-showtime/coah/3_Bottom_Image/Mobile_Bottom_BG.png)!important;
+    background-size: cover!important;
+  }**/
+  .mobile-headline {
+    display: block!important;
+    text-transform: none!important;
+    font-size: 18px;
+    padding: 0 15px;
+    color: #000;
+    text-align: center;
+    font-weight: 600;
+	}
+  .desktop-headline {
+    display: none!important;
+	}
+  .desus-and-mero__video-player {
+    height: 225px!important;
+	}
+
+}
+@media (min-width: 480px) {
+   .hero__image {
+     	background-image: url(https://www.sho.com/site/image-bin/images/46_3_0/46_3_0_web13_1024x640.jpg)!important;
+   }
+  /**.stream-showtime__red-banner {
+  	background-image: url(http://downloads.sho.com/stream-showtime/coah/3_Bottom_Image/Desktop_Bottom_BG.png)!important;
+    background-size: cover!important; 
+    background-position: top right!important;
+    margin-left: 0!important;
+    margin-right: 0!important;**/
+  }
+  .mobile-headline {
+    display: none!important;
+	}
+  .desktop-headline {
+    display: block!important;
+    font-size: 20px!important;
+    padding: 20px 0!important;
+    color: #000!important;
+    text-align: center!important;
+    font-weight: 600!important;
+    height: 115px!important;
+	}
+  .desus-and-mero__video-player {
+    height: 455px!important;
+	}
+}
+@media (max-width: 350px) {
+		.hero {
+  		height: 400px!important;
+  }
+  .hero__image {
+    height: 400px!important;
+  }
+}
+@media (max-width: 400px) {
+		.hero {
+  		height: 565px!important;
+  }
+  .hero__image {
+    height: 480px!important;
+  }
+}
+.device-lockup {
+    padding-top: 2px!Important;
+  }

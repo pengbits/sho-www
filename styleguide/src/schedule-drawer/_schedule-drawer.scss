@@ -1,0 +1,118 @@
+
+.schedule-drawer {
+  display: none;
+  background-color: $colors-pure-black;
+
+ 
+  @include from-large {
+    display: block;
+  }
+}
+.schedule-drawer {
+  @include header--delta;
+
+  .schedule-drawer__inner,
+  .schedule-drawer__footer__inner {
+    @include full-width-container__inner;
+  }
+
+  .schedule-drawer__icon-close {
+	  @include icon('close','medium');
+      float: right;
+      cursor: pointer;
+  }
+
+  .showtime-logo {
+    @include hide-text;
+    background-image: url("#{$icon-base-path}/showtime-logo.svg");
+    height: $size-xl;
+    width: $size-xxl + $size-l;
+    margin-left: 8px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .schedule-drawer--header {
+    display: inline-flex;
+    line-height: $size-xl;
+  }
+
+  .schedule-drawer__list {
+    @include unstyled-ul;
+    overflow: hidden;
+
+    .schedule-drawer__list-item {
+        @include span-columns(4);
+        @include omega(3n);
+
+      .schedule-drawer__program-img {
+        float: left;
+        margin: 0 5% $size-s 0;
+        width: 50%;
+        max-width: $size-xxl + $size-xl + $size-m;
+        box-shadow: 6px 2px 11px -5px rgba(0,0,0,1);
+      }
+
+      .schedule-drawer__program-time,
+      .schedule-drawer__program-episode-number {
+        @include header--zeta;
+      }
+      
+      .schedule-drawer__program-title {
+        @include header--epsilon;
+      }
+      
+      .schedule-drawer__program-time,
+      .schedule-drawer__program-title,
+      .schedule-drawer__program-episode-number {
+        //padding-bottom: $size-s;
+        text-align: left;
+      }
+
+      
+      .schedule-drawer__program-title, .schedule-drawer__program-episode-number {
+        display: block;
+      }
+
+      .schedule-drawer__program-time {
+        color: $colors-light-grey;
+      }
+
+
+      .schedule-drawer__program-episode-number {
+        color: $colors-mid-grey;
+      }
+    }
+  }
+
+  .schedule-drawer__footer__inner {
+    display: flex;
+    align-items: center;
+    left: 0;
+    padding: $size-m 0 0 0;
+    width: 100%;
+    .pipebar {
+      height: $size-xl;
+      width: $size-xxs;
+      background-color: $colors-bg-light;
+      padding: 0;
+    }
+    i{
+      margin-left: $size-xs;
+      height: 16px;
+      width: 16px;
+    }
+  }
+}
+
+.schedule-drawer__link--view-more {
+  @include header--epsilon;
+  @include cta--arrow;
+  display: inline-flex;
+  color: $colors-pure-white;
+  margin: 0 30px;
+  width: auto;
+  &:first-child {
+    margin: 0 25px 0 0;
+  }
+}

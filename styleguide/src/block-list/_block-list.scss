@@ -1,0 +1,75 @@
+$block-list-icon-size : 24px;
+$block-list-icon-size-large : 40px;
+
+.block-list {
+  @include unstyled-list;
+  padding-top: $size-s;
+
+  
+  &__item {
+    position: relative;
+    padding-left: ($block-list-icon-size + $size-s);
+    margin-bottom: $size-l; 
+    
+    p {
+      @include header('epsilon');
+      position: relative;
+    }
+    
+    p:last-child {
+      margin-bottom: 0
+    }
+  }
+  
+  &__icon {
+    @include size ($block-list-icon-size);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.block-list--to-grid {
+  .block-list__item {
+    padding-left: ($block-list-icon-size * 2); // seems like this extra padding is just to account for the --wide [live] icon
+  }
+  @include from-medium {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .block-list__item {
+      padding: $size-m;
+      max-width: 50%; // IE11
+      flex-basis: 50%;
+      text-align: center;
+    }
+    
+    .block-list__icon {
+      position: static;
+      margin-bottom: $size-m
+    }
+  }
+  
+  @include from-large {
+    flex-wrap: nowrap;
+  
+    .block-list__item {
+      flex-basis: 25%;
+    }
+  
+    .block-list__icon {
+      @include size($block-list-icon-size);
+      transform: none;
+    }
+  }
+  
+  // fix for [LIVE] appearing too small when sized same as other icons:
+  // apply a --wide modifier for extra width 
+  .block-list__item--wide .block-list__icon {
+    width: $block-list-icon-size * 1.5;
+    @include from-large {
+      width: $block-list-icon-size-large * 1.5;
+    }   
+  }
+}

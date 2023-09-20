@@ -1,0 +1,15 @@
+.slider {
+  @include full-width-container__inner;
+  
+  @include until-medium {
+    border: 0;
+  }
+}
+
+.slider--fight-card {
+	min-height: 296px;
+	
+  @include from-medium {
+    min-height: 310px;
+  }
+}

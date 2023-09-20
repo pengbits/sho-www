@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'AntiqueLegacy';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url(./AntiqueLegacy-Medium.eot);
+  src: local('AntiqueLegacy-Medium'),
+       url(./AntiqueLegacy-Medium.eot?#iefix) format('embedded-opentype'),
+       url(./AntiqueLegacy-Medium.woff2) format('woff2'),
+       url(./AntiqueLegacy-Medium.woff) format('woff'),
+       url(./AntiqueLegacy-Medium.ttf) format('truetype'),
+       url(./AntiqueLegacy-Medium.svg#AntiqueLegacy-Medium) format('svg');
+}

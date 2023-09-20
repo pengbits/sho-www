@@ -1,0 +1,16 @@
+blockquote {
+	padding: $size-xl + $size-l;
+	background: $colors-bg-dark;
+	margin: 0 0 $size-s 0;
+
+	p {
+		@include body-text;
+	}
+
+	cite {
+		@include header--epsilon;
+		margin-top: $size-xs;
+		color: $colors-accent-primary;
+		font-style: normal;
+	}
+}

@@ -1,0 +1,108 @@
+// two ways to set fonts without adhering to header system below:
+// 1) force mobile size of the header mixin to persist through large+
+// by applying header and then setting a breakpoint + override
+// 2) apply font with din mixin , but don't apply header, 
+// just set a single unresponsive font rule
+
+$colors-spektrum-blue: #337ace;
+$colors-glossy-card-gradient-start: $colors-pure-black;
+$colors-glossy-card-gradient-end: #505050;
+
+.glossy-card {
+  text-align: center;
+  margin-bottom: $size-xl;
+  border-radius: $size-l;
+  border: $colors-bg-dark solid 1px;
+
+  &__header {
+    padding:$size-l $size-l;
+    @include linear-gradient(to bottom, $colors-glossy-card-gradient-start, $colors-glossy-card-gradient-end 100%, $fallback:  $colors-bg-dark);
+    border-radius: $size-l $size-l 0 0;
+    border: $colors-bg-dark solid 1px;
+    border-bottom: 0;
+  }
+
+  &__body {
+    padding: $size-l;
+  }
+
+  &__headline {
+    @include din(300);    // 2
+    @include font(24,32);
+    color: $colors-pure-white;
+
+    & > span { // dont let symbols get orphaned on own line
+      white-space: nowrap;
+    }
+
+    sup.glossy-card__symbol {
+      top:-0.45em;
+      font-size: 16px; //66.66%
+    }
+  }
+
+
+  &__price {
+    margin-bottom: $size-xl;
+
+    &__point,
+    &__headline,
+    &__sub {
+      @include din(600);
+      
+    }
+
+    &__point,
+    &__headline {
+      @include font(42, 52, 700);
+    }
+
+    &__point {
+      @include from-medium {
+        @include font(60, 72);
+      }
+      
+      sup {
+        top: -0.45em;
+        font-size: 25px;
+
+        @include from-medium {
+          font-size: 36px // 60%
+        }
+      }
+    }
+
+    &__sub{
+      @include font(14,20);
+      @include upcase;
+    }
+
+    em {
+      font-style: normal;
+    }
+  }
+
+  &__copy {
+    margin-bottom: $size-xl;
+    @include din(300);
+    @include font(20,28);
+    color:$colors-pure-black;
+    &--emphasis {
+      font-weight: 600;
+    }
+  }
+
+  &__legal {
+    @include header('zeta');
+    color: #7D7D7D;
+  } 
+
+  &__price__point,
+  &__price__headline,
+  &__copy--emphasis {
+      color:$colors-spektrum-blue;
+  }
+  &__price__sub {
+    color: $colors-pure-black;
+  }
+}

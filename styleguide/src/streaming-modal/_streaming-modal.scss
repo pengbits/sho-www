@@ -1,0 +1,312 @@
+.modal__close {
+  @include until-large {
+    height: 18px !important;
+    width: 18px !important;
+  }
+}
+
+.streaming-modal {
+  position: relative;
+  max-width: 440px;
+  background: $colors-pure-black;
+
+  @include container-equal;
+  @include flex-wrap(wrap);
+
+  @include from-large {
+    max-width: 874px;
+  }
+}
+
+.streaming-modal__option {
+  padding: ($size-l + $size-s);
+  @include span-columns(12);
+  @include display(flex);
+  @include flex-direction(column);
+  flex: 1 0 auto;
+  margin-right: 0;
+
+  @include from-large {
+    @include span-columns(6);
+    @include display(flex);
+    margin-right: 0;
+    width: 40%;
+  }
+}
+
+.streaming-modal__headline {
+  @include header--theta;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.streaming-modal__option--showtime-anytime {
+  @include until-large {
+    border-top: $size-xxs solid $colors-bg-light;
+  }
+  @include from-large {
+    border-left: $size-xxs solid $colors-bg-light;
+  }
+}
+
+.streaming-modal__copy {
+  @include header--epsilon;
+  margin: 0 auto;
+  padding: $size-m 0 $size-m;
+  color: $colors-pure-white;
+  text-align: center;
+  @include from-large {
+    width: 95%;
+  }
+}
+
+.streaming-modal__button {
+  @include button;
+  @include button--outline($colors-pure-white);
+  margin-top: auto;
+  width: 100%;
+
+  .streaming-modal__option--showtime-anytime & {
+    padding-left: $size-xxs;
+    padding-right: $size-xxs;
+  }
+}
+
+.streaming-modal__order {
+  padding: ($size-l + $size-s);
+  text-align: center;
+  @include span-columns(12);
+}
+
+.streaming-modal__order-header {
+  @include header--delta;
+  @include upcase;
+  margin-bottom: $size-xs;
+  color: $colors-text-med;
+}
+
+.streaming-modal__order-promo {
+  display: none;
+  width: 100%;
+  background: $colors-blue;
+  padding: $size-l;
+
+  .streaming-modal__headline {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .streaming-modal__copy {
+    padding-bottom: 0;
+    margin-bottom: $size-m !important;
+    @include from-large {
+      width: 70%;
+    }
+  }
+}
+
+.streaming-modal--order-promo {
+  .streaming-modal__option {
+    padding: 0 ($size-l + $size-s) ($size-l + $size-s);
+
+    .streaming-modal__button {
+      @include button--outline($colors-pure-white);
+    }
+  }
+
+  .streaming-modal__option.streaming-modal__option--pplus {
+    padding-bottom: 0;
+  }
+
+  .streaming-modal__headline {
+    display: block;
+    padding: ($size-l + $size-s) 0 $size-l;
+  }
+
+  .streaming-modal__option--showtime-anytime {
+    @include until-large {
+      border-top: none;
+    }
+    @include from-large {
+      border-left: none;
+    }
+  }
+
+  .streaming-modal__copy {
+    margin-bottom: 0;
+    padding-top: 0;
+  }
+
+  .streaming-modal__order-promo {
+    display: block;
+    text-align: center;
+  }
+
+  .streaming-modal__order-promo-button {
+    display: block;
+    margin: 0 auto;
+    @include button--secondary;
+
+    @include from-large {
+      width: 40%;
+    }
+  }
+}
+
+.streaming-modal__image {
+  display: none;
+  width: 100%;
+}
+
+.streaming-modal__link {
+  display: none;
+  @include cta;
+  
+  &:after {
+    @include icon-image('next');    
+    margin-left: $size-xs;  
+    content:' '
+  }
+}
+
+.streaming-modal--with-image {
+  max-width: 600px;
+
+  .streaming-modal__image {
+    display: block;
+  }
+
+  .streaming-modal__image-headline {
+    @include header--theta;
+    padding-right: $size-l + $size-s;
+    text-transform: uppercase;
+  }
+
+  .streaming-modal__copy {
+    @include header--epsilon;
+    color: $colors-pure-white; 
+    text-align: center;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .streaming-modal__image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    @include proportions--landscape;
+    overflow: hidden;
+
+    &__shim {
+      position: absolute;
+      height: 30%;
+      width: 100%;
+      top: 0px;
+      z-index: 1;
+      opacity: 0.6;
+      background: -webkit-linear-gradient(top, #000000, rgba(53, 53, 48, 0));
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .streaming-modal__order-promo {
+    @include until-large {
+      padding-top: $size-l;
+      .streaming-modal__headline {
+        padding-top: 0 !important;
+      }
+    }
+  }
+
+  &.streaming-modal--order-promo {
+    .streaming-modal__headline { 
+      //@include header--theta;
+    } 
+  }
+
+  .streaming-modal__order-promo-button {
+    width: 100%;
+
+    @include from-large {
+      width: 48%;
+    }
+  }
+
+  .streaming-modal__headline {
+    @include until-medium {
+      padding: 30px 0 $size-l 0;
+    }
+  }
+
+  .streaming-modal__option {
+    .streaming-modal__button {
+      display: block;
+    }
+
+    .streaming-modal__link {
+      display: none;
+
+      @include until-large {
+        text-align: center;
+      }
+    }
+  }
+
+  .streaming-modal__option--showtime {
+    @include until-large {
+
+      .streaming-modal__copy {
+        text-align: center;
+      }
+
+      .streaming-modal__link {
+        display: none;
+        @include until-large {
+          margin-bottom: $size-l;
+        }
+
+        @include from-large {
+          margin-bottom: $size-l + $size-s;
+        }
+      }
+    }
+
+    @include from-large {
+      border-right: 1px solid $colors-slate-grey;
+    }
+  }
+
+  .streaming-modal__option--showtime-anytime {
+    @include until-large {
+
+      .streaming-modal__copy {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.streaming-modal__logo {
+  display: block;
+  margin: $size-s auto $size-s auto;
+  height: 40px;
+  width: 175px;
+  text-indent: -10000px;
+  background-image: url('http://www.sho.com/assets/images/lib/pplus-logo-white.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.streaming-modal__option--pplus .streaming-modal__button {
+  margin: 0 auto;
+  @include from-large {
+    width: 40%;
+  }
+}

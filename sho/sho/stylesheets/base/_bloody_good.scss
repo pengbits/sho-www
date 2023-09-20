@@ -1,0 +1,24 @@
+// styles for bloody good promotional page
+.bloody-good {
+  .refresh-hero {
+    @include from-medium {
+      margin-bottom: $size-xl;
+    }
+  }
+  
+  .refresh-hero__cta.button--secondary {
+    @include button--primary
+  }
+
+  .video-background__audio-controls {
+    display: none;
+  }
+
+  &__footer {
+    padding:0 0 $size-xl 0;
+  }
+  
+  &__legal {
+    @include header('zeta')
+  }
+}

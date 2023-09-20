@@ -1,0 +1,55 @@
+.gallery {
+  padding-top: $size-l;
+  
+  @include from-large {
+    padding-top: $size-xl;
+    padding-bottom: $size-xl + $size-xs;
+  }
+  
+  &__header {
+    color: $colors-pure-white !important;
+  }
+  
+  &__image-count {
+    @include full-width-container__inner;
+    margin-bottom: $size-l;
+    
+    @include from-large {
+      margin-bottom: $size-l + $size-s;
+    }
+  }
+  
+  &__inner{
+    @include full-width-container__inner;
+    
+    .gallery__image {      
+  		@include span-columns(6);
+      margin-bottom: $size-xs;
+      
+  		@include from-medium {
+  			@include span-columns(4);
+        margin-bottom: $size-m;
+  		}
+      
+      img {
+        width: 100%;
+      }
+    }
+    
+    @include until-medium {
+		  .gallery__image:nth-child(2n) {
+		    margin-right: 0;
+		  }
+    }
+    
+    @include from-medium {
+		  .gallery__image:nth-child(3n) {
+		    margin-right: 0;
+		  }
+    }
+  }
+
+  figure {
+    margin: 0px;
+  }
+}

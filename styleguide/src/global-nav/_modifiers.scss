@@ -1,0 +1,266 @@
+// menu open
+.global-nav--open {
+	@include until-large {
+		.global-nav__menu--mobile {
+			opacity: 1;
+			max-height: calc(100vh);
+    	overflow-y: scroll;
+			@include display(flex);
+			@include transform(translateX(0));
+		}
+
+		&.global-nav--banner-exists .global-nav__menu--mobile {
+			max-height: calc(100vh - 80px);
+		}
+
+		.global-nav__breadcrumb {
+			display: none;
+		}
+	}
+
+	@include from-large {
+		.global-nav__menu--desktop {
+			left: $logo-width + $size-xl + $size-l;
+			@include transform(translateX(0));
+		}
+
+		.global-nav__breadcrumb,
+		.global-nav__list--utility,
+		.global-nav__search-icon {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	.global-nav__inner {
+		@include until-small {
+			.global-nav__list--utility {
+				display: none;
+			}
+		
+			.global-nav__search-icon {
+				display: block;
+			}
+		}
+	
+		.global-nav__menu-toggle {
+			span:nth-child(1) {
+				width: 0;
+				top: 16px;
+				left: 50%;
+			}
+	
+			span:nth-child(2) {
+				@include transform(rotate(45deg));
+			}
+	
+			span:nth-child(3) {
+				@include transform(rotate(-45deg));
+			}
+	
+			span:nth-child(4) {
+				width: 0;
+				top: 16px;
+				left: 50%;
+			}
+		}
+	}
+
+	.global-nav__list--callout {
+		opacity: 0;
+	}
+}
+
+// flyout open
+.global-nav.global-nav--flyout-open {
+	@include from-small {
+		.flyout-container {
+			opacity: 1;
+			@include transform(translateY(0));
+		}
+	}
+}
+
+.global-nav--selected:after {
+	content: "";
+	display: block;
+	width: auto;
+	height: 3px;
+	background-color: $colors-red;
+	margin-top:-5px;
+}
+
+// search open
+.global-nav--search-open {
+	.global-nav__search-bar {
+    position: absolute;
+		width: 100%;
+		padding-left: 40px;
+		opacity: 1;
+		pointer-events: auto;
+		@include transform(translateX(0));
+
+		@include from-large {
+			padding-left: $logo-width + 70px;
+		}
+	}
+		
+	.global-nav__menu-toggle,
+	.global-nav__list,
+	.global-nav__logo {
+		opacity: 0;
+	}
+
+	@include until-large {
+		.global-nav__list.global-nav__breadcrumb {
+			opacity: 1;
+		}
+	}
+	
+	@include from-large {
+		.global-nav__logo {
+			opacity: 1;
+		}
+	}
+
+	.global-nav__search-icon {
+		display: block;
+	}
+	
+	.global-nav__circle {
+		@include transform(scale(.02));
+		@include transform-origin(30% 40%);
+		background: transparent;
+		border-color: transparent;
+	}
+
+	.global-nav__handle {
+		display: block;
+ 		top: 0;
+		left: 10px;
+		height: 22px;
+
+		@include from-small {
+			top: 0px;
+		}
+	}
+
+	.global-nav__handle:after {
+		animation: animate-search-handle ($duration + .1s);
+		animation-timing-function: $easing;
+		animation-delay: .1s;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes animate-search-handle {
+		0% {}
+  	100% {@include transform-origin(center center); @include transform(rotate(90deg)); height: 22px;}
+	}
+}
+
+// fix: don't obscure underlying content w/ breadcrumb
+.global-nav--has-breadcrumb {
+  @include until-large {
+    margin-bottom: $size-xl;
+  
+    // unless not showing breadcrumb at all
+    .has-breadcrumb-on-desktop & {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// stuck
+.global-nav.global-nav--stuck {
+  @include from-large {
+		.global-nav__gradient {
+			opacity: 1;
+      @include transition(background $duration-quick ease-in);
+		}
+  }
+
+	&.global-nav--open {
+		.global-nav__menu--mobile {
+			// needed for mobile menu scrolling
+			max-height: calc(100vh);
+		}
+	}
+}
+
+// pages where desktop menu is exposed by default (homepage, about pages and the affiliate video player)
+.has-nav-exposed {
+  .global-nav__menu-toggle {
+    @include from-extra-large {
+      display: none;
+    }
+  }
+
+  .global-nav__menu--desktop {
+    @include from-extra-large {
+      @include display(flex);
+      @include transform(translateX(0));
+    }
+  }
+}
+
+// solid nav
+.global-nav--solid,
+.has-nav-solid .global-nav {
+  margin-bottom: $size-xl;
+
+	.global-nav__gradient {
+		display: none;
+	}
+  @include from-large {
+		height: 84px;
+  	margin-bottom: 0;
+    background-color: $colors-pure-black;
+  }
+}
+
+// solid when stuck nav
+.global-nav--solid-when-stuck,
+.has-nav-solid-when-stuck .global-nav--stuck {
+	@include from-large {
+		.global-nav__gradient {
+			height: 84px;
+			@include background(
+				linear-gradient(
+					rgba(0, 0, 0, 1) 0%,
+					rgba(0, 0, 0, 1) 100%
+				)
+			);
+		}
+	}
+}
+
+.has-breadcrumb-solid {
+	.global-nav__breadcrumb__background {
+		background: $colors-pure-black;
+	}
+}
+
+.has-menu-open {
+	@include until-large {
+		overflow: hidden;
+	}
+	// to have mobile scrollable in short height contexts,
+	// all sticky elements need to be unstuck
+	// .refresh-hero--has-header .section-header--hero {
+	// 	position: relative;
+	// 	top: 0;
+	// }
+}
+
+.has-breadcrumb-on-desktop {
+  .global-nav__breadcrumb,
+  .global-nav__breadcrumb__background {
+    display: none;
+	}
+	.global-nav__breadcrumb {
+    @include from-large {
+      display: block;
+    }
+  }
+}

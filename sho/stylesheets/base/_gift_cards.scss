@@ -1,0 +1,112 @@
+.gift-cards {
+	.hero__top-line--logo {
+		width: $size-xxl;
+		height: $size-xxl;
+		background: url(https://www.sho.com/assets/images/gift-cards/sho-app-icon-160x160.png) no-repeat;
+		background-size: cover;	
+	}
+
+	.email-gift {
+		p {
+			@include body-text;
+		}
+
+		p:last-of-type {
+			margin-bottom: $size-m * 2;
+		}
+
+		.button--fixed-width {
+			@include at-small {
+				max-width: none;
+			}
+		}
+	}
+
+	.ways-to-watch-disclosure .read-more {
+		text-align: center;
+		@include from-small {
+			text-align: left;
+		}
+	}
+	.read-more__toggle,
+	.read-more__toggle--less {
+		margin-top: 0;
+	}
+  
+  // without a height on the image, the height of container isn't accurate 
+  // at the time when read-more component examines it
+  .device-grid .device__icon {
+    width: 100px;
+    height: 70px;
+  }
+
+	.provider-grid {
+		margin: $size-l;
+		@include from-small {
+			margin: $size-xl;
+		}
+	}
+
+	.provider-list {
+		margin-bottom: $size-m * 2;
+	}
+
+	.included,
+	.redeem {
+		padding: $size-xl 0;
+
+		@include from-small {
+			padding: $size-xxl 0;
+		}	
+	}
+
+	.included {
+
+		&__header {
+			margin-bottom: $size-m * 2;
+			@include header--gamma;
+			@include upcase;
+		}
+
+		&__sub-header {
+			@include header--delta;
+			@include upcase;
+			margin-bottom: $size-s;
+		}
+
+		&__description {
+			margin-bottom: $size-m * 2;
+		}
+
+		&__footnote {
+			@include header--zeta;
+		}
+	}
+
+	.redeem {
+
+		&__cta {
+			@include header--epsilon;
+			@include upcase;
+			margin-bottom: $size-xl;
+		}
+
+		&__cta::after {
+			@include icon;
+			@include icon-size('small');
+			@include icon-image('next');
+			margin-left: $size-s;
+			margin-right: -$size-s;
+			content: "";
+		}
+
+		&__footnote {
+			@include header--zeta;
+
+			a {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+

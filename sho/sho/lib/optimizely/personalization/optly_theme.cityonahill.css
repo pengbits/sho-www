@@ -1,0 +1,54 @@
+.hero__logo {
+  position: absolute;
+  top: 10px;
+  margin-left: 50%;
+  z-index: 999;
+  transform: translateX(-50%);
+}
+
+.hero__inner {
+  display: block;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .hero__logo {
+    width: 110px;
+  }
+
+  .hero__image {
+    background-image: url(https://www.sho.com/site/image-bin/images/1033334_1_0/1033334_1_0_prm-keyart_568x426.jpg) !important;
+    height: 530px !important;
+    background-position: inherit !important;
+    background-size: 100% !important;
+    background-repeat: no-repeat;
+  }
+
+  .hero__inner {
+    margin-top: 225px !important;
+  }
+}
+
+@media (min-width: 480px) {
+  .hero__logo {
+    width: 140px;
+  }
+
+  .hero__inner {
+    margin-top: 260px !important;
+  }
+
+  .hero__image {
+    background-image: url(https://www.sho.com/site/image-bin/images/1033334_1_0/1033334_1_0_prm-keyart_1700x1063.jpg) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero__inner {
+    margin-top: 40vmin !important;
+  }
+  
+  .hero__logo {
+    width: 180px;
+  }
+}

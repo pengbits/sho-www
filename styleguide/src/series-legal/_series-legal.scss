@@ -1,0 +1,132 @@
+$ratings-icon-path: 'https://www.sho.com/assets/images/series/lib/tv-ratings/';
+
+@mixin ratings-icon($icon) {
+  background: transparent url(#{$ratings-icon-path}#{$icon});
+  background-size: cover;
+}
+ 
+.series-legal {
+
+  &.section--inner {
+    margin-bottom: $size-xl;
+
+    @include from-large {
+      margin-bottom: 0;
+    }
+  }
+
+  .series-legal__icon {
+    position: relative;
+    float:left;
+    margin-right: $size-s;
+    height: 30px;
+    width: 30px;
+  }
+
+  &__advisories {
+    @include header--zeta;
+    display: block;
+    overflow: hidden;
+    color: $colors-text-med;
+  }
+
+  &__advisories--ratings {
+    @include capitalize;
+  }
+
+  .tvma-dlvs {
+    @include ratings-icon('tvma-dlvs_24x24.png');
+  }
+
+  .tv14-d {
+    @include ratings-icon('tv14-d_24x24.png');
+  }
+
+  .tv14-dl {
+    @include ratings-icon('tv14-dl_24x24.png');
+  }
+
+  .tv14-l {
+    @include ratings-icon('tv14-l_24x24.png');
+  }
+
+  .tv14-lv {
+    @include ratings-icon('tv14-lv_24x24.png');
+  }
+
+  .tv14-lvd {
+    @include ratings-icon('tv14-lvd_24x24.png');
+  }
+
+  .tv14-dlvs {
+    @include ratings-icon('tv14-dlvs_24x24.png');
+  }
+
+  .tvma {
+    @include ratings-icon('tvma_24x24.png');
+  }
+
+  .tvma-dl {
+    @include ratings-icon('tvma-dl_24x24.png');
+  }
+
+  .tvma-ds {
+    @include ratings-icon('tvma-ds_24x24.png');
+  }
+
+  .tvma-dls {
+    @include ratings-icon('tvma-dls_24x24.png');
+  }
+
+  .tvma-dlv {
+    @include ratings-icon('tvma-dlv_24x24.png');
+  }
+
+  .tvma-dvs {
+    @include ratings-icon('tvma-dvs_24x24.png');
+  }
+
+  .tvma-l {
+    @include ratings-icon('tvma-l_24x24.png');
+  }
+
+  .tvma-lv {
+    @include ratings-icon('tvma-lv_24x24.png');
+  }
+
+  .tvma-sl {
+    @include ratings-icon('tvma-sl_24x24.png');
+  }
+
+  .tvma-sv {
+    @include ratings-icon('tvma-sv_24x24.png');
+  }
+
+  .tvpg-ac {
+    @include ratings-icon('tvpg-ac_24x24.png');
+  }
+
+  .tvpg-l {
+    @include ratings-icon('tvpg-l_24x24.png');
+  }
+
+  .tvpg-acv {
+    @include ratings-icon('tvpg-acv_24x24.png');
+  }
+
+  .tvma-acvl {
+    @include ratings-icon('tvma-acvl_24x24.png');
+  }
+
+  .tvma-acglnv {
+    @include ratings-icon('tvma_acglnv_60x60.png');
+  }
+
+  .tvma-acal {
+    @include ratings-icon('tvma-acal_60x60.png');
+  }
+
+  .tvma-al {
+    @include ratings-icon('tvma-al_60x60.png');
+  }
+}

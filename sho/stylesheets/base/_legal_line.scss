@@ -1,0 +1,9 @@
+/* Legal Line used so far on Dexter anniversary page
+ */
+ 
+.legal-line {
+  @include header--zeta;
+  color: $colors-pure-white;  
+  text-align: center; 
+  padding-bottom: $size-l;
+ }

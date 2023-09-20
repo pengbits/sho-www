@@ -1,0 +1,26 @@
+.podcast-lib { 
+    // previously this was not clearfixed, so container was collapsing, making for unpredictable  margins
+    @include clearfix;
+    padding-left: 0;
+}
+.podcast-lib--item {
+  list-style-type: none;
+}
+@include until-medium {
+  .podcast-lib {
+      padding-left: 0;
+      border: transparent solid 15px;
+      border-width: 0 15px;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .podcast-lib--item {
+      width: 48.5%;
+      float: left;
+      margin-right: 3%;
+  }
+  .podcast-lib--item:nth-child(even) {
+      margin-right: 0;
+  }
+}              

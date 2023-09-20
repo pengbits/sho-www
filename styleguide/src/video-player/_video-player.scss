@@ -1,0 +1,85 @@
+// rules for video-player page layout
+// TODO rename as video-play6r, clearing the way for full recode in video-experience project?
+.video-player {
+  @include full-width-container__inner;
+  position: relative;
+  padding-bottom: $size-m;
+  @include clearfix;
+
+  &__secondary {
+    @include until-large {
+      margin-bottom: $size-l;
+    }
+  }
+
+  @include from-large {
+    padding-bottom: $size-m;
+
+    &--two-col {
+      .video-player__primary,
+      .video-player__secondary {
+        float: left;
+      }
+
+      .video-player__primary {
+        float: left;
+        width: 66.66%
+      }
+
+      .video-player__secondary {
+        width: 33.33%;
+        padding-left: ($size-l + $size-s);
+
+        &__header {
+          // see sho/base/_section_quirks.scss 
+          // for more rules via extend of section-header
+          @include header('theta');
+          color: $colors-red;
+          margin-bottom: $size-l;
+        }
+      }
+
+      .video-player__video {
+        margin-bottom: $size-m;
+      }
+
+      .promo--video:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .video-player__secondary--from-large { 
+    @include until-large {
+      display: none;
+    }
+  }
+
+  &__video {
+    position: relative;
+    max-width: 100%;
+    @include proportions--landscape;
+    background-color: $colors-pure-black;
+  }
+
+  &--youtube &__video {
+    padding-top: 0;
+    position: static;
+ 
+    #ytplayer {
+      width: 100%;
+    }
+  }
+
+
+  &__video .video-play7r {
+    // absolutely-position the player embed into place (snap four corners to parent)
+    // to avoid unseemly 'pop' during transitions
+    // ideally this component would be sturdier than this, too many modes/contexts to debug rn
+    position:  absolute;
+    top:0;
+    left:0;
+    right:0; 
+    bottom:0;
+  }
+}

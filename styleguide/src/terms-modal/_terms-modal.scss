@@ -1,0 +1,30 @@
+.terms-modal {
+  max-width: 600px;
+  padding: $size-xl;
+
+  &__title {
+    @include header('theta');
+    margin-bottom: $size-l;
+    color: $colors-pure-white;
+  }  
+  
+  &__description {
+    @include body-text;
+    margin-bottom: $size-l;
+    color: $colors-pure-white; // needed for order page
+  }
+
+  a {
+    &:link,
+    &:visited {
+      text-decoration: underline;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  // &__accept {}
+}

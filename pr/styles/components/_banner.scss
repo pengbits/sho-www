@@ -1,0 +1,45 @@
+.banner {
+  @include full-width-container;
+  position: relative;
+  width: 100%;
+  padding-bottom: 30px;
+  z-index: 100;
+  background: #000;
+  border-top: $size-m solid $colors-red;
+
+  .header--beta {
+    margin-top: 15px;
+    font-weight: 600;
+  }
+}
+
+.banner__inner {
+  color: $colors-pure-white;
+  text-transform: uppercase;
+  height: auto;
+  text-align: center;
+  @include full-width-container__inner;
+}
+
+$sho-logo-width: 154px;
+$sho-logo-height: 55px;
+$sho-logo-width-large: 210px;
+$sho-logo-height-large: 75px;
+
+.banner__title__logo {
+  display: block;
+  text-indent: -9000px;
+  overflow: hidden;
+  margin: 30px auto 0px;
+  width: $sho-logo-width;
+  height: $sho-logo-height;
+  background: url('#{$icon-base-path}/showtime_nav_logo_84x30.svg');
+  background-size: $sho-logo-width $sho-logo-height;
+  background-repeat: no-repeat;
+
+  @include from-medium {
+    width: $sho-logo-width-large;
+    height: $sho-logo-height-large;
+    background-size: $sho-logo-width-large $sho-logo-height-large;
+  }
+}

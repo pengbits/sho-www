@@ -1,0 +1,76 @@
+/* alternate stripped down title page */
+.collection-title--streamlined {
+  margin-top: 0;
+
+
+  .collection__children__title,
+  .promo--video .promo__headline {
+    font-weight: 600;
+  }
+
+  .collection__children__description {
+    display: none;
+  }
+
+  .collection__children {
+    margin-bottom: 0;
+
+    &:last-child:after {
+      margin-bottom: $size-xl;
+
+      @include from-large {
+        margin-bottom: $size-xxl;
+      }
+    }
+  }
+
+  .collection__children:not(:last-child):after {
+    border: 0;
+  }
+
+  .video-section {
+    padding-top: 25px;
+
+    @include from-large {
+      padding-top: 0px;
+    }
+
+    .video-player {
+      padding-bottom: 40px;
+    }
+
+    .video-section__inner  {
+      text-align: center;
+    }
+
+    .video__title,
+    .video__description {
+      margin: 0 auto;
+      font-weight: 600;
+
+      @include from-large {
+        max-width: 65%;
+      }
+    }
+
+    .video__title {
+      margin-bottom: $size-s;
+
+      @include from-large {
+        margin-bottom: $size-m;
+      }
+    }
+  }
+
+  .video-section .video__metadata .video__metadata__primary {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .video__notes,
+  .video__ctas,
+  .video__airdate,
+  .video__metadata__secondary {
+    display: none;
+  }
+}

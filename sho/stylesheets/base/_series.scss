@@ -1,0 +1,148 @@
+.popular-series {
+  padding: $size-xl 0 ($size-xl + $size-l);
+
+  @include from-medium {
+    padding: $size-xxl 0 ($size-xl + $size-l);
+  }
+}
+
+// series cast page specific styles
+.series-cast {
+
+  .hero--cast .cast__character,
+  .hero--cast .cast__talent {
+    @include block-container;
+    padding-left: 0px !important; //had to put important here
+    margin-bottom: $size-m;
+
+    @include from-medium {
+      padding-top: 0px; 
+      margin-bottom: $size-l + $size-s;
+    }
+  }
+
+  .cast__information {
+    @include from-medium {
+      @include span-columns(8);
+    }
+    
+    p {
+      // p tags come back within cast tool data
+      // all. by. themselves. no classnames possible.
+      margin: $size-l 0;
+    }
+  }
+  
+  .cast__character__name {
+    @include header--alpha;
+    @include upcase;
+    color: $colors-red;
+    margin-bottom: 0;
+  }
+  
+  .cast__details__small {
+    @include from-medium {
+      display: none;
+    }
+  }
+  
+  .cast__details__large {
+    @include until-medium {
+      display: none;
+    }
+  }
+  
+  .cast__talent__name {
+    @include block-container__headline;
+    color: $colors-red;
+    
+    &--is-themself {
+      display: block;
+
+      @include from-medium {
+        display:none;
+      }
+    }
+  }
+
+  .cast__media {
+    @include from-medium {
+      @include span-columns(4);
+    }
+  }
+
+  .cast__media__headline {
+    @include header--beta;
+    @include upcase;
+    margin-bottom: $size-m;
+    padding: $size-xl 0 $size-s 0;
+    border: 0;
+    color: $colors-red;
+
+    @include from-medium {
+      display:none;
+    }
+  }
+}
+// end series-cast
+
+.episode-detail {
+  &__music-list {
+    @include from-medium {
+      @include span-columns(6);
+    }
+  }
+  .hero__headline {
+    color: $colors-pure-white;
+  }
+  .hero__headline__link::after {
+    @include icon-image('next')
+  }
+}
+
+.press-recap {
+  @include from-medium {
+    float: left;
+    width: 100%;
+  }
+}
+// end episode-detail
+
+// penny dreadful comic book series page
+.penny-dreadful-comic {
+  
+  .hero__headline:before,
+  .promo__body:before {
+    display: none;
+  }
+
+  .promo__body h3 {
+    padding-left: 0;
+  }
+}
+
+//season landing page specific styles
+.season-detail {  
+  .hero__body {
+    width: 100%;
+    @include from-large {
+      width: 65%;
+    }
+  }
+  
+  .hero__headline {
+    color: $colors-pure-white;
+  }
+  .hero__headline__link::after {
+    @include icon-image('next')
+  }
+
+  
+}
+
+.season-detail,
+.episode-detail {
+  .hero__description {
+    color: $colors-pure-white;
+  }
+}

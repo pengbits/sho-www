@@ -1,0 +1,22 @@
+/* This style is specifically for promos that are within a slider as in the all-fights sports page */
+
+.slider__items--order-promo {
+  @include display("flex");
+
+  .order-promo {
+    display: none;
+
+    @include from-medium {
+      @include display("flex");
+      flex: 0 1 auto;
+    }
+  }
+}
+
+.sports-home .hero .order-promo {
+  margin: 15px;
+
+  @include from-medium {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'AntiqueLegacy';
+  font-weight: 700 900;
+  font-style: italic;
+  font-display: swap;
+  src: url(assets/antiquelegacy/antiquelegacy-bolditalic/AntiqueLegacy-BoldItalic.eot);
+  src: local('AntiqueLegacy-BoldItalic'),
+       url(assets/antiquelegacy/antiquelegacy-bolditalic/AntiqueLegacy-BoldItalic.eot?#iefix) format('embedded-opentype'),
+       url(assets/antiquelegacy/antiquelegacy-bolditalic/AntiqueLegacy-BoldItalic.woff2) format('woff2'),
+       url(assets/antiquelegacy/antiquelegacy-bolditalic/AntiqueLegacy-BoldItalic.woff) format('woff'),
+       url(assets/antiquelegacy/antiquelegacy-bolditalic/AntiqueLegacy-BoldItalic.ttf) format('truetype'),
+       url(assets/antiquelegacy/antiquelegacy-bolditalic/AntiqueLegacy-BoldItalic.svg#AntiqueLegacy-BoldItalic) format('svg');
+}

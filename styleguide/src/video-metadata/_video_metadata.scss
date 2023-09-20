@@ -1,0 +1,91 @@
+@mixin info-headline-link {
+  @include cta;
+
+  &::after {
+    position: relative;
+    top: 0;
+    margin-right: -(map-get($icon-sizes, 'smedium')); // negative margin-right required to prevent :after el from wrapping by itself 
+    @include icon('next', 'smedium');             // https: //stackoverflow.com/questions/16100956/prevent-after-element-from-wrapping-to-next-line
+
+    @include from-large {
+      top: -2px;
+    }
+  }
+}
+
+
+// Video Metadata
+.video-metadata {
+  position:relative;
+  margin-bottom: $size-m;
+  padding-top: $size-s;
+  color: $colors-pure-white;
+  background-color: 0;
+  @include body-text;
+
+  @include from-large {
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: $size-xl;
+  }
+}
+
+.video-metadata__title {
+  margin-bottom: $size-s;
+  @include header('beta');
+  @include upcase;
+}
+
+.video-metadata__detail {
+  margin-bottom: $size-s;
+  color: $colors-text-med;
+}
+
+.video-metadata__info__headline {
+  @include header--beta;
+  @include info-headline-link;
+  margin-bottom: $size-s;
+  text-transform: uppercase;
+}
+
+.video-metadata__info__attribution {
+  @include upcase;
+  @include header--eta;
+  margin-bottom: $size-s;
+  letter-spacing: 0.3em !important;
+}
+
+.video-metadata__info__headline__image {
+  max-width: MIN(55vw,280px);
+  max-height: 100px;
+  margin-bottom: $size-s;
+}
+
+.video-metadata__info__tunein {
+  @include header--delta;
+  margin-bottom: $size-s;
+}
+
+.video-metadata__info__detail {
+  @include body-text;
+  margin-bottom: $size-s;
+}
+
+.video-metadata__link,
+.video-metadata__info__link {
+  @include header--epsilon;
+  @include cta--arrow;
+  display: block;
+  margin-bottom: $size-l;
+
+  @include from-large {
+    margin-bottom: $size-xl;
+  }
+}
+
+.video-metadata__link {
+  margin-top: $size-s;
+  @include from-large {
+    display: none;
+  }
+}

@@ -1,0 +1,6 @@
+# Files to be ignored when installing this package
+site/
+tasks/
+build/
+gulpfile.js
+

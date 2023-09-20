@@ -1,0 +1,231 @@
+$cart-lower-third-image-width	: 305px; // 610/2
+$cart-lower-third-image-height: 180px; // 360/2
+$cart-lower-third-image-cutout-height: 20px; // the part of the artwork w/ transparent background 
+$cart-lower-third-container-height : ($cart-lower-third-image-height - $cart-lower-third-image-cutout-height);
+
+.modal-open .modal--is-lower-third.modal {
+	top: auto;
+	background: transparent;
+	overflow-y: hidden;
+
+	@include from-large {
+		height: $cart-lower-third-image-height;
+	}
+}
+
+.cart-modal--lower-third {
+	@include full-width-container;
+	height: auto;
+	
+	@include from-large {
+		height: $cart-lower-third-container-height;
+	}
+}	
+
+.cart-modal--lower-third .cart-modal {		
+	
+	&__inner {
+		display: flex;
+		height: 100%;
+	}
+	
+	// clear the closer element [x] 1, 2
+	&__right-container {
+		display: flex;
+		width: 100%;
+		margin-right: 40px; // 1
+		
+		@include from-medium {
+			margin-top: $size-s;
+			margin-bottom: $size-s;
+		}
+		
+		@include from-large {
+			margin-right: 60px; // 2
+		}
+		
+		@include until-extra-large {
+			flex-direction: column;
+			padding: $size-l;
+			padding-right: $size-s;
+		}
+	}
+	
+	&__text-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		text-align: left;
+		width: 100%;
+	
+		@include at-large {
+			margin-bottom: $size-m;
+			padding: 0;
+		}
+		
+		@include from-extra-large {
+			margin: $size-xl;
+			width: 33%;
+		}
+	}
+	
+	&__button-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.button--solid-red {
+			margin-bottom: $size-s;			
+				
+			@include from-extra-large {
+				margin-right: $size-xl;
+			}
+		}
+		
+		@include until-large{
+			flex-direction: column;
+			align-items: flex-start;
+			margin: 0px;
+		}
+		
+		@include from-large {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	
+	
+	&__image-container{
+		// position can't be relative or you get weird scrollbars
+		width:  $cart-lower-third-image-width;
+		min-width:  $cart-lower-third-image-width;
+		height: $cart-lower-third-image-height;
+		overflow: hidden;
+		@include until-large {
+			display: none;
+		}
+	}
+
+	&__image {
+		position: absolute;
+		width:  $cart-lower-third-image-width;
+		height: $cart-lower-third-image-height;
+		bottom: 0;
+		overflow: hidden;
+
+		@include until-medium {
+			display: none;
+		}
+	}
+
+	&__headline {
+		@include header('theta');
+		text-align: left;
+		padding: 0;
+		margin-bottom: $size-s;
+	}
+	
+	&__copy {
+		@include header('zeta');
+		color: $colors-pure-white;
+		text-align: left;
+		padding: 0;
+		margin: 0;
+		max-width: 100%;
+		
+		@include until-medium {
+			color: $colors-text-dark;
+		}
+	}
+	
+ 	&__copy--sub-headline {
+		display: none;
+		@include from-large {
+			display: block;
+		}
+	}
+	
+	&__copy--close-modal {
+		white-space: nowrap;
+		color: $colors-light-grey;
+		
+		// rules for the `>` icon in I ALREADY HAVE SHOWTIME cta
+		&:after {
+			display: inline-block;
+	  	content: '';
+		  @include icon('next','xsmall')
+			width		: ($size-s - ($size-xxs * 2)); // 8px
+			height	: ($size-s - ($size-xxs * 2));
+			margin-left: ($size-xs - $size-xxs); // 4px
+			
+			@include from-large { 
+				@include icon-size('xsmall'); 
+				margin-left: $size-xs;
+			}
+		}
+		
+		@include from-extra-large {
+			margin-left: $size-xl
+		}
+	}
+	
+	&__button-terms {
+		color: $colors-text-med;
+		margin-top: $size-s;
+
+		@include until-extra-large {
+			margin-left: $size-l;
+			margin-top: 0;
+		}
+		@include until-large {
+			margin-left: 0;
+			margin-top: $size-s;
+			margin-bottom: 0px;
+		}
+	}
+
+	&__list {
+		height: 100%;
+		padding: 0;
+		margin-left: $size-m;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: $size-s 0;
+
+		&__item {
+			@include header('epsilon');
+			color: $colors-text-med;
+			margin-bottom: 0;
+			height:50%;
+			margin-right: $size-m;
+			@include until-large{
+				margin-right: $size-m;
+			}
+		}
+
+		@include until-medium {
+			display: none;
+		}
+	}
+}
+
+//forces the modal itself to the bottom;
+.modal--is-lower-third .modal__inner{
+	width: 100%;
+	vertical-align: bottom !important;
+	max-width: 100% !important;
+	@media screen and (max-height: 649px) {
+		margin: 0 !important;
+	}
+}
+
+.modal--is-lower-third 	.cart-modal__loader {
+	height: $cart-lower-third-container-height;
+	
+	.loading-animation {
+		top: ($cart-lower-third-image-height / 2) - $loading-animation-ball-size;
+	}
+}
+	

@@ -1,0 +1,237 @@
+.free-preview {
+  .hero__body {
+    @include from-small {
+      width: 70%;
+    }
+
+    .hero__copy {
+      padding-bottom:0;
+    }
+  }
+
+  .slider__item:nth-child(n+4) {
+    margin-bottom: 0;
+}
+
+  .promo-group {
+    margin-bottom: 0;
+  }
+
+  .ways-to-watch {
+    &__section {
+      @include block-container;
+      background-color: $colors-bg-dark;
+  		@include display(flex);
+  	  @include flex-direction(column);
+
+      @include until-large {
+    	  padding-top: $size-l;
+        width: 100%;
+      }
+
+      @include from-large {
+    		width: 34%;
+      }
+    }
+
+    &__headline-wrapper,
+    &__button-wrapper {
+      width: 100%;
+    }
+
+    &__copy {
+      margin-bottom: $size-l;
+      font-weight: 100;
+    }
+
+    &__section:not(:last-child):after {
+      content: '';
+      position: absolute;
+      background-color: $colors-bg-light;
+
+      @include until-small {
+        left: $size-l;
+        right: $size-l;
+        bottom: 0;
+        height: $size-xxs;
+      }
+
+      @include until-large {
+        @include from-small {
+          left: $size-m * 2;
+          right: $size-m * 2;
+          bottom: 0;
+          height: $size-xxs;
+        }
+      }
+
+      @include from-large {
+        top: $size-m * 2;
+        bottom: $size-m * 2;
+        right: 0;
+        width: $size-xxs;
+      }
+    }
+  }
+
+  .button--solid-red {
+    padding: ($size-s + $size-xxs) $size-l $size-s;
+    font-size: 16px;
+  }
+
+  .provider {
+    position: relative;
+    margin: 0 0 $size-l;
+    @include span-columns(6);
+
+
+
+    @include from-medium {
+      @include until-large {
+        @include omega(2n);
+      }
+    }
+
+    @include from-large {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+
+    &__image {
+      position: relative;
+      display: block;
+      padding-top: 85.25%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-color: $colors-dark-grey;
+      
+      @include from-medium {
+        padding-top: 56.25%;
+      }
+    }
+
+    &__body {
+      position: absolute;
+
+      @include until-medium {
+        top: 0;
+        left: 100%;
+        width: 100%;
+        padding: $size-s 0 0 $size-l;
+      }
+
+      @include from-medium {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: $size-s;
+        text-align: center;
+      }
+    }
+
+    &__copy {
+      @include header('epsilon');
+      color: $colors-pure-white;
+
+      @include from-medium {
+        font-size: 14px;
+        line-height: 18px;
+        color: $colors-mid-grey;
+      }
+    }
+  }
+
+  .provider:last-child {
+    @include until-medium {
+      margin-right: 2%;
+    }
+  }
+
+  .provider-list {
+    list-style: none;
+    border-left: 1px solid $colors-red;
+    padding-left: $size-l;
+
+    @include from-medium {
+      padding-left: $size-xl;
+    }
+
+    &__item {
+      margin-bottom: $size-xl;
+    }
+
+    &__item:last-child {
+      margin-bottom: 0;
+    }
+
+    &__copy {
+      color: $colors-mid-grey;
+    }
+  }
+
+  .order-promo {
+    display: block;
+    overflow: hidden;
+    padding: $size-xl;
+    margin-bottom: 0;
+
+    @include until-medium {
+      padding: $size-l;
+    }
+
+    &__body {
+      @include from-medium {
+        float: left;
+        margin-right: 2%;
+        width: 74.5%;
+
+      }
+    }
+
+    &__headline {
+      padding-bottom: $size-l;
+
+      @include from-medium {
+        padding-bottom: $size-xs;
+      }
+    }
+
+    &__copy {
+      display: block;
+      margin-bottom: 0;
+
+      @include until-medium {
+        display: none;
+      }
+    }
+
+    &__button {
+      @include from-medium {
+        float: left;
+        width: 23.5%;
+        margin-top: 10px;
+      }
+
+      @include from-large {
+        margin-top: 16px !important;
+      }
+    }
+  }
+
+  .email-signup {
+    border: none;
+    border-width: 0;
+  }
+
+  .legal__copy {
+    @include header('zeta');
+    margin-bottom: $size-s;
+    color: $colors-text-dark;
+  }
+
+  .read-more__toggle {
+    margin-top: 25px;
+    line-height: 12px;
+  }
+}

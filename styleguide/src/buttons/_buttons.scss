@@ -1,0 +1,102 @@
+@mixin button-transition {
+  transition: all .15s ease-out;
+  @include transition(background-color $transition-duration unquote($transition-easing), border-color $transition-duration unquote($transition-easing),
+    color $transition-duration unquote($transition-easing));
+}
+
+@mixin button {
+  @include button-transition;
+  @include header--eta;
+  @include smallcaps;
+  display: inline-block;
+  border: ($size-xxs * 2) solid;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  background-color: transparent;
+  outline: 0;
+  padding: 8px 12px 6px 12px;
+  -webkit-padding-before: 7px; 
+  -webkit-padding-after: 7px;
+}
+
+@mixin button--primary {
+  @include button;
+  @include button--solid($colors-red);
+}
+
+@mixin button--secondary {
+  @include button;
+  @include button--solid($colors-pure-white);
+}
+
+@mixin button--solid($color) {
+  background-color: $color;
+  border-color: $color;
+  color: $colors-pure-black; 
+  &:hover {
+    @if $color == $colors-pure-white {
+      color: $colors-pure-black;    
+    } @else {
+      border-color: $colors-pure-white;
+      background-color: $colors-pure-white;
+    }
+  }
+}
+
+@mixin button--outline($color) {
+  border-color: $color;
+  color: $color;
+
+  &:hover {
+    background-color: $color;
+    @if $color == $colors-pure-white {
+      color: $colors-pure-black;
+    } 
+    @else if $color == $colors-red {
+      color: $colors-pure-black;
+    }
+    @else {
+      color: $colors-pure-white;
+    }
+  }
+}
+
+.button--outline-red {
+  @include button;
+  @include button--outline($colors-red);
+}
+
+.button--outline-black {
+  @include button;
+  @include button--outline($colors-pure-black);
+}
+
+.button--outline-white {
+  @include button;
+  @include button--outline($colors-pure-white);
+}
+
+.button--primary {
+  @include button--primary;
+}
+
+.button--secondary {
+  @include button--secondary;
+}
+
+.button--video {
+  @include icon-before('triangle-right-black','small') 
+}
+
+.button--outline-white.button--video {
+  &::before {
+    @include transition(filter $transition-duration unquote($transition-easing));
+    filter: invert(100%);
+  }
+  
+  &:hover {
+    &::before {
+      filter: invert(0%)
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.network-feed {
+	.global-navigation__breadcrumb-mobile {
+		display: none;
+	}
+
+	.section--large {
+		@include at-medium {
+			margin-bottom: $size-xxl;
+		}
+	}
+	
+	&--terms {
+		.legal {
+			margin-top: $size-xxl;
+		}
+	}
+
+	.legal__body__link {
+		color: $colors-pure-white;
+	}
+
+	&__inner {
+		@include full-width-container__inner;
+	}
+
+	&__sub-inner {
+		word-wrap: break-word;
+		@include half-width-container;
+	}
+
+	&__header {
+		@include header--alpha;
+		margin: ($size-xxl + $size-xl) 0 $size-l 0;
+		@include until-medium {
+			margin-top: $size-xl;
+		}
+	}
+
+	&__sub-header {
+		@include header('delta');
+		margin-bottom: $size-m;
+	}
+
+	&__sub-sub-header {
+		@include header('zeta');
+	}
+
+	.faq-table {
+		@include body-text;
+		color: $colors-text-med;
+		width: 100%;
+
+		&__header {
+			@include header--zeta;
+			color: $colors-text-med;
+		}
+
+		tr {
+			height: $size-xl;
+	    border-bottom: 1px solid $colors-bg-med;
+		}
+
+		&--2-col {
+			td {
+				width: 50%;
+			}
+		}
+
+		&--3-col {
+			td {
+				width: 25%;
+
+				&:nth-child(3n) {
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	&__includes {
+		@include body-text;
+		margin: 0;
+		padding-left: $size-m;
+		color: $colors-text-med;
+
+		li {
+			margin-bottom: $size-xs;
+		}
+	}
+}

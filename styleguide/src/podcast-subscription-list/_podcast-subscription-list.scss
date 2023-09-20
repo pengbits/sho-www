@@ -1,0 +1,67 @@
+
+// Podcast Episode List  Meta Data
+
+.metaname-example {
+	background-color: $colors-pure-black;
+	@include span-columns(6);
+}
+.subscription-list{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(3 auto);
+  column-gap: $size-m;
+  row-gap: $size-m;
+  padding: $size-m *2 $size-l;
+  background-color: $colors-bg-light;
+  @include from-medium {
+    display: flex;
+    padding: $size-xl;
+  }
+
+  &__item--headline { 
+    grid-column: span 2;
+    justify-self: center;
+    @include header('gamma');
+    text-transform: capitalize; 
+    @include from-medium {
+      margin-right: 50px;
+      padding-top: $size-s;
+    }
+  }
+ 
+  &__item--img {
+    background-image: url(https://www.sho.com/assets/images/sports/podcast/spotify.png);
+    background-size: 35% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40px;
+    @include from-medium {
+      margin-right: $size-s;
+      width: 150px;
+      background-size: 60% auto;
+    }
+  }
+
+  &__item--feed {
+    &-apple {
+      background-color: #8641BD;
+      border-color: #8641BD;
+    }
+    &-youtube {
+      background-color: #FC1A21;
+      border-color: #FC1A21;
+    }
+    &-rss {
+      background-color: #1C9EDD;
+      border-color: #1C9EDD;
+    }
+    &-spotify {
+      background-color: $colors-pure-white;
+      border-color: $colors-pure-white;
+    }
+
+    
+
+  }
+
+}

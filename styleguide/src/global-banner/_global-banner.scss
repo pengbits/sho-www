@@ -1,0 +1,53 @@
+$global-banner-height: 80px;
+$global-banner-width-large: 765px;
+$global-banner-width-small: 400px;
+
+.global-banner {
+  position: relative;
+  z-index: 200;
+
+  &__bg {
+    height: $global-banner-height;
+  }
+
+  &__content {
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    height: $global-banner-height;
+    text-align: center;
+    margin: 0 auto;
+
+    @include from-medium {
+      background-size: contain; 
+    } 
+  }
+  &__mobile {
+    display:none;
+  }
+}
+
+.global-banner__mobile {
+  display: none; 
+}
+
+.global-banner__switch {
+  .global-banner__desktop {
+    display: none;
+    @include from-medium {
+      display: block;
+      }
+    .global-banner__content {
+      max-width: $global-banner-width-large;
+    }
+  }
+  .global-banner__mobile {
+    display: block;
+    @include from-medium {
+      display: none;
+    }
+    .global-banner__content {
+      max-width: $global-banner-width-small;
+    }
+  }
+}

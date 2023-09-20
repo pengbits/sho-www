@@ -1,0 +1,121 @@
+// email unsub & preferences page specific styles
+.email-preferences {
+
+  .email-preferences__section {
+    @include full-width-container__inner;
+    padding-top: $size-xxl;
+
+    @include from-medium {
+      padding-top: $size-xxl;
+    }
+
+    .email-preferences__headline {
+      @include header--delta;
+      padding-bottom: $size-m;
+
+      .email-preferences__headline--grey {
+        color: $colors-text-dark;
+      }
+    }
+
+    .email-preferences__headline--large {
+      @include header--gamma;
+      @include capitalize;
+      margin-bottom: $size-xl;
+    }
+
+    .email-preferences__form {
+      padding-bottom: $size-xxl + $size-m;
+    }
+
+    .email-preferences__manage-cta {
+      @include header--epsilon;
+      @include capitalize;
+      color: $colors-text-dark;
+    }
+
+    .email-preferences__label {
+      @include header--delta;
+    }
+
+    .email-preferences__input--card,
+    .email-preferences__input {
+      display:none;
+    }
+
+    @mixin email-preferences__input--checkbox {
+      background: url("#{$icon-base-path}/checkbox-square.svg") no-repeat 0 0;
+      height: $size-l;
+      padding-left: $size-l + $size-m;
+      display:inline-block;
+    }
+
+    @mixin email-preferences__input--selected {
+      background: url("#{$icon-base-path}/checkbox-square-selected.svg") no-repeat 0 0;
+    }
+
+    .email-preferences__input--card + label {
+      @include email-preferences__input--checkbox;
+      line-height: 19px;
+    }
+
+    .email-preferences__input--card:checked + label,
+    .email-preferences__input:checked + label {
+      @include email-preferences__input--selected;
+    }
+
+    .email-preferences__input + label {
+      @include email-preferences__input--checkbox;
+      line-height: 26px;
+    }
+
+    .email-preferences__input {
+        float:left;
+        opacity: 0;
+    }
+
+    .email-preferences__description {
+      @include body-text;
+      overflow: hidden;
+      padding-left: $size-l + $size-m;
+    }
+
+    .email-preferences__form-section {
+      padding: $size-s 0;
+
+      &--general {
+        padding: $size-xl 0;
+        margin-left: $size-m + $size-m;
+        @include clearfix;
+      }
+    }
+
+    .email-preferences__entry {
+      @include display("flex");
+      padding-top: $size-m;
+    }
+
+    .email-preferences__entry--odd {
+      @include from-medium {
+        float:left;
+        width:40%;
+      }
+    }
+
+    .email-preferences__submit {
+      @include button;
+      @include button--solid($colors-pure-white);
+      margin-top: $size-l;
+    }
+
+    .email-preferences__unsubscribe {
+      padding: $size-l 0;
+
+      &--link {
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+}

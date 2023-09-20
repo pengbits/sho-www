@@ -1,0 +1,103 @@
+// paths that don't change by environment
+$assets-image-base: "https://www.sho.com/assets/images";
+$assets-image-base-new: "https://www.sho.com/assets/images";
+$assets-shoplace-base-new: "https://www.sho.com/assets/images/shoplace";
+
+// font-family and fallback
+$font-fallback: "Helvetica", "Arial", sans-serif;
+$ff: "AntiqueLegacy";
+
+// color palette
+$colors-pure-white: #FFFFFF;
+$colors-pure-black: #000000;
+
+// body/html color palette
+$global-bgcolor:    $colors-pure-black;
+$global-text-color: $colors-pure-white;
+
+ // brand refresh
+$colors-red: #ff202C;
+$colors-light-grey: #FAFAFA;
+$colors-mid-dark-grey: #191919;
+$colors-slate-grey: #191919;
+$colors-dark-grey: #191919;
+$colors-other-grey: #191919;
+$colors-bg-dark: #191919;
+
+$colors-mid-grey: #7D7D7D;
+
+// use these greys below;
+// the ones above are being phased out
+$colors-text-med: #aaaaaa;
+$colors-text-dark: #7D7D7D;
+$colors-bg-med: #222226;
+$colors-bg-light: #2d2d33;
+
+// off-brand colors
+$colors-dark-teal: #38958B; // fight card, video metadata
+$colors-teal: #65F2E3; // fight card
+
+// paramount plus
+$colors-blue: #0064ff; // paramount brand guidelines
+
+
+// sizes to be used
+$size-xxs: 1px;
+$size-xs: 5px;
+$size-s: 10px;
+$size-m: 15px;
+$size-l: 20px;
+$size-xl: 40px;
+$size-xxl: 80px;
+
+$size-border-width-s: 1px;
+$size-border-width-m: 2px;
+$size-border-width-l: 5px;
+$size-border-radius:  5px;
+$size-border-radius-m: 5px;
+$size-border-radius-l: 10px;
+
+// transitions
+$transition-easing: "ease-in-out"!default;
+$transition-duration: .25s!default;
+
+// icons
+$icon-sizes: (
+  xsmall:    10px,
+  small:    12px,
+  smedium:  18px,
+  medium:   24px,
+  large:    32px,
+  xlarge:   40px
+);
+
+// loading-animation
+$loading-animation-ball-size: 15px;
+
+// Neat grid settings
+$column: 78px; // was 67
+$gutter: 24px; // was 36
+$grid-columns: 12;
+$max-width: 1600px;
+$fg-column: $column;
+$fg-gutter: $gutter;
+
+// using a map instead of variables, for an individual breakpoint,
+// use mq-breakpoint function:
+// mq-breakpoint('small') => 480px
+$breakpoint-map: (
+  'extra-small':        380px,
+  'small':              480px,
+  'medium':             768px,
+  'large':              992px,
+  'extra-large':        1200px,
+  'extra-extra-large':  1360px,
+
+  'extra-short':        450px,
+  'short':              550px,
+  'medium-tall':        650px,
+  'tall':               750px,
+  'extra-tall':         1200px
+);
+
+$icon-base-path: '/assets/svg' !default;

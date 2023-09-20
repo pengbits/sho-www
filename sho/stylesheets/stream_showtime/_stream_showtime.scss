@@ -1,0 +1,477 @@
+// 1. container
+// 2. peekaboo-banner
+// 3. hero, 
+// 4. video-background
+// 5. video-player
+// 6. stream showtime provider-grid aka block-list aka features-list
+// 7. catalog-grid aka Featured Series Featured Movies, Featured Sports,
+// 8. footer
+// 9. device logos aka platform logos
+
+// todo - extract all the [upcase + text-align:centered] into a utility class or mixin
+
+// =:1 =:container
+.stream-showtime {
+
+  .site-container {
+    height: auto;
+  } 
+ 
+  // =:3 =:hero
+  .hero {}
+  
+  // these are the rules for a degraded experience without the megastrip and for the 
+  // themed versions which have a taller hero and series-specific art, for example https://www.sho.com/order?i_cid=int-yourhonor-1234  
+  .hero--stream-showtime .hero__inner {
+    margin-top: 225px;
+    @include from-large {
+      border-width: 80px 90px 80px 90px;
+      margin-top: 40vmin
+    }
+  }
+  
+  .hero__inner {
+    display: block; // undo flex from stock hero
+    text-align: center;
+    background: $colors-pure-white;
+    padding-top: 25px;
+
+    @include from-large {
+      background: transparent;
+      //padding-top: 25px;
+    }
+  }
+
+
+  // sho.com link, only present in `/order`, not in `/stream-showtime`
+  .hero__logo-link {
+    display: block;
+  }
+  
+  .hero__body {
+    padding-bottom: 0;
+    width: 100%;
+  }
+  
+  .hero__headline:before {
+    display: none
+  }
+
+  // =:4 video-background
+  // the trickiest part of getting the video-bg into the stream-showtime hero
+  // seems to be ensuring the correct aspect ratio for the footprint,
+  // and getting the audio controls to show up, given they are docked into bottom-right corner,
+  // but there are a seires of intricate, pixel-based rules for setting the cut-off point of the hero,
+  // with many chances for controls to be cropped/hidden otherwise.
+  // it's tempting to use percentages for simply extending the `hero__image` to something taller
+  // (ie a padding-top of 80% instead of 75%), but the above quirks are defined in pixels in the hero component
+  
+  // from _hero.scss
+  // at < small   - hero-offset(180px)
+  // at-small     - hero-offset(260px)
+  // at-medium    - hero-offset(260px)
+  // at-large     - hero-offset(40vmin)
+  // at-extra-lrg - hero-offset(50vmin) 
+  
+  // 'small':              480px,
+  // 'medium':             768px,
+  // 'large':              992px,
+  
+  .hero--stream-showtime.hero--video-bg {
+    // from 0 - small we have too much container
+      .hero__inner { margin-top:  80% }
+      .hero__image { padding-top: 80% }
+
+    @include from-large { 
+      .hero__inner { margin-top: 250px }
+      .hero__image { padding-top: 75%  }
+    }
+    
+    // undo padding and shader from standard hero
+    // (hero__image in this variant is more of a container than anything else)
+    .hero__image {  
+      &:before {
+        content: none;
+        display: none;
+      }
+    }
+        
+    // have to set top:0 so player isn't hidden 'below fold' in this context
+    .video-background {
+      top:0;
+    }
+    
+    // hide the extra audio toggle at smaller viewports
+    .hero__image   .video-background__audio-controls {
+      display: block;
+      @include from-small { display:  none }
+    }
+    
+    .hero__inner + .video-background__audio-controls {
+      display: none;
+      @include from-small { display: block }
+    }
+  }
+  
+  // .stream-showtime__hero {}
+  // this class is actually on the .hero__inner (.stream-showtime__hero.hero__inner), not in use in isolation,
+  // more of a way to provide a namespace for the child elements below more than anything
+ 
+  // for bespoke asterisk and registration mark styles seee 'decorated-symbols' component
+
+  // BEGIN overlap with hero--chunky
+  // note that we don't need the inverted black+white colors in the bulk context
+
+  .stream-showtime__hero-header,
+  .stream-showtime__hero-copy {
+    color: $colors-pure-black;
+    
+    @include from-large {
+      color: $colors-pure-white
+    };
+  }
+  
+  .stream-showtime__hero-header {
+    padding-top: 10px;
+    @include upcase;
+    @include font(36, 40, 400);       
+    @include from-large {
+      @include font(64, 80, 400);
+    }
+  }
+
+  .stream-showtime__hero-copy {
+    @include font(18,20, 400);    
+    @include from-large {
+      @include  font(24, 29, 400);
+    }
+  }
+  
+  // END overlap with hero--chunky
+  
+  .stream-showtime__hero-copy,
+  .stream-showtime__red-banner__copy {
+    padding-bottom: 55px; // shim for relatively positioned cta, see =:red-banner below
+  } 
+
+  .stream-showtime__cta {
+    display: block;
+    background-color: $colors-pure-white;
+    text-align: center; 
+    padding-bottom: 25px;
+    @include from-large {
+      background-color: $colors-pure-black;
+    }
+    &.stream-showtime__cta--hero-themed {
+      @include from-large {
+        background-color: $colors-pure-white;
+        padding-bottom: 0px;
+      }
+      .stream-showtime__hero__cta-button {
+        @include from-large {
+          top: -100px;
+        }
+      }
+    }
+  }
+
+
+
+  $red-banner-cta-offset : -33px;
+  .stream-showtime__red-banner__cta-button {
+    display: inline-block;
+    position: relative;
+    top:$red-banner-cta-offset;
+    padding:$size-m $size-l;     
+  }
+  
+  .stream-showtime__hero__cta-button { // see =:red-banner below      
+    @include upcase;
+    @include button--primary;  
+    @include header--theta;
+    letter-spacing: 0.15em !important; // match header--eta; normal button size
+    font-weight: 600 !important; 
+    position: relative;   
+    z-index: 999999;
+    padding:$size-m $size-l;  
+
+    @include from-medium {
+      padding: $size-l $size-xl;
+    }
+
+    &:hover {
+      border-color: $colors-pure-white;
+      background-color: $colors-pure-white;
+      outline: solid 1px $colors-pure-black;
+    }
+  }
+  
+  // =:5 =:video-player =:variety =:combo-art
+  // the updated 'fan' treatment has 3 different key arts with sliced corners,
+  // combined with a copy block. the art is floated next to the copy at small+
+  // and the images are swapped out (responsive bg image on the span)
+  // ...
+  // alternatively, this entire component can be swapped out for the hive-style
+  // video player, in which case, it needs a margin-bottom set
+  &__variety.section--inner {
+    @include until-medium {
+      border-left: 0;   // unset default margins so image fills container edge-to-edge
+      border-right: 0;
+    }
+  }
+  
+  // or 
+  
+  &__video-section.section--inner  {
+    margin-bottom: $size-xl;
+    @include from-medium { margin-bottom: $size-xxl }
+    
+    // we need a couple hacks to stop the outline around the play button 
+    // persisting in mobile after closing the (full-screen) playback
+    // 1) blue outline in ios
+    // iOS won't honor `outline: none` but we can hide the outline with a transparent color setting
+    // 2) yellow outline on android
+    // android will accept the `outline: none` on the focus-visible psuedo-selector
+    button.vjs-play-control {
+      outline:transparent solid 1px; // 1
+      
+      &:focus-visible {
+        outline:none  // 2
+      } 
+    }
+  }
+  
+  &__video-section__header {
+    @include header('delta');  
+    @include from-medium {
+      margin: 0 auto 0 auto;
+      width: 50%;
+    }
+    
+    color: $colors-pure-black;
+    text-align: center;
+  }
+  
+  // =:05 =:video-player
+  .stream-showtime__video-player {
+    margin: 0 auto ($size-l + $size-s) auto;
+    width: 90%;
+    max-width: 810px;
+    height: 225px;
+    
+    @include  from-small {
+      height: 295px;
+    }
+    
+    @include  from-medium {
+      height: 455px;
+      margin-bottom: $size-xl
+    }
+  }
+  
+  #video-player .vjs-big-play-button {
+    width:  $size-xl * 3;
+    height: $size-xl * 3;
+    margin: auto;
+    top:   0;
+    right: 0;
+    bottom:0;
+    left:  0;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: $size-xxl * 2;
+
+    span:before {
+      width: $size-m * 2;
+      height: $size-xl;
+      margin: $size-xl;
+      font-size: $size-xl;
+      line-height: $size-xl;
+    }
+  }
+  
+  // =:6 =:device-grid, =:provider-grid, =:features-list
+  // (device-grid was extracted to styleguide and refactored into new component)
+  // see styleguide/src/block-list
+  .stream-showtime__device-grid,
+  .product-features-list {
+    margin-bottom: $size-l;
+    
+    .block-list {
+      margin-left:  $size-m;
+      margin-right: $size-m;
+    }
+
+    .block-list__item {
+      color: $colors-pure-black !important;
+    }
+  }
+
+  // =:7. =:catalog-grid, =:Featured
+  // new refactored version relies on a catalog-grid component in styleguide, also used in series-drawer,
+  // styles below are just for quirks and the section headers
+  .stream-showtime__catalog {
+    background-color: $colors-pure-white;
+  }
+  
+  .stream-showtime__catalog-headline {
+    @include header('beta');
+    @include upcase;
+    color: $colors-pure-black;
+    text-align: center;
+  }
+
+  .stream-showtime__catalog .section--inner {
+    margin-bottom: 38px;
+    @include from-medium {
+      margin-bottom: 30px;
+    }
+  }
+  
+  .catalog-grid__copy {
+    color: $colors-pure-black
+  }
+  
+  // =:red-banner, =:footer
+  .stream-showtime__red-banner {
+    margin-bottom: $size-xxl;
+    padding: 80px 0 (80px + $red-banner-cta-offset) 0;
+    background-color: $colors-red;
+    max-width: none;
+    text-align: center;
+    @include from-medium {
+      // padding: $size-xxl 65px $size-xxl 65px;
+    }
+    
+    &__sub-header {
+      @include header('gamma');
+      margin-bottom: $size-m;
+      @include from-medium {
+        @include font(20,20);
+        letter-spacing: 4px
+      }
+    }
+    
+    &__header {
+      @include header('alpha');
+      @include upcase;
+      color: $colors-pure-white;
+      @include from-medium {
+        line-height: 60px;
+      }
+    }
+
+    &__copy {
+      margin: 0 auto;
+      max-width: 1200px;
+      @include header('gamma');
+      color: $colors-pure-white;
+    }
+
+    &__cta-button {
+      @include header('theta');
+      @include upcase;
+      letter-spacing: 0.15em !important; // match header--eta; normal button size
+      background-color: $colors-pure-white;
+      color: $colors-red;
+      font-weight: 600;
+      @include from-medium {
+        padding-left: $size-xl;
+        padding-right: $size-xl;
+        @include font(20, 20, 600);
+      }
+    }
+  }
+
+  // =:8 =:footer
+  .stream-showtime__footer {
+    background-color: $colors-pure-white;
+    padding-bottom:45px;
+
+    .stream-showtime__legal {
+      h5 {
+        padding: 25px 0 0;
+        @include header('epsilon');
+      }
+
+      p {
+        @include header('zeta');
+        margin-top: 25px;
+      }
+      
+      h5, p {
+        color: $colors-text-dark;
+      }
+    }
+    
+    .stream-showtime__legal-notice-link {
+      text-decoration: underline;
+    }
+    
+    .stream-showtime__footer-links {
+      float: left;
+      margin: 20px 0;
+      width: 100%;
+      color: #aaaaaa;
+      font-size: 12px;
+
+      a {
+        text-decoration: underline;
+      }
+
+      &__main {
+        @include header--epsilon;
+        color: $colors-pure-black;
+        margin: 25px 25px 0 0;
+      }
+
+      &__alt {
+        @include header--zeta;
+        color: $colors-text-med;
+        margin: 10px 5px 0 1px;
+      }
+    }
+  }
+  
+  // =:9, =:device-logos
+  .device-logos {
+    margin-bottom: $size-xxl;
+  }
+}
+
+/* 
+this modifier is supplied via the body-tag for the /order-showtime version 
+its only used to create this slightly smaller version of the device-logos so far
+*/
+
+.stream-showtime--organic .device-logos .section--inner {
+  .device-logos__title {
+    @include header('theta');
+    color: $colors-pure-black;
+    border-bottom: 0
+  }
+
+  .device-logos__logo {
+    margin-top: 0;
+    height: 36px;
+  }
+  
+  @include from-medium {
+    width: 80%;
+  }
+}
+
+// adding a new entry to this list of z-index fixes for terms modal because of 
+// obscenely high z-index set on provider-lead button above....
+.stream-showtime--organic.modal-open {
+  .stream-showtime__banner.peek-a-boo--banner {z-index: 99999998}
+  .modal.tv-providers-modal,
+  .modal.terms-modal-outer-modal {
+    z-index: 99999999;
+  }
+}
+
+.stream-showtime.modal-open {
+  .modal.terms-modal-outer-modal {
+    z-index: 99999999;
+  }
+}

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Atyp';
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
+  src: url(/styleguide/src/assets/fonts/atyp/light/ShowtimeAtypText-Light.eot);
+  src: local('ShowtimeAtypText-Light'),
+       url(/styleguide/src/assets/fonts/atyp/light/ShowtimeAtypText-Light.eot?#iefix) format('embedded-opentype'),
+       url(/styleguide/src/assets/fonts/atyp/light/ShowtimeAtypText-Light.woff2) format('woff2'),
+       url(/styleguide/src/assets/fonts/atyp/light/ShowtimeAtypText-Light.woff) format('woff'),
+       url(/styleguide/src/assets/fonts/atyp/light/ShowtimeAtypText-Light.ttf) format('truetype'),
+       url(/styleguide/src/assets/fonts/atyp/light/ShowtimeAtypText-Light.svg#ShowtimeAtypText-Light) format('svg');
+}

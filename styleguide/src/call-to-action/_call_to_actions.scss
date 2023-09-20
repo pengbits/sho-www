@@ -1,0 +1,128 @@
+@mixin cta {
+	//@include upcase;
+
+	&:after {
+		@include icon;
+	  @include icon-size('small');
+		margin-left: $size-xs;
+		content: "";
+	}
+}
+
+.cta:after,
+.cta--expand:after,
+.cta--collapse:after {
+  @include cta;
+}
+
+@mixin cta--arrow {
+  &:after {
+    content: "\2192";
+    position: relative;
+    top: -1px;
+    margin-left: 4px;
+  }
+}
+
+.cta--prev:before {
+	@include icon;
+	@include icon-size('small');
+  margin-right: $size-s;
+  content: "";
+}
+
+.cta--white {
+  color: $colors-pure-white;
+}
+
+.cta--white:before {
+  @include icon;
+  @include icon-image('prev');
+}
+
+.cta--next:after {
+	@include icon;
+	@include icon-size('small');
+	@include icon-image('next');
+  margin-left: $size-xs;
+  margin-right: -$size-s;
+  content: "";
+}
+
+.cta--red {
+  color: $colors-red;
+}
+
+.cta--red:before {
+  @include icon;
+  @include icon-image('prev-red');
+}
+
+.cta--red:after {
+  @include icon;
+  @include icon-image('prev-red');
+}
+
+.cta--black {
+  color: $colors-pure-black;
+}
+
+.cta--expand:after {
+  @include icon;
+  @include icon-image('prev-red');
+}
+
+.cta--collapse:after {
+  @include icon;
+  @include icon-image('prev-red');
+}
+
+@include from-medium {
+  .cta--item {
+    margin-right: $size-m;
+  }
+}
+
+.cta--video,        // still in use, see sports events
+.cta--gallery,      // still in use, see movie hero, PR site
+.cta--facebook,     // deprecated?
+.cta--twitter,      // deprecated?
+.cta--contact {     // deprecated?
+  @include body-text;
+  //@include upcase;
+  @include until-medium {
+    display: block;
+  }
+
+  &:before {
+    @include icon;
+    @include icon-size('medium');
+    margin: 0 $size-s 0 0;
+    vertical-align: -7px;
+    content: "";
+  }
+}
+
+.cta--gallery {
+  @include header('eta');
+  @include upcase;
+}
+.cta--gallery:before {
+  @include icon-image('camera');
+}
+
+.cta--video:before {
+  @include icon-image('play-arrow');
+}
+
+.cta--facebook:before {
+  @include icon-image('social-icons-facebook');
+}
+
+.cta--twitter:before {
+  @include icon-image('social-icons-twitter');
+}
+
+.cta--contact:before {
+  @include icon-image('envelope')
+}

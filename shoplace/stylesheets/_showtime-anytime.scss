@@ -1,0 +1,39 @@
+.anytime-callout__section {
+  float:left;
+  padding-right:40px;
+  border-bottom: 1px solid #1f1f1f;
+  @include from-medium {
+    border-bottom: none;
+  }
+}
+
+.anytime-callout {
+  &__title{      
+    text-transform: uppercase;
+    @include header('epsilon');
+    color: $colors-accent-primary;
+    margin-bottom: $size-xs
+  }         
+  &__body {
+    margin-bottom: $size-m * 2;
+  }
+}
+
+.anytime__wtw { 
+  float: left;
+  padding-bottom:$size-m * 2;
+  padding-top:  $size-m * 2;
+  @include from-medium {
+    padding-left: $size-m * 2;
+    border-left: 1px solid #1f1f1f;
+    padding-top: 0;
+  }
+  &__sub-title {
+    @include header('epsilon');
+    margin-top: $size-m * 2;
+    text-transform: uppercase;
+  }
+  &__device {
+    margin-top: $size-s
+  } 
+}

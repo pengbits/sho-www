@@ -1,0 +1,249 @@
+.global-nav {
+  position: sticky;
+  z-index: 100;
+  min-height: 64px;
+	top: -1px;
+  background: rgba(0, 0, 0, 1);
+
+  @include from-large {
+    height: 0;
+    min-height: 0;
+    background: none;
+  }
+
+  &__inner,
+  &__list {
+    @include display(flex);
+    @include flex-flow(row nowrap);
+    @include align-items(center);
+    @include justify-content(flex-start);
+  }
+
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 110;
+    padding: 14px 0 12px 0;
+    min-height: 64px;
+    background: $colors-pure-black;
+		@include full-width-container__inner;
+
+    @include from-small {
+      padding-right: 25px;
+    }
+
+    @include from-large {
+      padding: $size-l 25px 0 0;
+      background: none;
+    }
+  }
+
+  &__gradient {
+    display: none;
+		height: 165px;
+		width: 100%;
+		@include background(
+			linear-gradient(
+				rgba(0, 0, 0, 1) 0%,
+				rgba(0, 0, 0, 0) 100%
+			)
+		);
+
+		@include from-large {
+			display: block;
+			opacity: 1;
+			@include transition($duration-quick ease-in);
+		}
+	}
+
+  &__logo__wrapper {
+    order: 2;
+    font-size: inherit;
+
+    @include until-extra-small {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-left: -20px;
+    }
+
+    @include from-large {
+      order: 1;
+    }
+  }
+
+  &__logo {
+    z-index: 20;
+    display: inline-block;
+    width: $logo-width-small;
+    height: $logo-height-small;
+    margin-right: $size-l;
+    text-indent: -1000px;
+    background: url('#{$icon-base-path}/showtime-logo-red.svg');
+    background-size: $logo-width-small $logo-height-small;
+    background-repeat: no-repeat;
+    @include transition(opacity $duration-quick ease-in);
+
+    @include from-large {
+      order: 1;
+      width: $logo-width;
+      height: $logo-height;
+      background-size: $logo-width $logo-height;
+    }
+  }
+
+  &__list {
+    order: 3;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    opacity: 1;
+    @include transition(opacity $duration-quick ease-in);
+  }
+
+  &__list--utility {
+    @include from-large {
+      position: absolute;
+      right: 25px;
+      margin-left: auto;
+    }
+    @include until-large {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: list-item;
+    margin-right: $size-m;
+    @include align-self(center);
+		@include header--epsilon;
+
+    &--highlight {
+      color: $colors-red !important;
+    }
+
+    @include from-large {
+      display: inline-block;
+      margin-right: $size-l;
+
+      &--red .global-nav__link {
+        @include button--primary;
+      }
+  
+      &--white .global-nav__link {
+        @include button--secondary;
+      }
+  
+      &--outline .global-nav__link {
+        @include button;
+        @include button--outline($colors-pure-white);
+      }
+    }
+  }
+
+  &__link {
+    @include from-large {
+      line-height: 32px;
+    }
+
+    &.global-nav__flyout {
+      cursor: pointer;
+    }
+  }
+
+  &__list--callout {
+    margin-left: auto;
+
+    .global-nav__item--red .global-nav__link {
+      @include button--primary;
+    }
+
+    .global-nav__item--white .global-nav__link {
+      @include button--secondary;
+    }
+
+    .global-nav__item--outline .global-nav__link {
+      @include button;
+      @include button--outline($colors-pure-white);
+    }
+
+    @include until-extra-small {
+      display: none;
+    }
+
+    @include until-small {
+      .global-nav__item {
+        margin-right: 0;
+      }
+    }
+
+    @include from-large {
+      display: none;
+    }
+  }
+
+  &__menu__wrapper {
+    display: none;
+    order: 3;
+    overflow: hidden;
+
+    @include from-large {
+      @include display(flex);
+    }
+  }
+
+  &__menu {
+    left: $logo-width + $size-l;
+    @include display(flex);
+    @include transform(translateX(-101%));
+    @include transition($duration-quick ease-in-out);
+  }
+
+  &__breadcrumb {
+    position: absolute;
+
+    .global-nav__item {
+      padding-left: $size-m;
+      border-left: 1px solid $colors-mid-grey;
+    }
+
+    @include until-large {
+      bottom: -29px;
+
+      .global-nav__item:first-child { 
+        padding-left: 0;
+        border: 0;
+      }
+    }
+    
+    @include from-large {
+      left: $logo-width + $size-xl + $size-l;
+      background: none;
+      opacity: 1;
+      @include transition(opacity $duration-quick ease-in);
+      @include display(flex);
+    }
+
+    @include from-large { 
+      .global-nav__item {
+        padding-left: $size-l;
+      }
+    }
+  }
+
+  &__breadcrumb__background {
+    position: absolute;
+    z-index: 1;
+    bottom: -$size-xl;
+    height: $size-xl;
+    width: 100%;
+	  background: rgba($colors-dark-grey, .85);
+
+    @include from-large {
+      display: none;
+    }
+  }
+}

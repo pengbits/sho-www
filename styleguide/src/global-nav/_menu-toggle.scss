@@ -1,0 +1,51 @@
+.global-nav__menu-toggle {
+  order: 1;
+  opacity: 1;
+  @include transition(opacity $duration-quick ease-in);
+
+  @include from-large {
+    order: 2;
+  }
+}
+				
+.global-nav__menu-icon {
+	position: relative;
+	z-index: 102;
+	top: $size-xxs;
+	width: $size-l;
+	height: $size-l;
+	margin-right: $size-m;
+	cursor: pointer;
+	@include transform(rotate(0deg));
+	@include transition(.25s ease-in-out);
+	
+	@include from-extra-large {
+		margin-right: $size-l;
+	}
+	
+	span {
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: $colors-pure-white;
+		opacity: 1;
+		@include transform(rotate(0deg));
+		@include transition(.25s ease-in-out);
+	}
+	
+	span:nth-child(1) {
+		top: 0px;
+		left: 0;
+	}
+	
+	span:nth-child(2), 
+	span:nth-child(3) {
+		top: 8px;
+		left: 0;
+	}
+	
+	span:nth-child(4) {
+		top: 16px;
+		left: 0;
+	}	
+}

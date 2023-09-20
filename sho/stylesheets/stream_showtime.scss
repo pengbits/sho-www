@@ -1,0 +1,61 @@
+// this is the master import for all styles used in the  order promotional pages
+// used in /stream-showtime, /order-showtime and potentially, in /hive
+
+// load vendor frameworks
+@import "../lib/normalize_css/normalize";
+// only loading this for clearfix and a few other utilities unless we are making use of their grid?
+@import "../lib/bourbon-stylesheets/bourbon"; 
+
+// load variables
+@import "./_variables";
+@import "../styleguide/_variables";
+
+// import variables specific to the environment
+@import "../styleguide/variables.env";
+
+// set any overrides here
+$global-bgcolor: $colors-pure-white;
+$global-text-color: $colors-pure-black;
+
+// load rules for base elements and utils ie mq()
+@import "../styleguide/lib/bourbon-neat-stylesheets/neat";
+@import "../styleguide/utils/utils";
+@import "../styleguide/typography/typography";
+@import "../styleguide/images/images";
+// @import "../styleguide/grid/grid";
+
+// load styleguide components
+@import "../styleguide/full-width-container/_full_width_container";
+@import "../styleguide/sections/sections";
+@import "../styleguide/icons/icons";
+@import "../styleguide/buttons/buttons";
+@import "../styleguide/block-container/block-container";
+@import "../styleguide/block-list/block-list";
+@import "../styleguide/call-to-action/call_to_actions";
+@import "../styleguide/footer/footer";
+@import "../styleguide/headers/headers";
+@import "../styleguide/hero-classic/hero-classic";
+@import "../styleguide/hero-megastrip/hero-megastrip";
+@import "../styleguide/hero-tallboy/hero-tallboy";
+@import "../styleguide/video-background/video-background";
+@import "../styleguide/video-player-simple/video-player-simple";
+@import "../styleguide/series-drawer/catalog-grid";
+@import "../styleguide/peek-a-boo-banner/peek-a-boo-banner";
+@import "../styleguide/provider-pseudo-table/provider-pseudo-table";
+@import "../styleguide/provider-device-logos/provider-device-logos";
+@import "../styleguide/modal/modal";
+@import "../styleguide/terms-modal/terms-modal";
+@import "../styleguide/tv-providers-modal/tv-providers-modal";
+@import "../styleguide/glossy-card/glossy-card";
+
+
+// load the order styles
+@import "./base/global";
+@import "./base/defaults";
+@import "./stream_showtime/stream_showtime";
+@import "./stream_showtime/desus_and_mero";
+@import "./stream_showtime/wyndham";
+
+// .stream-showtime .hero__logo {
+//   outline: purple solid 2px;
+// }

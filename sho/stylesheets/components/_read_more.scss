@@ -1,0 +1,10 @@
+/* specific styles for positioning the read-more button on sports page */
+
+.sports-all-fights .read-more {
+  @include full-width-container__inner;  
+}
+
+// promo group gap on all fights sports page
+.promo-group.promo-group--read-more {
+  margin-bottom:0px; 
+}  

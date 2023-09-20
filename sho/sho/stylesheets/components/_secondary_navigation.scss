@@ -1,0 +1,14 @@
+.secondary-nav {
+  position: sticky;
+  top: 100px;
+	width: 100%;
+	z-index: 10;
+	
+	@include from-small {
+		top: 103px;
+	}
+	
+	@include from-large {
+		top: 83px;
+	}
+}

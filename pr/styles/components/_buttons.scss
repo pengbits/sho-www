@@ -1,0 +1,18 @@
+@mixin button--pr {
+  @include round-button;
+  border-radius: $size-l;
+  border-width: 0;
+  color: $colors-pure-white;
+  cursor: pointer;
+  @include appearance(none);
+}
+
+@mixin button--smith-red {
+  @include button--pr;
+  background-color: $colors-smith-red;
+}
+
+@mixin button--solid-blue {
+  @include button--pr;
+  background-color: $colors-blue;
+}

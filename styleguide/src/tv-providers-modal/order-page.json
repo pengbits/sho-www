@@ -1,0 +1,1057 @@
+---
+layout: api
+---
+  {
+  "global": {
+    "copyrightYear": "2020",
+    "environment": {
+      "version": "7.190.0",
+      "logTop": "/Users/dave/tomcat/tomcat-7.0.52/logs",
+      "env": "LOCAL",
+      "project": "showtime_local",
+      "isLiveServer": false,
+      "isTestServer": true,
+      "isMinifyAsset": false,
+      "wellFormattedProjectName": "Showtime Local"
+    },
+    "requestUrl": "http://localhost:8080/order.json",
+    "canonicalUrl": "https://www.sho.com/order",
+    "navigationSeriesFlyout": {}
+  },
+  "page": {
+    "scheduleTray": null,
+    "meta": {
+      "valueMap": {
+        "ogImageUrl": "https://www.sho.com/site/image-bin/images/0_0_0/0_0_0_prm-ogsho_1280x640.jpg"
+      }
+    },
+    "popularSeriesGroup": null,
+    "footerGroup": null,
+    "emailSignUp": null,
+    "hero": {
+      "topLine": "STREAM SHOWTIME NOW",
+      "title": "STREAM SHOWTIME NOW",
+      "description": null,
+      "subTitle": "Start your 7-day free trial, then only $10.99/month. Cancel anytime.",
+      "imageUrl": null,
+      "ctaLabel": "Start Your Free Trial",
+      "ctaType": "order link",
+      "ctaLink": "https://www.showtime.com/#signup?i_cid=int-default-14589",
+      "panelLink": null,
+      "panelLinkType": null
+    },
+    "videoPlayerView": {
+      "videoId": 70390,
+      "ageGate": 0,
+      "title": "Coming Soon in 2020 | SHOWTIME",
+      "description": "Stream hit series like Homeland, Shameless, Billions and more!",
+      "isFullEpisode": false,
+      "vendorId": 6126921411001,
+      "videoUrl": null,
+      "imageUrl": "https://www.sho.com/site/image-bin/images/2_2020_0/2_2020_0_pro01_1280x640.jpg",
+      "smallImageUrl": "https://www.sho.com/site/image-bin/images/2_2020_0/2_2020_0_pro01_160x90.jpg"
+    },
+    "seriesTileGroup": {},
+    "moviesTileGroup": {
+      "heading": "Featured Movies & Documentaries",
+      "tileList": [{
+          "title": "HUSTLERS",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/0_0_3469112/0_0_3469112_02_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/0_0_3469112/0_0_3469112_02_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "ON THE BASIS OF SEX",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/0_0_3454689/0_0_3454689_02_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/0_0_3454689/0_0_3454689_02_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "GREEN BOOK",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/0_0_3463226/0_0_3463226_03_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/0_0_3463226/0_0_3463226_03_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "FIVE FEET APART",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/0_0_3469096/0_0_3469096_01h_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/0_0_3469096/0_0_3469096_01h_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "VICE",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/1035479_0_0/1035479_0_0_01h_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/1035479_0_0/1035479_0_0_01h_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "COUPLES THERAPY",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/1033926_0_0/1033926_0_0_01h_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/1033926_0_0/1033926_0_0_01h_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        }
+      ]
+    },
+    "sportsTileGroup": {
+      "heading": "Featured Sports",
+      "tileList": [{
+          "title": "ALL ACCESS: WILDER VS. BREAZEALE",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/1002741_26_0/1002741_26_0_01h_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/1002741_26_0/1002741_26_0_01h_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "BELOW THE BELT WITH BRENDAN SCHAUB",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/1005289_0_0/1005289_0_0_20h_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/1005289_0_0/1005289_0_0_20h_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "QUIET STORM: THE RON ARTEST STORY",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/0_0_3471116/0_0_3471116_02_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/0_0_3471116/0_0_3471116_02_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "100%: JULIAN EDELMAN",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/0_0_3471995/0_0_3471995_01h_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/0_0_3471995/0_0_3471995_01h_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "SHOWTIME CHAMPIONSHIP BOXING®",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/46_0_3472640/46_0_3472640_04_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/46_0_3472640/46_0_3472640_04_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        },
+        {
+          "title": "SHUT UP AND DRIBBLE",
+          "subTitle": null,
+          "smallImageUrl": "https://www.sho.com/site/image-bin/images/1033323_0_0/1033323_0_0_20h_210x118.jpg",
+          "imageUrl": "https://www.sho.com/site/image-bin/images/1033323_0_0/1033323_0_0_20h_210x118.jpg",
+          "ctaLabel": null,
+          "ctaType": null,
+          "ctaLink": null,
+          "type": null,
+          "isOrder": false
+        }
+      ]
+    },
+    "footerBanner": {
+      "topLine": "TRY SHOWTIME FREE FOR 7 DAYS",
+      "title": "TRY SHOWTIME FREE FOR 7 DAYS",
+      "description": "Start your 7-day free trial, then only $10.99/month. Cancel anytime.",
+      "subTitle": "Start your 7-day free trial, then only $10.99/month. Cancel anytime.",
+      "smallImageUrl": null,
+      "imageUrl": null,
+      "ctaLabel": "Start Your Free Trial",
+      "ctaType": "order link",
+      "ctaLink": "https://www.showtime.com/#signup?i_cid=int-default-14590",
+      "panelLink": null,
+      "panelLinkType": null
+    },
+    "legalBanner": {
+    },
+    "featuredProviders": [{
+        "providerId": 100,
+        "name": "Amazon Prime Video",
+        "description": "Prime members can subscribe to SHOWTIME with Prime Video Channels. 7-Day Free Trial then only $10.99/month. Prime membership needed.",
+        "headline": "Prime members can subscribe to SHOWTIME with Prime Video Channels",
+        "providerLeadUrl": "https://www.amazon.com/gp/video/offers/signup/ref=DVM_PTM_AMG_US_AC_C_ACQ_SHOMLPlink2?benefitID=showtimeSub",
+        "providerLeadText": "Go to Amazon"
+      },
+      {
+        "providerId": 95,
+        "name": "Hulu",
+        "description": "Get SHOWTIME as a Premium Add-on with your Hulu subscription. 7-Day Free Trial then only $10.99/month.",
+        "headline": "Add SHOWTIME to your Hulu subscription",
+        "providerLeadUrl": "https://www.hulu.com/showtime?cmp=8062&utm_campaign=Evergreen+Leads+Tracking&utm_source=SHO.com&utm_medium=AFF",
+        "providerLeadText": "Go to Hulu"
+      },
+      {
+        "providerId": 126,
+        "name": "TV Providers",
+        "description": "Add SHOWTIME to your pay TV subscription. Prices vary. ***",
+        "headline": "Add SHOWTIME to your pay TV subscription",
+        "providerLeadUrl": "/order-showtime#/tvproviders/open",
+        "providerLeadText": "See all TV Providers"
+      }
+    ],
+    "providers": [{
+        "providerId": 183,
+        "name": "Apple TV App",
+        "description": "Subscribe to SHOWTIME on APPLE TV APP. 30-Day Free Trial then only $10.99/month.",
+        "headline": "Subscribe to SHOWTIME on APPLE TV APP",
+        "providerLeadUrl": "https://geni.us/Showtime_",
+        "providerLeadText": "OPEN APPLE TV APP"
+      },
+      {
+        "providerId": 118,
+        "name": "AT&T TV NOW",
+        "description": "Add SHOWTIME to your AT&T TV Now channel line-up. 7-Day Free Trial then only $10.99/month.",
+        "headline": "Add SHOWTIME To Your AT&T TV NOW Channel Line-up",
+        "providerLeadUrl": "https://www.atttvnow.com/",
+        "providerLeadText": "Go to AT&T TV NOW"
+      },
+      {
+        "providerId": 124,
+        "name": "fuboTV",
+        "description": "Add SHOWTIME to your fuboTV subscription. 7-Day Free Trial then only $10.99/month.",
+        "headline": "Add SHOWTIME to your fuboTV subscription",
+        "providerLeadUrl": "https://www.fubo.tv/lp/showtime/",
+        "providerLeadText": "Go to fuboTV"
+      },
+      {
+        "providerId": 176,
+        "name": "The Roku Channel",
+        "description": "Subscribe to SHOWTIME on The Roku Channel. 30-Day Free Trial then only $10.99/ month.",
+        "headline": "Subscribe to SHOWTIME on The Roku Channel",
+        "providerLeadUrl": "https://therokuchannel.roku.com/browse/w.M1YAedABy3FGNZbQdJ0MS9xpz4Rb4mUx0pPg9781cWDe7V1eb1sJLZNlD/showtime",
+        "providerLeadText": "Go to Roku"
+      },
+      {
+        "providerId": 112,
+        "name": "Sling TV",
+        "description": "Add SHOWTIME to your Sling TV subscription. 7-Day Free Trial then only $10.99/month.",
+        "headline": "Add SHOWTIME to your Sling TV subscription",
+        "providerLeadUrl": "http://www.sling.com/showtime?cvosrc=indirect.affiliate.showtime&utm_medium=indirect&utm_source=online&utm_campaign=showtime&affiliate=showtime",
+        "providerLeadText": "Go to Sling"
+      },
+      {
+        "providerId": 110,
+        "name": "YouTube TV",
+        "description": "Add SHOWTIME to your YouTube TV membership. 7-Day Free Trial then only $10.99/ month",
+        "headline": "Add SHOWTIME to your YouTube TV membership",
+        "providerLeadUrl": "https://tv.youtube.com/?utm_source=sho&utm_medium=order&utm_campaign=sho_0317",
+        "providerLeadText": "Go to YouTube TV"
+      }
+    ],
+    "tvProviders": [{
+        "key": "A",
+        "tvProviders": [{
+            "providerId": 1,
+            "name": "Adams Cable TV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.adamscable.com/residential/cabletv/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 3,
+            "name": "Antietam Cable TV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.antietamcable.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 4,
+            "name": "Armstrong",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://armstrongonewire.com/Television/PremiumChannels",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 6,
+            "name": "AT&T Uverse",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.att.com/directv/premium-channels/showtime.html",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 7,
+            "name": "Atlantic Broadband",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://atlanticbb.com/for-home/tv/premium-channels",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 5,
+            "name": "ATMC ",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.atmc.com/digital-cable",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "tvProviders": [{
+            "providerId": 136,
+            "name": "BEK Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.bektel.com/television/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 10,
+            "name": "BendBroadband",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://shop.bendbroadband.com/tv/premium-channels.html",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 11,
+            "name": "Blue Ridge Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.brctv.com/tv#anchor-premium-tv-like-never-before",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 83,
+            "name": "Blue Stream",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.mybluestream.com/television",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 80,
+            "name": "Bristol VA Utilities",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.bvu-optinet.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 81,
+            "name": "Broadstripe",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.broadstripe.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 15,
+            "name": "Buckeye Cablevision",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://orderservices.buckeyecablesystem.com/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "tvProviders": [{
+            "providerId": 17,
+            "name": "Cable One",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.cableone.net/Pages/default.aspx",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 137,
+            "name": "Central Arkansas Telephone Cooperative Cable TV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.catc.net/services/tv-cable",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 79,
+            "name": "CenturyLink Prism",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.centurylink.com/prismtv/#index.html",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 72,
+            "name": "Cincinnati Bell Fioptics",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.cincinnatibell.com/fioptics",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 22,
+            "name": "Click! Cable TV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.clickcabletv.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 23,
+            "name": "Comcast Xfinity",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.xfinity.com/learn/digital-cable-tv/premium-channels/showtime?CMP=PWS:UPS:BAU:SUB:COM:VID:INT5c06b7f04a4cb",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 24,
+            "name": "Comporium Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.comporium.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 63,
+            "name": "Consolidated Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.consolidated.com/Residential/Digital-TV/Premium-Channels",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 25,
+            "name": "Cox",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://store.cox.com/residential-shop/shop.cox?pc=addshowtime&custtype=current&sc_id=cr_dl_camp_z_showtime_custom",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 138,
+            "name": "CTI Fiber",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.ctitech.com/fiber/tv/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "D",
+        "tvProviders": [{
+            "providerId": 26,
+            "name": "DIRECTV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.directv.com/networks/showtime",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 27,
+            "name": "DIRECTV Puerto Rico",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.directvpr.com/programacion/showtime/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 28,
+            "name": "DISH",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.mydish.com/upgrades/premiums/showtime/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 48,
+            "name": "Docomo Pacific",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.docomopacific.com/tv",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "E",
+        "tvProviders": [{
+          "providerId": 74,
+          "name": "Eatel Video",
+          "description": "",
+          "headline": "",
+          "providerLeadUrl": "http://www.eatel.com/residential/television/premium-channels",
+          "providerLeadText": ""
+        }]
+      },
+      {
+        "key": "F",
+        "tvProviders": [{
+            "providerId": 31,
+            "name": "Fidelity",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.fidelitycommunications.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 84,
+            "name": "Frankfort Plant Board",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.fewpb.com",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 122,
+            "name": "Frontier Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://frontier.com/channels/premium-movie-channels",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 139,
+            "name": "FTCtv",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://farmerstel.com/tv/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "G",
+        "tvProviders": [{
+            "providerId": 140,
+            "name": "Garden Valley - GVTV ",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.gvtel.com/video/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 33,
+            "name": "GCI",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.gci.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 87,
+            "name": "Google Fiber",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://fiber.google.com/myfiber",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 34,
+            "name": "Grande Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://mygrande.com/premium-channels",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 141,
+            "name": "GTItv",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.gtec.com/television/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "H",
+        "tvProviders": [{
+            "providerId": 35,
+            "name": "Hargray",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.hargray.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 88,
+            "name": "Hawaiian Telcom ",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.hawaiiantel.com/tv",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 142,
+            "name": "Home Communications, Inc.",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.homecomminc.com/services",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 36,
+            "name": "HTC",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.htcinc.net",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 162,
+            "name": "HTC Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.htc.net/tv/showtime/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "I",
+        "tvProviders": [{
+            "providerId": 37,
+            "name": "Innovative Cable TV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.innovativevi.net/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 39,
+            "name": "Inter-Mountain Cable",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.imctv.com/portfolio/movies/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "L",
+        "tvProviders": [{
+          "providerId": 43,
+          "name": "Liberty Cablevision of PR",
+          "description": "",
+          "headline": "",
+          "providerLeadUrl": "http://www.libertypr.com/",
+          "providerLeadText": ""
+        }]
+      },
+      {
+        "key": "M",
+        "tvProviders": [{
+            "providerId": 44,
+            "name": "MCTV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.mctvohio.com/premium-channels",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 45,
+            "name": "Mediacom",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://shop.mediacomcable.com",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 104,
+            "name": "MetroNet",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.metronetinc.com/home/fiber-tv/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 75,
+            "name": "Mid-Hudson Cable",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.mhcable.net/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 143,
+            "name": "Mid-Plains Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.midplains.coop/index.php/television",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 49,
+            "name": "Midcontinent Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.midco.com/shop",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 144,
+            "name": "Montana Opticom",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.mt-opticom.com/television.htm",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "N",
+        "tvProviders": [{
+            "providerId": 145,
+            "name": "Nelson Cable",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.nelsoncable.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 50,
+            "name": "NewWave Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.newwavecom.com/premium-channels/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 146,
+            "name": "NNTV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.nntc.net/channels.php",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 147,
+            "name": "Northeast MO Rural Telephone",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.nemr.net/copy-of-video-services-1",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 51,
+            "name": "Northland Cable Television",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.yournorthland.com/upgrade/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "O",
+        "tvProviders": [{
+          "providerId": 18,
+          "name": "Optimum",
+          "description": "",
+          "headline": "",
+          "providerLeadUrl": "https://www.optimum.com/digital-cable-tv/premiumchannels",
+          "providerLeadText": ""
+        }]
+      },
+      {
+        "key": "P",
+        "tvProviders": [{
+            "providerId": 148,
+            "name": "Palmetto Rural Telephone Cooperative, Inc",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.prtc.coop/residential-video",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 149,
+            "name": "Plateau Telecommunications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.plateau.tv/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "R",
+        "tvProviders": [{
+            "providerId": 150,
+            "name": "Randolph Communications ",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.rtmc.net",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 57,
+            "name": "RCN",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.rcn.com/new-york/digital-cable-tv/premium-channels/showtime-tmc",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "S",
+        "tvProviders": [{
+            "providerId": 58,
+            "name": "Service Electric Broadband Cable",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.secable.com/index.php",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 60,
+            "name": "Service Electric Cable TV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.sectv.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 59,
+            "name": "Service Electric Cablevision",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.secv.com",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 78,
+            "name": "Shentel",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.shentel.net",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 151,
+            "name": "Siren Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://sirentel.com/expanded-fiber-iptv/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 152,
+            "name": "Southern Montana",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://smtel.com/contact-us/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 120,
+            "name": "Spectrum",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.spectrum.com/addsilver/?cmp=pdm-siu-eng-showtime-button-0618",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 153,
+            "name": "SPTC Telecom, Ltd.",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://sptc.net/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 61,
+            "name": "Suddenlink",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://order.suddenlink.com/Buyflow/Storefront",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 154,
+            "name": "Swiftel Communications",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://swiftel.net/tv-page/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "T",
+        "tvProviders": [{
+            "providerId": 156,
+            "name": "TCT TV",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.tctelco.net/television/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 9,
+            "name": "TDS",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://tdstelecom.com/shop/tv/tdstv/premium-and-movie-channels/showtime.html",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 157,
+            "name": "Tennessee Valley Network",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.tvn.net/tv/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 108,
+            "name": "TVision",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://layer3tv.com/get-layer3",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "U",
+        "tvProviders": [{
+          "providerId": 158,
+          "name": "United Communications/Turtle Mountain Communications",
+          "description": "",
+          "headline": "",
+          "providerLeadUrl": "https://www.utma.com/residential.php",
+          "providerLeadText": ""
+        }]
+      },
+      {
+        "key": "V",
+        "tvProviders": [{
+            "providerId": 155,
+            "name": "ValuNet",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://myvalunet.com/tv/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 123,
+            "name": "Vantage TV by Frontier",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://frontier.com/channels/premium-movie-channels",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 66,
+            "name": "Verizon FiOS",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.verizon.com/home/MLP/Premium.html#SHO",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 16,
+            "name": "Vyve Broadband",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://vyvebroadband.com/home/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "W",
+        "tvProviders": [{
+            "providerId": 67,
+            "name": "Wave",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.wavebroadband.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 69,
+            "name": "WOW - Wide Open West",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.wowway.com/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "Y",
+        "tvProviders": [{
+            "providerId": 160,
+            "name": "Yadtel Telecom",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "http://www.yadtel.com/",
+            "providerLeadText": ""
+          },
+          {
+            "providerId": 161,
+            "name": "Yucca Telecommunications Systems, Inc",
+            "description": "",
+            "headline": "",
+            "providerLeadUrl": "https://www.yuccatelecom.com/tv/",
+            "providerLeadText": ""
+          }
+        ]
+      },
+      {
+        "key": "Z",
+        "tvProviders": [{
+          "providerId": 85,
+          "name": "Zito Media",
+          "description": "",
+          "headline": "",
+          "providerLeadUrl": "http://www.zitomedia.com",
+          "providerLeadText": ""
+        }]
+      }
+    ]
+  }
+}

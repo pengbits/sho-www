@@ -1,0 +1,18 @@
+.showtime-highlights-nav {
+  @include full-width-container;
+  position: absolute;
+  top: $size-m;
+  width: 100%;
+  &__inner {
+    @include full-width-container__inner;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__logo {
+    height: 32px;
+  }
+}
+
+.showtime-highlights-footer {
+  padding: 15px;
+}

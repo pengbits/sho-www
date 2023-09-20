@@ -1,0 +1,141 @@
+.refresh-hero {
+  position: relative;
+  overflow: hidden;
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__header {
+    @include header--gamma;
+  }
+
+  &__image {
+    right: 0;
+    background-size: cover;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    @include pin-top-left;
+    @include proportions--fourbythree;
+    @include overlay(gradient-dark);
+  
+    @include from-medium {
+      @include proportions--landscape;
+    }
+  }
+
+  &__inner {
+    @include clearfix;
+    @include full-width-container__inner;
+    @include hero-offset(220px);
+    margin-bottom: $size-xl + $size-l;
+
+    @include at-small {
+      @include hero-offset(260px);
+    }
+
+    @include at-medium {
+      @include hero-offset(25vmin);
+    }
+
+    @include at-large {
+      @include hero-offset(35vmin);
+    }
+
+    @include from-extra-large {
+      @include hero-offset(40vmin);
+      margin-bottom: $size-xl + $size-l;
+    }
+  }
+
+  &__body__container {
+    position: relative;
+    @include display(flex);
+    @include clearfix;
+  }
+
+  &__body {
+    padding-top: ($size-l + $size-s);
+    @include from-large {
+      width: 60%;
+    }
+
+    @include from-extra-extra-large {
+      width: 55%;
+    }
+  }
+
+  &__headline,
+  &__headline__container,
+  &__info,
+  &__detail,
+  &__subtitle,
+  &__descriptor {
+    margin-bottom: $size-s;
+  }
+
+  &__headline {
+    @include header--alpha;
+    @include upcase;
+    color: $colors-red;
+    padding-right: $size-xs;
+  }
+
+  .hero__headline__link {
+    display: inline-block;        // can't be display block or we'll get an inflated linkable area
+    @include hero-headline-link; 
+  }
+
+  &__headline__container {
+    // can't be display:block (to fill parent container) or you'll get inflated linkable area
+    display: inline-block;
+
+    // constrain the width of the image
+    // ALL CAPS MIN is on purpose - sass needs me to shout
+    max-width: MIN(75vw,500px);
+    margin-top: 10px;
+  }
+  
+  // create a series of logical steps for the image height in the hero,
+  // loosely tied to the breakpoints in the system
+  &__headline__container__image {
+    height: 100%;
+    max-height: 50px;
+    max-width: 100%;
+    @media screen and (min-width:900px)  { max-height: 70px   }
+    @media screen and (min-width:1200px) { max-height: 90px   }
+    @media screen and (min-width:1500px) { max-height: 110px  }
+    @media screen and (min-width:1800px) { max-height: 130px  }
+  }
+
+  &__info {
+    @include header--gamma;
+  }
+
+  &__descriptor,
+  &__detail {
+    @include body-text;
+    & strong {
+      font-weight: 600;
+    }
+  }
+
+  &__cta {
+    margin-top: $size-s;
+    margin-right: $size-m;
+  }
+
+  &__attribution {
+    @include upcase;
+    @include header--eta;
+    margin-bottom: 5px;
+    letter-spacing: 0.3em !important;
+  }
+}
+
+.refresh-hero--has-header {
+  overflow: visible;
+}
+
+// hero promo video styles were in _hero_classic.scss, removed with new video player

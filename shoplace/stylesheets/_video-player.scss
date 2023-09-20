@@ -1,0 +1,24 @@
+.video-player {
+	&__video {
+		margin-bottom: 30px;
+		display: block;
+		max-width: 100%;
+		
+		&__inner {
+			display: block;
+			padding-top: 56.25%;
+			height: 0;
+		}
+	}
+	
+	&__title {		
+		@include header--beta;
+		color: $colors-accent-primary;
+		margin-top: $size-m *2;
+		margin-bottom: $size-xs;
+	}
+
+	&__desc {
+		@include body-text;
+	}    
+}

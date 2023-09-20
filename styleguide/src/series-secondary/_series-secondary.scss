@@ -1,0 +1,98 @@
+// we are making use of a 2-3 column adaptive layout in order to handle differing availability of secondary content in the series footer.
+
+// the different possible cases are:
+
+// - with series updates but no next-on [a]
+// - with next-on but no series updates [b]
+// - with series updates and next-on    [c]
+// - no series updates or next on       [d]
+
+.about-the-series-section {
+  @include full-width-container__inner;
+  margin-bottom: $size-xxl;
+  
+  @include until-large {
+    margin-bottom: $size-xl;
+  }
+}
+
+@include from-large {
+  .about-the-series {
+    // wide - skinny - skinny 
+    &--has-updates,
+    &--has-next-on {
+      .about-the-series__synapsis {
+        @include span-columns(8)
+      }
+
+      .about-the-series__updates,
+      .about-the-series__next-on {
+        @include span-columns(4);
+        display:none;
+      }
+    }
+
+    // naively assume a or b and set last column rule...
+    &--has-updates .about-the-series__updates,
+    &--has-next-on .about-the-series__next-on {
+      display: block;
+      @include omega;
+    }
+    
+    // ...but if c, fix width and restore margin to middle column
+    &--has-updates.about-the-series--has-next-on {
+      .about-the-series__synapsis {
+        @include span-columns(4)
+      }
+      .about-the-series__updates {
+        margin-right: 2%;
+      }
+    }
+
+    // a,b or c - no order-promo
+    &--has-updates &__order-promo,
+    &--has-next-on &__order-promo {
+      display: none;
+    }
+
+
+    // d - synapsis and order-promo
+    &--has-synapsis-only {
+      .about-the-series__synapsis {
+        @include span-columns(8)
+      }
+      
+      .about-the-series__updates,
+      .about-the-series__next-on {
+        display: none
+      }
+
+      .about-the-series__order-promo {
+        @include span-columns(4)
+        @include omega
+      }
+    }
+  }
+}
+
+// tidy up a few things for the mobile view
+@include until-large {
+  .about-the-series--has-updates,
+  .about-the-series--has-next-on {
+    .about-the-series__synapsis, 
+    .about-the-series__updates,
+    .about-the-series__next-on {
+      margin-bottom: $size-l;
+    }
+
+    div:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .about-the-series--has-updates.about-the-series--has-next-on {
+    .about-the-series__next-on {
+      margin-bottom: 0;
+    }
+  }
+}

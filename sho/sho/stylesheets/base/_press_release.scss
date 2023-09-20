@@ -1,0 +1,21 @@
+.press-release {
+	.hero__body {
+		padding-bottom: 20px;
+	}
+	&__copy {
+		margin-bottom: $size-m * 2;
+		@include body-text;
+		color: $colors-text-med;    
+	}
+}
+
+.resources {
+	&__copy {
+		margin-bottom: $size-m;
+		@include body-text;
+		color: $colors-text-med;
+	}
+	&__copy--title {
+		padding-top: $size-m;
+	}
+}

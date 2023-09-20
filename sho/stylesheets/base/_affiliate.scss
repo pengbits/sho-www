@@ -1,0 +1,187 @@
+.affiliate { 
+  border-top: $size-xs solid $colors-red; 
+
+  .site-container {
+    height: auto;
+    background: $colors-pure-white;
+  }
+
+  &--inner-content {
+  }
+
+  .affiliate__top-banner {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $colors-pure-black;
+    @include until-medium {
+      height: 100px
+    }
+    &__logo {
+      width: 200px;
+      @include until-medium {
+        width: 150px
+      }
+    }
+  }
+
+  .affiliate__hero {
+    background: $colors-pure-white;
+    color: $colors-pure-black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+    padding-bottom: $size-m;
+    @include until-medium {
+      margin-top: $size-xl;
+    }
+    &__header {
+      width: 100%;
+      @include font(36, 40, 400);    
+      @include upcase;
+      @include from-medium {
+        @include font(50, 80);
+        line-height: 50px;
+      }
+      @include from-large {
+        @include font(64, 80, 400);
+        line-height: 64px;
+      }
+    }
+    &__sub-header {
+      @include header--gamma;
+      color: $colors-pure-black;
+      padding-top: $size-l;
+      padding-bottom: $size-l + $size-s;
+      width: 100%;
+      max-width: 700px;
+    }
+    &__cta-button {
+      @include header--gamma;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      background-color: $colors-red;
+      color: $colors-pure-white;
+      margin-bottom: $size-xl;
+      padding: $size-l;
+    }
+    &__copy {
+      @include header--epsilon;
+      color: $colors-pure-black;
+      max-width: 700px;
+      padding-bottom: $size-l + $size-s;
+    }
+    &__link {
+      text-decoration: underline;
+    }
+  }
+
+  .affiliate__video-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: $size-xl + $size-l;
+  }
+
+  .affiliate__info {
+    margin-top: $size-xl;
+    color: $colors-pure-black;
+    &__sub-section {
+      margin-top: $size-xl;
+    }
+    &__header {
+      @include header--beta;
+      color: $colors-pure-black;
+      border-bottom: $size-xxs solid $colors-red;
+      display: flex;
+      justify-content: center;
+      padding-bottom: $size-s;
+      text-align: center;
+      @include from-large {
+        padding-bottom: $size-m;
+      }
+    }
+    &__sub-header {
+      @include header--delta;
+      color: $colors-text-dark;
+      margin-bottom: $size-xs;
+    }
+    &__copy {
+      @include header--epsilon;
+      color: $colors-pure-black;
+      margin-bottom: $size-s;
+    }
+    &__link {
+      color: $colors-red;
+      text-decoration: underline;
+    }
+  }
+
+  .affiliate__footer-cta {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 50px;
+    &__sub-header {
+      @include header--delta;
+      color: $colors-pure-black;
+      padding: $size-l 0px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+  // Legal section, swiped from /stream-showtime
+  .stream-showtime__footer {
+    background-color: $colors-pure-white;
+    padding-bottom:45px;
+
+    .stream-showtime__legal {
+      h5 {
+        padding: 25px 0 0;
+        @include header('epsilon');
+      }
+
+      p {
+        @include header('zeta');
+        margin-top: 25px;
+      }
+      
+      h5, p {
+        color: $colors-text-dark;
+      }
+    }
+    
+    .stream-showtime__footer-links {
+      float: left;
+      margin: 20px 0;
+      width: 100%;
+      color: $colors-text-med;
+      font-size: 12px;
+
+      a {
+        text-decoration: underline;
+        font-weight: 400; 
+      }
+
+      &__main {
+        @include header--epsilon;
+        color: $colors-pure-black;
+        margin: 25px 25px 0 0;
+      }
+
+      &__alt {
+        @include header--zeta;
+        color: $colors-text-med;
+        margin: 10px 5px 0 1px;
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+
+
+//styles for legal pages
+
+.legal {
+  @include full-width-container__inner;
+  
+  &__headline {
+    @include header('beta'); 
+    @include upcase;  
+    margin-bottom: $size-m * 2;
+  }
+  
+  &__sub-headline { 
+    @include header('delta');
+    margin-bottom: $size-m * 2;
+  }
+      
+  &__list-headline { 
+    @include body-text;    
+    margin-bottom: $size-m;
+    color: $colors-text-med; 
+  }
+  
+  &__body {
+    @include body-text;
+    margin-bottom: $size-m * 2;
+    color: $colors-text-med;
+    
+    &__link {
+      text-decoration:underline;
+    }
+    
+    &__list {
+      margin-bottom: $size-m * 2;
+    }
+    
+    &__list-item {
+      @include body-text;
+      color: $colors-text-med;
+    } 
+  }
+}
+
+
+//setting active link styles 
+
+.legal-terms              .secondary-nav__item--terms,
+.legal-privacy            .secondary-nav__item--privacy,
+.legal-video-services     .secondary-nav__item--video,
+.legal-mobile-eula        .secondary-nav__item--mobile-eula,
+.legal-closed-captioning  .secondary-nav__item--closed-captioning {
+  color: $colors-pure-white;
+	font-size: 24px;
+	border: none;
+  pointer-events: none;
+  cursor: default;
+	@include from-medium {
+		color: $colors-red;
+		font-size: 16px;
+		border-bottom: 3px solid $colors-red;
+	}  
+}
+
+
+
+.legal-departure-nav {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  
+  li {
+    margin-left: 0;
+    margin-right: $size-l;
+    display: inline-block;
+  }
+  
+  a {
+    @include header('epsilon');
+    text-decoration: underline;
+  }
+}
+
+.legal.legal-notices.section--large {
+  padding-top: $size-xxl;
+}

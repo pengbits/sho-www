@@ -1,0 +1,50 @@
+.collection__children {
+  @include full-width-container__inner;
+  margin-bottom: $size-xl;
+
+  &:not(:last-child) {
+    // because using straight-up border was bleeding into
+    // full-width container edges
+    &:after {
+      content: '';
+      width: 100%;
+      height: $size-xl;
+      border-bottom: 1px solid $colors-bg-med;
+    }
+  }
+
+  @include until-medium {
+    .hero__ctas {
+      margin-top: 0;
+    }
+  }
+
+  @include from-medium {
+    margin-bottom: $size-xxl;
+
+    &:not(:last-child) {
+      &:after {
+        height: $size-xxl;
+      }
+    }
+  }
+
+  &__title {
+    @include header--gamma();
+    @include upcase();
+  }
+
+  &__description {
+    margin-top: $size-s;
+    @include body-text();
+
+    @include from-medium {
+      max-width: 60%;
+    }
+  }
+
+  .promo__headline {
+    // this should probably be a promo--small variant in styleguide
+    @include header--epsilon();
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "headline": "AIRLINE DISTRIBUTION SCREENING ROOM",
+  "subheadline": "Welcome to the showtime airline distribution screening room",
+  "APIkey": "PRODUCT",
+  "trackingPrefix": "pr:product:",
+  "defaultImagePath": "https://www.sho.com/site/image-bin/images/0_0_0/0_0_0_01",
+  "brightcove": {
+    "accountId": 63128,
+    "playerId": "Ah62ouVV2",
+    "playerName": "showtime product partners"
+  },
+  "codeInputRequired": true,
+  "authorizationRequired": true,
+  "streamlinedTitleInfo": true,
+  "largePromos": false,
+  "hasCategoriesPage": false,
+  "hasEntireShoLibrary": false,
+  "legal": "&copy; 2023 Showtime Networks Inc. All rights reserved. SHOWTIME and related marks are trademarks of Showtime Networks Inc., a CBS Company. Closed Captioning.",
+  "header": {
+    "siteName": "Airline distribution screening room",
+    "siteTagLine": "welcome to the showtime airline distribution screening room",
+    "help": {
+      "emailAddress": "",
+      "subject": ""
+    },
+    "logOutLink": null,
+    "bannerOnly": true
+  } 
+}

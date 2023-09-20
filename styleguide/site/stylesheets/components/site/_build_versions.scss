@@ -1,0 +1,18 @@
+.build-version {
+  display: flex;
+
+  &__label,
+  &__number {
+    border:$colors-pure-black solid 1px;
+    font-size: 14px;
+    padding: $size-xs $size-s;
+    color: $colors-site-light-grey;
+  }
+  
+
+  &__number {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 10em;
+  }
+}

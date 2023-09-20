@@ -1,0 +1,15 @@
+README
+these css files contain the inline styles that were extracted from optimizely, 
+for a sample personalization campaign: On Becoming a God x DTC Landing Page
+the vairation code contained some custom css, mostly for adjusting the hero image into place,
+I then extended these changes to incorporate some styles need to undo the breaking changes from the animated hero component,
+Hopefully, these css changes are templated and applicable to others (not one-off changes that are tied to hero art content!)
+adding the css in before and after state to git, for historic purposes only. this is not included in the css layer
+
+for more context, see this experiment
+Personalization | DTC Landing Page | Hero Image and Copy | On Becoming A God in Central Florida s_cid | treatment LOCAL DEBUG
+https://app.optimizely.com/v2/projects/3403230669/experiments/16263920212/variations/16244170363
+
+and these tickets
+- SITE-19766 Stream showtime updates
+- SITE-19823 Stream Showtime Page: Implement Animated Hero Component

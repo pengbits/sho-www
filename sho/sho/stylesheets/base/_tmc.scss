@@ -1,0 +1,27 @@
+/* tmc styles
+ */
+  
+  //tmc hero
+
+.hero__headline--tmc {
+  background-image: url(/www/sho/lib/assets/svg/tmc_logo.svg);
+  background-size: 240px;
+  width: 340px; 
+  height: 100px;
+  background-repeat: no-repeat;
+  @include from-medium {
+    background-size: 340px;
+    height: 140px;
+  }
+}
+.hero--tmc-no-body-content {
+  margin-bottom: $size-l;
+
+  @include from-medium {
+    margin-bottom: $size-xl;
+  }
+}
+
+.legal--tmc {
+  color: $colors-mid-grey;
+}

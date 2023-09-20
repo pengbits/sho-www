@@ -1,0 +1,37 @@
+#shoministrator-panel {
+background-color: rgba(18, 126, 183, .9);
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding:10px;
+border: 2px solid #127EB7;
+}
+#shoministrator-panel h1 {
+font-size: 18px;
+border-bottom: 1px solid #fff;
+padding-bottom:3px;
+margin-bottom: 7px;
+font-weight: bold;
+}
+
+#shoministrator-panel .close {
+position: absolute;
+top:5px;
+right: 10px;
+cursor: pointer;
+font-size: 16px;
+}
+#timewarp-picker {
+	padding: 5px;
+	width: 169px;
+	background-color: #0D6694;
+	border: 0px solid;
+	color: #fff;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }

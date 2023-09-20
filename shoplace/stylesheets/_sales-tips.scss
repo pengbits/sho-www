@@ -1,0 +1,16 @@
+.sales-tip {
+  &__title {
+    @include header--beta;
+    margin-top: $size-m * 4;
+    margin-bottom: $size-s;
+  }
+
+  &__copy{
+    font-size: $size-m + $size-xxs;
+    margin-bottom: $size-xs;
+  }
+
+  &__attr{
+    font-size: $size-m + $size-xxs;
+  }
+}

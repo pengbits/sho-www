@@ -1,0 +1,96 @@
+
+.row {
+  @include clearfix;
+}
+
+// ------ NEW GRID ------ //
+
+// --- 2 across --- //
+.col-6 {
+  &--from-medium {
+    @include from-medium {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+  &--at-medium {
+    @include at-medium {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+}
+
+// --- 3 across --- //
+.col-4 {
+  &--at-medium {
+    @include at-medium {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+  &--from-medium {
+    @include from-medium {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+  &--from-large {
+    @include from-large {
+      @include span-columns(4);
+      @include omega(3n); 
+    }
+  }
+  &--at-large {
+    @include at-large {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+}
+
+// --- 2 of 3 --- //
+.col-8 {
+  &--at-medium {
+    @include at-medium {
+      @include span-columns(8);
+      @include omega(7n);  
+    }
+  }
+  &--from-medium {
+    @include from-medium {
+      @include span-columns(8);
+      @include omega(7n);  
+    }
+  }
+}
+
+// --- 4 across --- //
+.col-3 {
+  &--at-medium {
+    @include at-medium {
+      @include span-columns(3);
+      @include omega(4n);
+    } 
+  }
+  &--from-medium {
+    @include from-medium {
+      @include span-columns(3);
+      @include omega(4n);
+    } 
+  }
+  &--at-large {
+    @include at-large {
+      @include span-columns(3);
+      @include omega(4n); 
+    }
+  }
+  &--from-large {
+    @include from-large {
+      @include span-columns(3);
+      @include omega(4n);
+    }
+  }
+}
+
+

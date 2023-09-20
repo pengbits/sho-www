@@ -1,0 +1,42 @@
+.full-episode-banner {
+  @include from-large {
+    margin-bottom: $size-s;
+  }
+  &__inner {
+    background-color: $colors-pure-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: $size-m;
+  }
+  &__cta {
+    @include upcase;
+    @include header--theta;
+    @include cta;
+    color: $colors-pure-black;
+    @include until-medium {
+      margin-right: 12px; //hack to make sure cta:after wraps with preceeding word on mobile
+    }
+  }
+  &__cta:after {
+      @include icon;
+      @include icon-image('next-black');
+      width: $size-m;
+      height: $size-m;
+      margin-left: $size-xs;
+      content: "";
+      display: inline-block;
+      @include until-medium {
+        position: absolute; //this is here because when the cta is long the arrow tends to get shifted into its own line
+        margin-top: 4px;
+      }
+      @include from-medium {
+        margin-top: 0;
+        margin-bottom: 1px;
+      }
+      @include until-large {
+        @include icon-size('small');
+      }
+  }
+}

@@ -1,0 +1,19 @@
+.footer {
+  padding-bottom: 1em;
+  @include header--zeta;
+  @include full-width-container__inner;
+  color: $colors-text-dark;
+
+  a {
+    color: $colors-text-med;
+  }
+}
+
+.footer--centered {
+  padding: $size-l 0;
+  text-align: center;
+
+  @include from-large {
+    padding: $size-xl 0;
+  }
+}

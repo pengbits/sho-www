@@ -1,0 +1,73 @@
+.schedule {
+	.global-navigation {
+    max-height: 210px;
+		background: $colors-pure-black;
+		z-index: 30;
+		// position: fixed !important; /* this got moved to styleguide/src/schedule-grid/index.js so mobile menu doesn't get cut uff by shorter device heights
+		/* with position: fixed we need to reset the stacking context by setting transform 
+		to something other than none. This prevents the viewport from becoming the container, which crops the element */
+		@include transform(translate3d(0,0,0));
+
+		&__breadcrumb-mobile {
+			background: $colors-pure-black !important;
+		}
+	}
+
+	.global-navigation--sticky ~ {
+		.schedule-grid {
+			top: 158px;
+			@include until-extra-short {
+				@include from-medium {
+					top: -($size-l * 3);
+				}
+			}
+			@include from-short {
+				@include at-medium {
+					top: 187px;
+				}
+				@include from-large {
+					top: 166px;
+				}
+			}
+		}
+
+		.entire-sho-library {
+			margin-top: 140px;
+			@include from-medium {
+				margin-top: 167px;
+			}
+			@include until-extra-short {
+				@include from-medium {
+					margin-top: -($size-l * 3);
+				}
+			}
+		}
+	}
+
+
+  // these offsets are needed to keep the schedules nav
+  // docked to the bottom of the primary nav, which has some variety
+  // in its height as it responds to different breakpoints
+	.schedule-grid__nav {
+		top: 140px;
+    @include at-medium {
+      top: 160px;
+    }
+    @include mq($from: mq-breakpoint('large'), $until: 1054px){
+      top: 187px;
+    }
+    @include mq($from: 992px){
+      top: 143px;
+    }
+  }
+
+	.secondary-nav--schedule-next {
+		top: 100% !important;
+    margin-bottom: 0 !important;
+	  z-index: 0 !important;
+	}
+
+	.secondary-nav {
+		margin-bottom: 0;
+	}
+}

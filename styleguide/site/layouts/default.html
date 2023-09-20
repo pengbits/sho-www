@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--[if !gt IE 9]>
+  <html class="oldie" lang="en">
+<![endif]-->
+<!--[if !IE]><!-->
+  <html lang="en" class="theme--dark">
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>{{#if name}}{{name}} - Sho.com Styleguide {{else}}Sho.com - Styleguide{{/if}}</title>
+    {{#if pageTracking}}<meta name="page-tracking" content="{{pageTracking}}">{{/if}}
+    
+    <link rel="stylesheet" href="/lib/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.css">
+   
+    <link rel="stylesheet" href="/styleguide.css">
+    <script>
+      // set credentials for development reporting suite
+      var omniture_rsid = "cbsshodev,cbsshoglobaldev";
+    </script>
+    <style type="text/css">
+     
+      @font-face {
+        font-family: 'Atyp';
+        font-weight: 100 300;
+        font-style: normal;
+        font-display: swap;
+        src: url("/styleguide/assets/fonts/atyp/light/ShowtimeAtypText-Light.eot");
+        src: local('ShowtimeAtypText-Light'),
+            url("/styleguide/assets/fonts/atyp/light/ShowtimeAtypText-Light.eot?#iefix") format('embedded-opentype'),
+            url("/styleguide/assets/fonts/atyp/light/ShowtimeAtypText-Light.woff2") format('woff2'),
+            url("/styleguide/assets/fonts/atyp/light/ShowtimeAtypText-Light.woff") format('woff'),
+            url("/styleguide/assets/fonts/atyp/light/ShowtimeAtypText-Light.ttf") format('truetype'),
+            url("/styleguide/assets/fonts/atyp/light/ShowtimeAtypText-Light.svg#ShowtimeAtypText-Light") format('svg');
+      }
+
+      @font-face {
+        font-family: 'Atyp';
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        src: url("/styleguide/assets/fonts/atyp/regular/ShowtimeAtypText-Regular.eot");
+        src: local('ShowtimeAtypText-Regular'),
+            url("/styleguide/assets/fonts/atyp/regular/ShowtimeAtypText-Regular.eot?#iefix") format('embedded-opentype'),
+            url("/styleguide/assets/fonts/atyp/regular/ShowtimeAtypText-Regular.woff2") format('woff2'),
+            url("/styleguide/assets/fonts/atyp/regular/ShowtimeAtypText-Regular.woff") format('woff'),
+            url("/styleguide/assets/fonts/atyp/regular/ShowtimeAtypText-Regular.ttf") format('truetype'),
+            url("/styleguide/assets/fonts/atyp/regular/ShowtimeAtypText-Regular.svg#ShowtimeAtypText-Regular") format('svg');
+      }
+
+      @font-face {
+        font-family: 'Atyp';
+        font-weight: 600 900;
+        font-style: normal;
+        font-display: swap;
+        src: url("/styleguide/assets/fonts/atyp/semi-bold/ShowtimeAtypText-Semibold.eot");
+        src: local('ShowtimeAtypText-Semibold'),
+            url("/styleguide/assets/fonts/atyp/semi-bold/ShowtimeAtypText-Semibold.eot?#iefix") format('embedded-opentype'),
+            url("/styleguide/assets/fonts/atyp/semi-bold/ShowtimeAtypText-Semibold.woff2") format('woff2'),
+            url("/styleguide/assets/fonts/atyp/semi-bold/ShowtimeAtypText-Semibold.woff") format('woff'),
+            url("/styleguide/assets/fonts/atyp/semi-bold/ShowtimeAtypText-Semibold.ttf") format('truetype'),
+            url("/styleguide/assets/fonts/atyp/semi-bold/ShowtimeAtypText-Semibold.svg#ShowtimeAtypText-Semibold") format('svg');
+      }
+
+      @font-face {
+        font-family: 'AntiqueLegacy';
+        font-weight: 200;
+        font-style: normal; 
+        font-display: swap;
+        src: url("/styleguide/assets/fonts/antique-legacy/light/AntiqueLegacy-Light.eot");
+        src: local('AntiqueLegacy-Light'),
+            url("/styleguide/assets/fonts/antique-legacy/light/AntiqueLegacy-Light.eot?#iefix") format('embedded-opentype'),
+            url("/styleguide/assets/fonts/antique-legacy/light/AntiqueLegacy-Light.woff2") format('woff2'),
+            url("/styleguide/assets/fonts/antique-legacy/light/AntiqueLegacy-Light.woff") format('woff'),
+            url("/styleguide/assets/fonts/antique-legacy/light/AntiqueLegacy-Light.ttf") format('truetype'),
+            url("/styleguide/assets/fonts/antique-legacy/light/AntiqueLegacy-Light.svg#AntiqueLegacy-Light") format('svg');
+      }
+
+      @font-face {
+        font-family: 'AntiqueLegacy';
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        src: url("/styleguide/assets/fonts/antique-legacy/regular/AntiqueLegacy-Regular.eot");
+        src: local('AntiqueLegacy-Regular'),
+            url("/styleguide/assets/fonts/antique-legacy/regular/AntiqueLegacy-Regular.eot?#iefix") format('embedded-opentype'),
+            url("/styleguide/assets/fonts/antique-legacy/regular/AntiqueLegacy-Regular.woff2") format('woff2'),
+            url("/styleguide/assets/fonts/antique-legacy/regular/AntiqueLegacy-Regular.woff") format('woff'),
+            url("/styleguide/assets/fonts/antique-legacy/regular/AntiqueLegacy-Regular.ttf") format('truetype'),
+            url("/styleguide/assets/fonts/antique-legacy/regular/AntiqueLegacy-Regular.svg#AntiqueLegacy-Light") format('svg');
+      }
+
+      @font-face {
+        font-family: 'AntiqueLegacy';
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+        src: url("/styleguide/assets/fonts/antique-legacy/medium/AntiqueLegacy-Medium.eot");
+        src: local('AntiqueLegacy-Medium'),
+            url("/styleguide/assets/fonts/antique-legacy/medium/AntiqueLegacy-Medium.eot?#iefix") format('embedded-opentype'),
+            url("/styleguide/assets/fonts/antique-legacy/medium/AntiqueLegacy-Medium.woff2") format('woff2'),
+            url("/styleguide/assets/fonts/antique-legacy/medium/AntiqueLegacy-Medium.woff") format('woff'),
+            url("/styleguide/assets/fonts/antique-legacy/medium/AntiqueLegacy-Medium.ttf") format('truetype'),
+            url("/styleguide/assets/fonts/antique-legacy/medium/AntiqueLegacy-Medium.svg#AntiqueLegacy-Medium") format('svg');
+      }
+
+       @font-face {
+        font-family: 'AntiqueLegacy';
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+        src: url("/styleguide/assets/fonts/antique-legacy/semi-bold/AntiqueLegacy-Semibold.eot");
+        src: local('AntiqueLegacy-Semibold'),
+            url("/styleguide/assets/fonts/antique-legacy/semi-bold/AntiqueLegacy-Semibold.eot?#iefix") format('embedded-opentype'),
+            url("/styleguide/assets/fonts/antique-legacy/semi-bold/AntiqueLegacy-Semibold.woff2") format('woff2'),
+            url("/styleguide/assets/fonts/antique-legacy/semi-bold/AntiqueLegacy-Semibold.woff") format('woff'),
+            url("/styleguide/assets/fonts/antique-legacy/semi-bold/AntiqueLegacy-Semibold.ttf") format('truetype'),
+            url("/styleguide/assets/fonts/antique-legacy/semi-bold/AntiqueLegacy-Semibold.svg#AntiqueLegacy-Semibold") format('svg');
+      }
+
+      @font-face {
+        font-family: 'AntiqueLegacy';
+        font-weight: 700 900;
+        font-style: normal;
+        font-display: swap;
+        src: url("/styleguide/assets/fonts/antique-legacy/bold/AntiqueLegacy-Bold.eot");
+        src: local('AntiqueLegacy-Bold'),
+            url("/styleguide/assets/fonts/antique-legacy/bold/AntiqueLegacy-Bold.eot?#iefix") format('embedded-opentype'),
+            url("/styleguide/assets/fonts/antique-legacy/bold/AntiqueLegacy-Bold.woff2") format('woff2'),
+            url("/styleguide/assets/fonts/antique-legacy/bold/AntiqueLegacy-Bold.woff") format('woff'),
+            url("/styleguide/assets/fonts/antique-legacy/bold/AntiqueLegacy-Bold.ttf") format('truetype'),
+            url("/styleguide/assets/fonts/antique-legacy/bold/AntiqueLegacy-Bold.svg#AntiqueLegacy-Bold") format('svg');
+      }
+      
+    </style>
+
+    <!-- Adobe Experience Cloud ID Service 
+    <script src="/styleguide/lib/omniture/VisitorAPI.js"></script> -->
+    {{#if adobedtm}}
+    <script src="//assets.adobedtm.com/eca55fd08170af505e740f16d8cd90e78a06126b/satelliteLib-13a2374f510724dbaaae05d6b73711be54a02e7c.js"></script>
+    {{/if}}
+   </head>
+
+  <body class="js-notification">
+    <div class="site-container">
+      <button class="site-sidebar-toggle">-</button>
+      <aside class="site-sidebar">
+        <header class="site-header">
+          <a href="/">
+            Sho.com Styleguide
+          </a>
+        </header>
+        <nav class="site-nav">
+          <section class="site-nav__section">
+            <h2 class="site-nav__heading">Articles</h2>
+            <ul class="site-nav__list">
+                {{#each articles}}
+                <li class="site-nav__item">
+                  <a class="site-nav__anchor" href="/{{this.filepath}}">{{this.name}}</a>
+                </li>
+                {{/each}}
+            </ul>
+          </section>
+
+          <section class="site-nav__section">
+            <h2 class="site-nav__heading">Vendor</h2>
+            <ul class="site-nav__list">
+              {{#each vendor}}
+                <li class="site-nav__item">
+                  <a class="site-nav__anchor" href="/{{this.filepath}}">{{this.name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+
+          <section class="site-nav__section">
+            <h2 class="site-nav__heading">Base &amp; Utils</h2>
+            <ul class="site-nav__list">
+              {{#each base}}
+                <li class="site-nav__item">
+                  <a class="site-nav__anchor" href="/{{this.filepath}}">{{this.name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+
+          <section class="site-nav__section">
+            <h2 class="site-nav__heading">Elements</h2>
+            <ul class="site-nav__list">
+              {{#each elements}}
+                <li class="site-nav__item">
+                  <a class="site-nav__anchor" href="/{{this.filepath}}">{{this.name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+
+          <section class="site-nav__section">
+            <h2 class="site-nav__heading">Components: Order</h2>
+            <ul class="site-nav__list">
+              {{#each order}}
+                <li class="site-nav__item">
+                  <a class="site-nav__anchor" href="/{{this.filepath}}">{{this.name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+          <section class="site-nav__section">
+            <h2 class="site-nav__heading">Components: Global</h2>
+            <ul class="site-nav__list">
+              {{#each components}}
+                <li class="site-nav__item">
+                  <a class="site-nav__anchor" href="/{{this.filepath}}">{{this.name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </section>
+        </nav>
+
+        <footer class="site-footer">
+          <div class="site-version">
+            <div class="build-version">
+              <span class="build-version__label">Version</span>
+              <span class="build-version__number">{{versionNumber}}</span>
+            </div>
+          </div>
+        </footer>
+      </aside>
+
+      <main class="site-main">
+        <div class="site-content">
+          {{{contents}}}
+        </div>
+      </main>
+    </div>
+
+    <!--
+    <script type="text/javascript" src="/styleguide/lib/omniture/AppMeasurement.js"></script>
+  -->
+
+    {{!-- the charset and content-type are set due to an issue with the vendor code d3. It used greek characters which causes an issue in some browsers (Chrome).
+    Using charset utf-8 converts it to ascii and so the sytax error does not occur--}}
+
+    
+    <script content-type="application/javascript" src="/lib/omniture/VisitorAPI.js"></script>
+    <script content-type="application/javascript" src="/lib/omniture/AppMeasurement.js"></script>
+    <script content-type="application/javascript" src="/lib/omniture/VideoHeartbeat.js"></script>
+    <script content-type="application/javascript" src="/lib/omniture/MediaHeartbeatDelegate.js"></script>
+    <script content-type="application/javascript" charset="utf-8" src="/styleguide.js"></script>
+
+    <script>
+      window.lazySizesConfig = window.lazySizesConfig || {};
+      window.lazySizesConfig.customMedia = {
+          '--small': '(max-width: 767px)',
+          '--medium': '(max-width: 991px)'
+      };
+    </script>
+
+
+
+  </body>
+</html>

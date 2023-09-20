@@ -1,0 +1,11 @@
+// read-more
+.read-more-example  {
+  padding: $size-l $size-m;
+  margin-bottom: $size-xxl;
+  background-color: $colors-dark-grey;
+  @include body-text;
+  
+  h2 {
+    @include header('beta')
+  }
+}

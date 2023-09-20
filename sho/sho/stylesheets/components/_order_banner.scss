@@ -1,0 +1,27 @@
+// These styles are specific to the order banner in the sports home page 
+// 1) hide banner at smaller sizes if it's inside the hero.
+// 2) override margins between hero and banner
+
+.sports-home {
+  .hero .order-banner {
+    display:none;
+    @include from-medium {
+      display: block; // 1
+    }
+  }
+  .hero + .section {
+    @include until-medium {
+      margin-bottom: ($size-xs + $size-l) // 2
+    }
+  }
+  .hero + .section  > .promo-group {
+    margin-bottom:0;
+    @include from-medium {    
+      margin-bottom: $size-xl; // 2  
+    }
+  }
+}
+
+.about-the-series .refresh-order-banner {
+  margin-bottom: 0;
+}

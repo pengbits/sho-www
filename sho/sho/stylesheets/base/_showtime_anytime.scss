@@ -1,0 +1,105 @@
+.showtime-anytime {
+
+    #showtime-anytime-logo {
+        position: relative;
+        left: -6px;
+        width: auto;
+        height: 72px;
+    }
+
+    .hero__body {
+      margin-bottom: $size-l;
+    }
+
+    .hero__cta {
+        text-transform: none;
+    }
+
+    @include until-medium { 
+        #showtime-anytime-logo {
+            width: auto;
+            height:50px;
+            margin-bottom: 5px;
+        } 
+
+        .hero__body {
+            padding-top: $size-xl;
+        }
+
+    }
+
+    .showtime-anytime__ways-to-watch {
+        margin-bottom:10px;
+    }
+
+    .read-more {
+        padding-bottom: $size-xxl;
+    }
+
+    .read-more__toggle {
+        margin-top: 0;
+    }
+
+  
+    .activate-devices {
+        padding-bottom: $size-xl;
+        padding-top: $size-xs;
+        color: $colors-mid-grey;
+    }
+
+    .showtime-anytime-watch-options {
+
+        h5 {
+            @include header--theta;
+            @include upcase;
+            padding-left: $size-xl;
+            color: $colors-red;
+        }
+
+        .ways-to-watch__option {
+            width: 50%;
+            float:left;
+            border-left: 1px solid $colors-red;
+            margin-bottom: $size-xl;
+
+            li.ways-to-watch__option-list--item {
+                @include header--epsilon;
+                list-style-type: none;
+                padding-bottom: $size-l;
+            }
+
+            li.ways-to-watch__option-list--item:last-child {
+                padding-bottom: $size-s;
+            } 
+
+            img {
+                width: 100px;
+            }
+
+            .ways-to-watch__option-list--item--roku {
+                width:55px;
+            }
+
+            .ways-to-watch__option-list--item--lg {
+                width:50px;
+            }
+        }
+
+        ul.ways-to-watch__option-list {
+            margin-bottom: 0;
+        }
+
+
+        @include until-medium {
+            .ways-to-watch__option {
+                width:100%;
+            }
+        }
+
+        @include from-small {
+            .ways-to-watch__app {
+                float: right;
+            }
+        }
+    }
+}

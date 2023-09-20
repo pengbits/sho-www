@@ -1,0 +1,35 @@
+.decorated-symbols {
+  &__symbol{ 
+    position: relative;
+  }
+  
+  &__symbol--reg {
+    font-size: 8px;
+    bottom: 20px;
+    
+    @include from-large{
+      bottom: 40px
+    }
+  }
+
+  &__symbol--asterisk {
+    font-size: 14px;
+    bottom: 16px;
+  
+    @include from-large {
+      bottom: 36px;
+    }
+  }
+}
+
+// the rules for the hero subtitle (h3) are on a smaller scale
+h3.decorated-symbols .decorated-symbols__symbol {
+  bottom: 6px !important;
+
+  // @include from-large {
+  //   bottom: 10px !important;
+  // }
+}
+
+
+

@@ -1,0 +1,135 @@
+.pplus-bundle {
+
+  .peek-a-boo--banner {
+    background-color: $colors-red;
+    
+    .stream-showtime__banner-cta {
+      // background-color: $colors-pure-white;
+      @include button--secondary
+    }
+
+    .stream-showtime__banner-logo {
+      background-image: url('#{$icon-base-path}/showtime-logo.svg');
+    }
+  }
+
+  .hero__cta{
+    @include button;
+    @include button--solid($colors-red);
+    
+    &::after { // remove disclosure symbol/carat
+      display: none;
+    }
+  }
+  
+  .pplus-hero {
+    .hero__headline::before {
+      display: block;
+      margin: -38px 0 38px 0;
+      width: 281px;
+      height: 38px;
+      @include from-medium {
+        margin: -50px 0 50px 0;
+        width:375px;
+        height:50px;
+      }
+      content: '';
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-size: contain;
+      // undo red accent because the pseudo element is used to draw a logo
+      border-bottom: 0;
+    }
+
+    .hero__description {
+      color:$colors-pure-white
+    }
+
+    .slider--cast {
+      height: 260px;
+      margin-bottom: 0;
+    }
+
+    .video-background__audio-controls {
+      display: none; // assume bg video has no sound and hide controls
+    }
+  }
+
+  .pplus-hero--featured .hero__headline::before {
+    background-image: url("https://www.sho.com/assets/images/order/pplus-bundle/q123/logos/pp-sho-logo_white.png");
+  }
+  .pplus-hero--showtime .hero__headline::before {
+    background-image: url("https://www.sho.com/assets/images/order/pplus-bundle/bundle-logo-showtime.svg");
+  }
+  .pplus-hero--paramount .hero__headline::before {
+    background-image: url("https://www.sho.com/assets/images/order/pplus-bundle/bundle-logo-pplus.svg");
+  }
+
+  .pplus-hero {
+    .slider-placeholder { 
+      width: $slider-cast-item-width; 
+    }
+    .slider-placeholder__item { 
+      padding-top: $size-l;
+      @include from-extra-large {
+        @include proportions--square;
+      }
+      @include from-extra-extra-large {
+        @include proportions--portrait;
+      }
+    }
+  }
+
+}
+
+.pplus-bundle__footer {
+  background-color: $colors-pure-white;
+  padding-top: $size-xxl;
+  padding-bottom: $size-xxl;
+
+  .pplus-bundle__legal {
+    h5 {
+      padding: 25px 0 0;
+      @include header('epsilon');
+    }
+
+    p {
+      @include header('zeta');
+      margin-top: 25px;
+    }
+
+    h5,
+    p {
+      color: $colors-text-dark;
+    }
+  }
+
+  .pplus-bundle__legal-notice-link {
+    text-decoration: underline;
+  }
+
+  .pplus-bundle__footer-links {
+    float: left;
+    margin: 20px 0;
+    width: 100%;
+    color: #aaaaaa;
+    font-size: 12px;
+
+    a {
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    &__main {
+      @include header--epsilon;
+      color: $colors-pure-black;
+      margin: 25px 25px 0 0;
+    }
+
+    &__alt {
+      @include header--zeta;
+      color: $colors-text-med;
+      margin: 10px 5px 0 1px;
+    }
+  }
+}

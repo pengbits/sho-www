@@ -1,0 +1,243 @@
+// default version and common styles
+.ways-to-watch {
+  @include from-large {
+    @include container-equal;
+  }
+  
+  &__headline {
+    @include header('delta');
+    width: 95%;
+    margin-bottom: $size-s;
+  }
+
+  &__copy,
+  &__date_time {
+    @include body-text;
+  }
+			
+  &__section {
+    position: relative;
+      
+    @include until-large {
+  	  padding-top: $size-l;
+      padding-bottom: $size-l;
+    }
+		
+    @include from-large {
+      @include span-columns(4);
+    }
+  }
+      
+  // these are the rules for the horizontal bar (smaller breakpoints) or vertical pipebar (larger breakpoints),
+  // that separates the sections visually, drawn with absolutely-positioned psuedo-content via the `shim()` mix-in
+  // because there are two options for the placement of the 'Stream' section,
+  // we are jumping through some hoops to target the last/first-child in each context.
+  &__section:after {
+	  @include shim('', $colors-bg-light);
+        
+    @include until-large {
+      left:   $size-l;
+	    right:  $size-l;
+		  bottom: 0;
+		  height: $size-xxs;   
+    }
+	  
+	  @include mq($from:'small', $until:'large'){
+	    left:   $size-m * 2;
+	    right:  $size-m * 2;
+	  }
+	
+    @include from-large {
+      top:    $size-m * 2;
+      bottom: $size-m * 2;
+      width:  $size-xxs;
+    }
+  }
+  
+  &__section:last-child:after {
+    display: none;
+  }
+  
+  @include from-large {
+    .ways-to-watch__section:after {
+      right:  0.5%;
+    }
+    
+    &--stream-first .ways-to-watch__section:after {
+      left:   -7.25%;
+    }
+    
+    &--stream-first .ways-to-watch__section:last-child:after {
+      display: block;
+    }
+  }
+  
+  &__link {
+    @include cta;
+		@include cta--arrow;
+    display: inline-block;
+    margin-top: 12px;
+    
+    @include from-large {
+		  margin: 12px 0;
+    }
+  }
+		
+  &__stream {
+	  position: relative;
+	  overflow: hidden;
+	   
+	  @include until-small {
+		  padding-top: $size-l;
+	  }
+	  
+	  @include from-large {
+		  @include display(flex);
+		  @include flex-direction(column);
+	  }
+  }
+
+  &__stream__button {
+    @include until-small {
+      margin-top: $size-s; 
+    }
+    
+    .ways-to-watch__button {
+      @include button;
+      @include button--outline($colors-pure-white);
+    }
+  }
+  
+  @include mq($from:'small', $until:'large'){
+    &__stream {
+      @include display(flex);
+      align-items: center;
+    }
+    
+    &__stream__headline,
+    &__stream__button {
+      @include display(flex);
+      display: block;
+      width:44%;
+    }
+    
+    &__stream__headline {
+      padding-right: $size-s;
+      margin-top: 7px;
+    }
+    
+    &__stream__button {
+		  // margin-top: $size-s;
+      width: 56%;
+      text-align: right;
+    }
+      
+    &__event__button {
+      text-align: left;
+    }
+  }
+  
+  @include from-large {
+    &__stream__headline {
+      margin-bottom: $size-s;
+    }
+  }
+  
+}
+
+// bulk variant
+.w2w {
+  position: relative;
+  @include display(flex);
+  @include flex-direction(column);
+  @include from-large {
+    @include flex-direction(row);
+  }
+
+  &__section {
+    position: relative;
+    padding: $size-xl;
+    //background-color: $colors-bg-dark;
+    @include flex-grow(1);
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+    
+    .w2w__headline {
+      width: 260px;
+      @include display(flex);
+      @include justify-content(flex-start);
+      @include from-large {
+        @include justify-content(center);
+      }
+    }
+    
+    &:nth-child(1) {
+      @include until-large {
+        margin-bottom: $size-m;
+      }
+      
+      .w2w__logo {
+        width: 260px;
+        height: 76px;
+        background: center center url(https://www.sho.com/assets/images/bulk/showtime-hotel-app-logo.png) no-repeat;
+        background-size: contain;
+      }
+
+      &:after {
+        position: absolute;
+        top: $size-l;
+        right: 0;
+        content: '';
+        height: 140px;
+        border-left: 2px solid $colors-bg-light;
+        @include until-large {
+          display: none;
+        }
+      }
+    }
+
+    &:nth-child(2) {  
+      .w2w__headline {
+        @include until-large {
+          width: 193px;
+        }
+      } 
+      .w2w__logo {
+        width: 193px;
+        background: url(https://www.sho.com/assets/images/bulk/showtime-logo.svg) no-repeat;
+      }
+    }
+    
+    &:nth-child(3) .w2w__logo {
+      width: 260px;
+      background: url(https://www.sho.com/assets/images/bulk/showtime-on-demand-logo.svg) no-repeat;
+    }
+  }
+
+  &__ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    background: url(https://www.sho.com/assets/images/bulk/new-ribbon.png) no-repeat;
+    background-size: contain;
+    width: 70px;
+
+    @include from-large {
+      width: $size-m * 5;
+    }
+  }
+
+  &__logo {
+    margin-bottom: $size-l;
+    height: $size-m * 4;
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+    width: 215px;
+  }
+}

@@ -1,0 +1,123 @@
+.hero--tallboy {
+  padding-top: 50%;
+  @include from-medium {
+    padding-top:0;
+  }
+  .hero__logo-link {
+    position: absolute;
+    width: 100%;
+    top:($size-s + $size-l);
+  }
+
+  .hero__inner {
+    padding-bottom: $size-xxl;
+    display: block; // undo flex from stock hero
+    text-align: center;
+  }
+  
+  .hero__image {
+    padding-top: 0;
+    bottom: 0; // fill container // might need some importants here 
+    @include from-medium {
+      &::before {
+        visibility: hidden; // undo shader
+      }
+    }
+  }
+  
+  .hero__headline,
+  .hero__copy {
+    width: 100%;
+    text-align: center;
+    line-height: 36px !important;
+    @include from-medium {
+      display: none;
+    }
+  }
+  
+  .hero__copy {
+    @include font(24,30)
+  }
+}
+.hero--tallboy .hero__headline:before,
+.hero--tallboy + .hero__popover .hero__headline:before {
+  display: none; // undo red accent mark
+}
+
+.hero--tallboy + .hero__popover {
+  display: none;
+  position: relative;
+  padding: $size-xl;
+  transform: translateY(-50%);
+  margin-left: 15%;
+  margin-right:15%;
+  text-align: center;
+  background-color:$colors-pure-black;
+  z-index: 99;
+
+  @include from-medium {
+    display: block;
+
+    .hero__headline {
+      margin-bottom: $size-l;
+    }
+
+    .hero__copy {
+      @include font(24, 26, 400) // force gamma, only at desktop
+    }
+  }
+
+  // force text-wrap at specific points without resorting to <br />
+  
+  .hero__copy {
+    @include from-medium {
+
+    }
+    @include from-large {
+      padding: 0 10%;
+    }
+    @include at-extra-large {
+      padding: 0 15%; 
+    }
+  }
+}
+
+$wyndham-badge-size-small: 136px;
+$wyndham-badge-size-large: 188px;
+
+.wyndham-badge {
+  display: block;
+  margin: 0 50% $size-xl 50%;
+  padding: 0;
+  position: relative;
+  transform: translateX(-50%);
+  @include size($wyndham-badge-size-small);
+  background: transparent no-repeat url("#{$icon-base-path}/wyndham-badge.min.svg") center center;
+  background-size: contain;
+  z-index: 999;
+
+  &__alt-text {
+    display: none;
+  }
+
+  @include from-medium {
+    @include size($wyndham-badge-size-large);
+  }
+}
+
+
+$directv-hospitality-logo-width  : 272px;
+$directv-hospitality-logo-height : 40px;
+.hero--tallboy .hero__logo--directv-hospitality {
+  width   : $directv-hospitality-logo-width;
+  height  : $directv-hospitality-logo-height;
+}
+@include from-medium {
+  .hero--tallboy .hero__logo--directv-hospitality {
+    width   : ($directv-hospitality-logo-width  * 1.5);
+    height  : ($directv-hospitality-logo-height * 1.5);
+  }
+  .hero--tallboy .hero__logo-link {
+    top:$size-s
+  }
+}

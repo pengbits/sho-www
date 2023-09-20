@@ -1,0 +1,101 @@
+.refresh-order-banner {
+  margin-bottom: $size-xl;
+  @include from-large {
+    margin-bottom: $size-xl * 2;
+  }
+
+  &__inner {
+    background-color: $colors-pure-black;
+    align-items: center;
+
+    @include from-large {
+      @include display(flex);
+      @include flex-direction(row);
+    }
+  }
+
+  &__image-wrapper {
+    flex: 66.6%;
+  }
+
+  &__image {
+    position: relative;
+    padding-top: 44%; // 66:29
+    background-repeat: no-repeat;
+    background-size: contain;
+   display: none;
+
+    @include from-large {
+     display: block;
+      padding-top: 18.75%; // 16:3
+    }
+  }
+
+  &__body {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    flex: 33.3%;
+    padding-bottom: $size-s;
+    border-right: 6px solid $colors-red;
+
+    @include from-large {
+      margin: 0 0 0 $size-l;
+      padding-right: $size-l + $size-s;
+    }
+  }
+
+  &__topline {
+    @include header--eta;
+    text-transform: uppercase;
+  }
+
+  &__headline {
+    @include header--beta;
+    @include upcase;
+    position: relative;
+    left: -2px;
+    color: $colors-red;
+    padding-top: 2px;
+    padding-bottom: $size-s;
+  }
+
+  &__button {
+    @include button--primary;
+    margin: auto 0 $size-s;
+  }
+
+  &__legal {
+    @include header--zeta;
+    margin-top: auto;
+    color: $colors-text-med;
+  }
+
+  &--until-large {
+    @include from-large {
+      display: none;
+    }
+  }
+
+  &--from-large {
+    @include until-large {
+      display: none;
+    }
+  }
+
+  &--no-border {
+    border: 0; // undoes section--inner padding
+  }
+}
+
+.refresh-order-banner--no-image {
+  border: 0;
+
+  .refresh-order-banner__image-wrapper {
+    display: none;
+  }
+
+  .refresh-order-banner__body {
+    margin-left: 0;
+  }
+}

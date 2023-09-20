@@ -1,0 +1,7 @@
+.hero-img {
+	@include full-width-container__inner;
+	position: relative;
+	width:100%;
+	margin-bottom:60px;      
+}
+

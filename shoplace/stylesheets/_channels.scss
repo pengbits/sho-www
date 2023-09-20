@@ -1,0 +1,36 @@
+.channels-table{
+  &__header {
+    @include header('gamma')
+  }
+}
+
+.availablity-at-small {
+  display: block;
+  @include from-medium {
+    display: none;
+  }
+}
+
+.availability-at-large {
+  display: none; 
+  @include from-medium {
+    display: block;
+  }
+}
+
+
+.channel-meta{
+  display: none;
+  @include from-medium {
+    display: table-row;
+  }
+  &__channels {
+    display: block;
+    position: relative;
+    top: 1.25em; // align w/ copy to the left
+    @include header('epsilon');
+    white-space: nowrap;
+    padding-left: 15px;
+  }
+}
+

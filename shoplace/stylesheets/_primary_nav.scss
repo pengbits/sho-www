@@ -1,0 +1,313 @@
+$nav-height-collapsed: 90px;
+$nav-height: 100px;
+$nav-item-margin: $size-l + $size-m;
+$nav-item-inner-width: 100px;
+$nav-item-outer-width: ($nav-item-inner-width + ($nav-item-margin * 2));
+
+.primary-nav-container {
+  position: relative;  
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  @include full-width-container;
+}
+
+
+// this is just a cheeky way to keep layout intact now that nav is always absolute'd
+// todo see if there isnt a less bizarre way to achieve this, less coupling etc
+.primary-nav + .masthead {
+  margin-top: ($nav-height/2);
+}
+
+.primary-nav { 
+  position: absolute;
+  top: 0;
+  left: 0;//necessary for IE
+  width: 100%;
+  min-height: $nav-height;
+  padding:  $size-l $size-s;
+  z-index: 1000;
+
+  @include until-large {
+    @include full-width-container__inner;
+  }
+
+  @include from-large {
+    display: block;
+    padding: 0;
+    @include full-width-container;
+  }
+
+  &__inner {
+    display: none;
+    position: relative;
+    @include full-width-container__inner;
+
+    @include from-large {
+      display: block;
+      padding-top: 0;
+    }
+  }
+
+  &__nav-list {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+  
+  @include until-large {
+    &--active {
+      display: block;
+      background-color: $colors-accent-primary;
+
+      .primary-nav__inner {
+        display: block;
+        padding-top: $size-l + $size-l;
+        border: 0px; //weird fix for IE bug. w/o it, closer icon moves to the right
+      }
+    }
+  }
+  
+  @include from-large {
+    &:hover {
+      display: block;
+      background-color: $colors-accent-primary;
+      
+      .primary-nav__inner {
+        display: block;
+        height: 300px;
+      }
+    }
+  }
+  
+  // for mediacom etc, 
+  // partners without any nav items get a disabled modifier
+  // so the active state isn't visible
+  &--disabled:hover,
+  &--disabled.primary-nav--active {
+    background-color: transparent !important
+  }
+  
+  &__toggle {
+    top: $size-l;
+    @include size($size-xl);
+    background: transparent no-repeat url(#{$assets-image-base}/shoplace/sho-mobile-menu.png) 0 0;
+    .primary-nav--active &,
+    .primary-nav--disabled & {
+      display: none;
+    }
+  }
+  
+  &__closer {
+    top: 0;
+    @include icon('close', 'medium');
+  }
+  
+  &__toggle,
+  &__closer {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+
+    @include from-large {
+      display: none;
+    }
+  }
+  
+
+  ul {
+    @include clearfix;
+    @include unstyled-ul;
+  }
+
+  &__nav-left {
+    @include display(flex);
+    @include justify-content(flex-start);
+    @include align-items(flex-start);
+    width: 100%;
+    @include until-medium {
+      @include flex-direction(column);
+      & > li:not(:first-child) {
+        margin-bottom: $nav-item-margin;
+      }
+    }
+    @include from-large{
+      @include align-items(center);
+    } 
+  }
+
+  &__item {
+    @include from-large{
+      @include align-items(center);
+      margin-top: $nav-item-margin/2;
+      margin-bottom: $nav-item-margin/2;
+      margin-right: 6%;
+    } 
+  }
+  
+  &__item,
+  &__item > a {
+    display: block;
+    @include from-large {
+      position: relative;
+    }
+  }
+  
+  &__item > a {
+    @include header('epsilon');
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+  
+    @include until-large {
+      margin-right: $size-xl + $size-l;
+      margin-bottom: $size-s;
+    }
+  
+    @include from-large {
+      padding: 0;
+      top: auto;
+      bottom: auto;
+      white-space: nowrap;
+      padding-top: $size-s;
+    }
+
+    &:hover {
+      color: $colors-accent-secondary;
+    }
+  }
+  
+  &__item--logo a {
+    position: absolute;
+    top:-$size-l;
+    @include hide-text;
+    min-width: auto;
+    width: 82px;
+    height: 32px;
+    background: transparent no-repeat url(#{$assets-image-base}/shoplace/nav_logos/generic/shoplace_nav_shoplacelogo_164x64.png) 0 0;
+    background-size:cover;
+    @include until-large {
+      margin-top: $size-l;
+      right: 0 - ($size-xl + $size-l);
+    }
+    @include from-large {
+      position: relative;
+      padding: 0;
+      top: auto;
+      bottom: auto;
+    }
+  }
+
+  &__menu-spacer {
+    display: none;
+    position: absolute;
+    top: $nav-height;
+    right: 0;
+    left: 0;
+    height: 200px;
+    background-color: $colors-accent-primary;
+    z-index: 1000;
+    
+    .primary-nav:hover + &,
+    .primary-nav--active + & {
+      @include from-large {
+        display: block;
+      }
+    }
+  }
+  
+  &__menu {
+    display: none;
+    margin-left: $nav-item-margin;
+    @include from-large {
+      margin-left: 0;
+      position: absolute;
+      top: $size-xl;
+      background-color: $colors-accent-primary;
+      z-index: 2000;
+    }
+    .primary-nav:hover &,
+    .primary-nav--active & {
+      display: block;
+    }
+    
+    &__item > a {
+      display: block;
+      margin-bottom: $size-m;
+      white-space: nowrap;
+      @include header('epsilon');
+      text-decoration: none;
+      @include from-large {
+        @include header('zeta');
+        font-size: 14px !important;
+      }
+      
+      &:hover {
+        color: $colors-accent-secondary;
+      }
+    }
+  }
+  
+  &__logoset {
+    position: relative;
+    text-align: right;
+    white-space: nowrap;
+  }
+  
+  &__logo {
+    position: relative;
+    display: none;
+    
+    @include from-large {
+      display: inline-block;
+    }
+    
+    img {
+      width: auto;
+      height: 32px;
+    }
+    
+    &--partner {
+      padding-right: $size-s;
+      margin-right: $size-s; 
+      border-right: 1px solid $colors-accent-grey;
+    }  
+    // shrink the showtime logo slightly for partner contexts
+    // instead of adding more jstl for conditional classnames, just going with a complex selector:
+    // (if there is a partner logo preceding this one, we must be in the partner context)
+    &--sho {
+      .primary-nav__logo--partner + & img { 
+        width: 71px;
+        height: auto;     
+      }
+    }
+    
+    &--shoplace {
+      height: 32px;
+      position: absolute;
+      right: $size-s;
+      top: $size-l;
+      display: block;
+
+      @include from-large {
+        display: none;
+      }
+      
+      .primary-nav--active & {
+        display: none
+      }
+    }
+  }
+
+  &:hover .primary-nav__logo {
+    &--partner {
+      border-color: rgba(255,255,255,0.5)
+    }
+  }
+}
+
+// active page highlighting in mobile nav
+.shoplace-sales-tools .primary-nav__item[data-category="Sales Tools"] > a,
+.shoplace-programming .primary-nav__item[data-category="Programming"] > a {
+  color:$colors-accent-secondary;
+}

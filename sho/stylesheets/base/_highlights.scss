@@ -1,0 +1,28 @@
+//  These highlights are used in the press release site
+.highlight {
+    color: $colors-pure-white;
+
+    &--caps{
+        @include upcase;
+    }
+
+    &--italic{
+        @include italic;
+    }
+
+    &--link {
+        @include underline;
+        @include italic;
+    }	
+}
+
+.press-release__copy {
+    strong {
+        color: $colors-pure-white;
+        font-weight: 400;
+    }
+		em {
+				color: $colors-pure-white;
+				font-style: italic;
+		}
+}

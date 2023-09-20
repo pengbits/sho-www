@@ -1,0 +1,59 @@
+.notification {
+  @include display(flex);
+  @include flex-direction(row);
+  padding: $size-l 0;
+  background-color: $colors-bg-med;
+  border-bottom: $colors-pure-black solid 1px;
+  z-index: 100;
+
+  br {
+    display: none;
+  }
+
+  &__content {
+    @include full-width-container__inner;
+    @include display(flex);
+    @include flex-direction(row);
+    @include align-items(center);
+    position: relative;
+    width: 100%;
+  }
+
+  &__message {
+    @include header('epsilon');
+    padding-right: $size-xl + $size-l;
+    color: $colors-pure-white;
+    
+    a { 
+      @include underline;
+    }
+  }
+
+  &__closer {
+    position: absolute;
+    @include icon('close','medium');
+    top: 0; 
+    right: 0;
+    cursor: pointer;
+  }
+
+  &__icon {
+    margin-top: -$size-xs;
+    margin-right: $size-l;
+    min-width: 24px;
+  }
+
+  &--white {
+    background: $colors-pure-white;
+    
+    .notification__message {
+      color: $colors-pure-black;
+    }
+  }
+
+  &--no-closer {
+    .notification__message {
+      padding-right: 0;
+    }
+  }
+}

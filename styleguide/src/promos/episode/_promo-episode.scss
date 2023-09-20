@@ -1,0 +1,22 @@
+.promo-season-group {
+	.promo {
+		&__stream-btn {
+			@include button;
+			@include button--primary;
+		}
+		&__watch-btn {
+			@include button;
+			@include button--secondary;
+			display: table;
+			margin-top: $size-l;
+			@include from-large {
+				display: inline-block;
+				margin-top: 0px;
+				margin-left: $size-m; 
+			}
+			&--first {
+				margin-left: 0;
+			}
+		}
+	}
+}

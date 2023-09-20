@@ -1,0 +1,30 @@
+{
+  "headline": "For Your Consideration",
+  "subheadline": "Welcome to SHOWTIME FYC.",
+  "APIkey": "SHO_FYC",
+  "trackingPrefix": "pr:fyc:",
+  "defaultImagePath": "https://www.sho.com/site/image-bin/images/0_0_0/0_0_0_01",
+  "brightcove": {
+    "accountId": 3493916762001,
+    "playerId": "HY2FHiiCm",
+    "playerName": "showtime fyc"
+  },
+  "codeInputRequired": true,
+  "authorizationRequired": true,
+  "streamlinedTitleInfo": false,
+  "largePromos": false,
+  "hasCategoriesPage": true,
+  "hasEntireShoLibrary": false,
+  "legal": "&copy; 2023 Showtime Networks Inc. (SNI), a wholly owned subsidiary of ViacomCBS Inc., owns and operates the premium television networks SHOWTIME&reg;, THE MOVIE CHANNEL&trade; and FLIX&reg;, and also offers SHOWTIME ON DEMAND&reg;, THE MOVIE CHANNEL&trade; ON DEMAND and FLIX ON DEMAND&reg;, and the network's authentication service SHOWTIME ANYTIME&reg;. Showtime Digital Inc., a wholly owned subsidiary of SNI, operates the stand-alone streaming service SHOWTIME&reg;. SHOWTIME is currently available to subscribers via cable, DBS, and telco providers, and as a stand-alone streaming service through Amazon, Apple&reg;, Google, LG Smart TVs, Oculus Go, Roku&reg;, Samsung Smart TVs and Xbox One. Consumers can also subscribe to SHOWTIME via Amazon’s Prime Video Channels, Apple TV Channels, AT&T TV Now, FuboTV, Hulu, The Roku Channel, Sling TV and YouTube TV. Viewers can also watch on computers at Showtime.com. SNI markets and distributes sports and entertainment events for exhibition to subscribers on a pay-per-view basis through SHOWTIME PPV&reg;. For more information, go to www.SHO.com. <a href=\"https://www.sho.com/closedcaptioning\">Closed Captioning.</a>",
+  "header": {
+    "siteName": "Showtime",
+    "siteTagLine": "FYC",
+    "help": {
+      "emailAddress": "foryourconsideration@showtime.net",
+      "subject": ""
+    },
+    "customNavLinks": [],
+    "logOutLink": null,
+    "bannerOnly": false
+  }
+}

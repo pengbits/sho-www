@@ -1,0 +1,102 @@
+// search icon
+.global-nav__search-icon {
+	display: none;
+  position: absolute;
+  right: 0;
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+  opacity: 1;
+  @include transition(opacity $duration-quick ease-in);
+
+	@include until-extra-small {
+		display: block;
+	}
+	
+	@include from-small {
+		display: block;
+	}
+	
+	.global-nav__circle {
+	  position: relative;
+		z-index: 1;
+		display: block;
+	  height: 16px;
+	  width: 16px;
+	  background-color: transparent;
+		border: 2px solid #fff;
+	  border-radius: 8px;
+		transition: all $duration-quick $easing;
+	}
+
+	.global-nav__handle {
+	  position: absolute;
+		top: 12px;
+		left: 15px;
+		z-index: 1;
+		display: block;
+	  width: 2px;
+	  height: 8px;
+		background-color: $colors-pure-white;
+	  border-radius: 2px;
+		transition: all .1s ease;
+		@include transform(rotate(-45deg));
+
+	  &:after {
+			top: 12px;
+			left: 15px;
+			z-index: -1;
+			display: block;
+	    content: "";
+			width: 2px;
+	    height: 8px;
+			background-color: $colors-pure-white;
+	    border-radius: 2px;
+	  }
+	}
+}
+
+// search bar
+.global-nav__search-bar {
+	position: absolute;
+	right: $size-xl;
+	width: 0;
+  opacity: 0;
+	pointer-events: none;
+  @include transform(translateX(110%));
+	@include transition($duration-quick ease-in-out);
+	
+	@include from-large {
+		right: $size-xl + $size-s;
+	}
+	
+	.global-nav__search-field {
+		width: 100%;
+		padding: $size-xs $size-xs $size-xs $size-s;
+		border-radius: 2px;
+		border: none;
+		outline: none;
+		@include header--epsilon;
+
+		color: $colors-pure-black; 
+				
+		@include from-small {
+			position: relative;
+			top: 1px;
+			height: $logo-height-small;
+		}
+		
+		@include until-medium {
+			font-size: 16px !important;
+		}
+		
+		@include from-large {
+      padding-left: 0;
+			color: $colors-pure-white;
+			background: none;
+			border-radius: 0;
+			border: none;
+			border-bottom: 1px solid $colors-pure-white;
+		}
+	}
+}

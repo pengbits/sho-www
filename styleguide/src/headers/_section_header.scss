@@ -1,0 +1,82 @@
+.section-header {
+  @include header--beta;
+  @include upcase;
+  position: relative;
+  display: block;
+  padding-bottom: $size-s;
+	color: $colors-red;
+  
+  @include from-large {
+    margin-bottom: $size-xs;
+  }
+
+  &--white {
+    color: $colors-pure-white;
+  }
+}
+  
+.section-header--more {
+  margin-bottom: 0;
+  color: $colors-pure-white;
+}  
+
+.section-header--more::after {
+	@include icon('next','small');
+  display: inline-block !important; // this is fighting the clearfix on inner-container
+	//margin-left: $size-xs;
+  vertical-align: 3px;
+	content: "";
+
+  @include from-medium {
+		vertical-align: $size-xs;
+  }
+}
+
+.section-header--more.section-header--border::after  {
+  @include icon('next-red', 'small')
+}
+
+.section-header--border {
+  padding-bottom: $size-s;
+  color: $colors-red;
+}
+
+// section header for related videos in full episodes
+// for short-form, see .video-player__secondary__header in video-player.scss
+.section-header--related-videos {
+  @include header('beta');
+  color: $colors-red;
+}
+
+// sticky header for hero component
+.section-header--hero {
+  top: 62px;
+  opacity: 0;
+  height: 0;
+  background: linear-gradient(180deg, rgba(25,25,25,1) 0%, rgba(25,25,25,0.8) 25%, rgba(25,25,25,0) 100%);
+
+  @include from-large {
+    top: 80px;
+  }
+
+  &__inner {
+    @include full-width-container__inner;
+    @include header--epsilon;
+    height: 60px;
+    padding: $size-s 0;
+    background: none;
+
+    @include from-large {
+      padding: 12px 0;
+    }
+  }
+}
+
+.refresh-hero--has-header .section-header--hero {
+  // overrides for .refresh-hero > *
+  position: sticky;
+  height: auto;
+  width: 100%;
+  opacity: 1;
+  z-index: 5;
+}

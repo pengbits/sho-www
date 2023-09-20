@@ -1,0 +1,31 @@
+// this is here to support some changes to the promo__body's display,
+// most relevant when viewed in the 3 up promo-group view at desktop size
+// instead of an absolutely positioned inner container pinned at bottom and sides
+// but with arbitratry heights so that promo__body can grow to accomodate any content,
+// set a hard height on the promo__body and vertically align the text and icon within that inner container,
+// for a more pleasant experience when viewing the promos side by side (in a group)
+
+// see _promo_icon.scss for integration w/ convenience classnames
+
+
+.promo--valign .promo__body,
+.promo--valign.promo--large .promo__body {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .promo__details {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 4.5em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+// icon
+.promo--valign {
+  .promo__body::before {
+    top:50%;
+    transform: translateY(-50%);
+  }
+}

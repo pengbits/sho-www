@@ -1,0 +1,156 @@
+$sho-logo-width: 70px;
+$sho-logo-height: 25px;
+$sho-logo-width-large: 84px;
+$sho-logo-height-large: 30px;
+
+
+@mixin blue-theme {
+  .promo-group-header__title:before,
+  .category__header {
+    background-color: $colors-blue;
+  }
+
+  .hero__headline:before {
+    border-color: $colors-blue;
+  }
+
+  .cta--button {
+    @include button--solid-blue;
+  }
+}
+
+@mixin red-theme {
+  .nav__bar,
+  .promo-group-header__title:before,
+  .category__header {
+    background-color: $colors-smith-red;
+    background-image: none;
+  }
+
+  .hero__headline:before {
+    border-color: $colors-smith-red;
+  }
+
+  .cta--button {
+    @include button--smith-red;
+  }
+
+  .registration__form__submit-btn {
+    @include button--smith-red;
+   }
+}
+
+// semi-opaque black background, red submit button
+@mixin red-theme-modal {
+  .enter-code-modal {
+    background-color: rgba(0,0,0,0.8);
+    background-image: none;
+  }
+  
+  .enter-code-modal__links .enter-code-modal__link {
+    color: #fff;
+  }
+  
+  .enter-code-modal__form__submit-btn {
+    background-color: $colors-red;
+    border-color: $colors-red;
+  }
+}
+
+[site='sho_pr'],
+[site='sho_fyc'] {
+  @include blue-theme();
+}
+
+[site='distribution'],
+[site='distributor'],
+[site='digital-media'] {
+  @include red-theme();
+}
+
+[site='distributor'],
+[site='distribution'],
+[site='digital-media'],
+[site='product'] {
+  @include red-theme-modal()
+}
+
+[site='sho_pr'],
+[site='sho_fyc'] {
+
+  .nav__title__logo {
+    width: $sho-logo-width;
+    height: $sho-logo-height;
+    background: url('#{$icon-base-path}/showtime_nav_logo_84x30.svg');
+    background-size: $sho-logo-width $sho-logo-height;
+  	background-repeat: no-repeat;
+    @include from-medium {
+      width: $sho-logo-width-large;
+      height: $sho-logo-height-large;
+      background-size: $sho-logo-width-large $sho-logo-height-large;
+    }
+  }
+}
+
+[site='sho_fyc'] {
+  .nav__title__line,
+  .nav__title__text  {
+    display: block;
+  }
+
+  .nav__menu {
+    padding-bottom: $size-m * 2; 
+  }
+
+  .nav__item__text, .nav__item__link {
+    margin: 0 $size-m;
+    font-size: 12px;
+    @include at-large {
+      margin: 0 $size-s;
+    }
+  }
+
+  .nav__item__link {
+    color: $colors-text-blue;
+  }
+
+  .nav__inner {
+    @include from-medium {
+      max-width: none;
+      border: transparent solid 50px;
+      border-width: 0 50px;
+    }
+  }
+
+  // show mobile menu at all times
+  .nav__menu,
+  .nav__toggle {   
+    @include from-large {
+      display: block;
+	  }
+  }
+
+  // hide desktop menu at all times
+  .nav__items {
+    display: none;
+  }
+}
+
+[site='sho_pr'] {
+  .nav__item__link {
+    color: $colors-text-blue;
+  }
+
+  .video__ctas .cta--button {
+    display: none;
+  }
+  .video__ctas .cta--item:nth-child(2) {
+    margin-left: 0;
+  }
+}
+
+// Featured category customization, based on category name
+[site='sho_fyc'] [data-category~="featured"] {
+  background: rgb(205,151,1);
+  background: linear-gradient(90deg, rgba(237,174,0,1) 0%, rgba(221,162,0,1) 35%, rgba(205,151,1,1) 100%);
+}

@@ -1,0 +1,39 @@
+.section-header {
+	text-transform: none;
+	@include display(flex);
+	@include align-items(flex-end);
+	@include flex-wrap(wrap);
+	margin-left: $size-s;
+	margin-right: $size-s;
+	&__left {
+		margin-bottom: 5px;
+	}
+
+	&__title {
+		margin-right: $size-s;
+	}
+
+	&__aside {
+		@include header--delta;
+		margin-right: $size-s;
+		color: $colors-text-med;
+	}
+
+	&--border:after {
+		border-color: $colors-bg-med;
+	}
+
+	&--button {
+		@include display(flex);
+		@include flex-direction(row);
+		@include justify-content(flex-end);
+	}
+
+	&__button {
+		text-transform: none;
+		margin-left: auto;
+		text-decoration: none;
+		border-radius: 0;
+		border-color: $colors-text-med;
+	}
+}

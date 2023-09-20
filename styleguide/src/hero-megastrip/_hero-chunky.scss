@@ -1,0 +1,54 @@
+// hero chunky aka hero megastrip
+// lifted from stream-showtime-hero in order page,
+// repurposed here for Bulk
+
+.hero--chunky {
+  .hero__image {}
+  
+  .hero__inner { 
+    // these margin-top rules are meant to be overriden by hero--megastrip's own,
+    // but they have a lesser weight then when coming from stream-showtime's sass override,
+    // fortunately they aren't needed for this version
+    // margin-top: 225px;
+    @include from-medium {
+      border-width: 0 90px;
+      // margin-top: 40vmin
+    }
+  }
+
+  .hero__inner {
+    display: block; // undo flex from stock hero
+    text-align: center;
+
+    @include until-small {
+      // dont need inverted black+white colorway from order context
+      //background: $colors-pure-white;
+      padding-top: 25px;
+    }
+  }
+
+  .hero__logo-link {
+    display: block;
+  }
+  
+  .hero__body {
+    width: 100%;
+    // padding-bottom: 0;
+  }
+  
+  .hero__headline:before {
+    display: none;
+  }
+
+
+// for bespoke asterisk and registration mark styles, see ../decorated-symbols
+// this modifier is actually on the.hero__inner (.stream-showtime__hero.hero__inner)
+  .hero__headline {
+    padding-top: 10px;
+    @include font(36, 40);    
+    @include upcase;
+    @include from-large {
+      @include font(64, 80);
+    }
+  }
+}

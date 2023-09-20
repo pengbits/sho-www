@@ -1,0 +1,21 @@
+@import "catalog-grid";
+
+.series-drawer {
+  display: none;
+  // set background-color in parent context, stream-showtime is white, series drawer is black
+  
+  @include from-large {
+    display: block;
+  }
+  
+  &__inner {
+    @include full-width-container__inner;
+    text-align: center;
+  }
+
+  &__see-all-cntr {
+    padding-top: $size-l;
+    text-align: center;
+  }
+}
+

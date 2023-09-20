@@ -1,0 +1,84 @@
+.promo-group-header {
+  margin-bottom: $size-s;
+
+  @include from-large {
+    margin-bottom: $size-l;
+  }
+
+
+  /*
+  &__title:before {
+    display: block;
+    margin-bottom: $size-s;
+    height: $size-xs;
+    width: $size-xl;
+    background: $colors-red;
+    content: "";
+
+    @include from-large {
+      width: ($size-xl + $size-l);
+      height: ($size-xs + $size-xxs)
+    }
+    
+    .promo-group-header--no-accent & {
+      display: none
+    }
+  }
+*/
+
+  &__title {
+    @include header('beta');
+    @include upcase;
+    padding: 0 $size-s 0 0;
+    color: $colors-red;
+  }
+
+  &__title--large {
+    @include header('alpha');
+    color: $colors-red;
+  }
+
+  &__sub-title {
+    @include body-text; // equivalent to epsilon
+  	margin: 0;
+  }
+  
+  // added for custom ppv event wilder vs fury
+  &--with-callout {
+    .promo-group-header__title {
+      @include header('beta');
+    }
+    
+    .promo-group-header__sub-title {
+      @include upcase;
+    }    
+    
+    .promo-group-header__callout {
+      @include header('delta');
+    }
+    
+    .promo-group-header__sub-title .promo-group-header__callout {
+      @include header('epsilon');
+    }
+    
+    .promo-group-header__callout,
+    .promo-group-header__sub-title .promo-group-header__callout {
+      font-style: normal;
+      color: $colors-text-dark;
+    }
+  }
+}
+
+
+
+.promo-group-header--large .promo-group-header__title {
+  @include header--alpha;
+  
+  &:before {
+    margin-bottom: $size-s;
+    
+    @include from-medium {
+      margin-bottom: $size-m;
+    }
+  }
+}

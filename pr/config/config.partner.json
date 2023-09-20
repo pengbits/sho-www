@@ -1,0 +1,30 @@
+{
+  "headline": "",
+  "subheadline": "",
+  "APIkey": "b2b",
+  "trackingPrefix": "pr:b2b:",
+  "defaultImagePath": "https://www.sho.com/site/image-bin/images/0_0_0/0_0_0_01",
+  "brightcove": {
+    "accountId": 63128,
+    "playerId": "E7SnUtnWus",
+    "playerName": "b2b"
+  },
+  "codeInputRequired": false,
+  "authorizationRequired": false,
+  "streamlinedTitleInfo": true,
+  "largePromos": true,
+  "hasCategoriesPage": false,
+  "hasEntireShoLibrary": true,
+  "legal": "&copy; 2023 Showtime Networks Inc. All rights reserved. SHOWTIME and related marks are trademarks of Showtime Networks Inc., a CBS Company. Billions &copy; Showtime Networks Inc. All rights reserved. BLACK MONDAY &copy; Sony Pictures Television Inc. and Showtime Networks Inc. All Rights Reserved. The Chi &copy; Twentieth Century Fox Film Corporation. All Rights Reserved. Desus & Mero &copy; Showtime Networks Inc. All Rights Reserved. “Kidding”: &copy; Showtime Networks Inc. All rights reserved. Ray Donovan &copy; Showtime Networks Inc. All rights reserved. Shameless &copy; Warner Bros. Entertainment Inc. All rights reserved. SMILF &copy; ABC Signature Productions, Inc. and Showtime Networks Inc. All Rights Reserved. <a href=\"https://www.sho.com/closedcaptioning\">Closed Captioning</a>.",
+  "header": {
+    "siteName": "Showtime",
+    "siteTagLine": "Welcome to the Showtime Screening Room",
+    "help": null,
+    "logOutLink": null,
+    "bannerOnly": true
+  },
+  "footer": {
+    "heading": "The Entire Showtime Library",
+    "apiUrl": "/api/pr/partner/footer"
+  }
+}

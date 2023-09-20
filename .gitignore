@@ -1,0 +1,30 @@
+# ignore generated files because they are ripe for conflict - will revisit when we need to deploy to dev/qa
+# package-lock.json
+*.map
+*.jsp.md
+.partials.json
+styleguide/build
+styleguide/site/styleguide
+sho/lib/styleguide
+sho/styleguide
+sho/dist
+shoplace/styleguide
+styleguide/dist
+
+# ignore environment-specific sass vars because this file will be created by gulp task and changes per context
+styleguide/src/_variables.env.scss
+
+# ignore npm modules as all this vendor code is outside scope of our project, we will only include sym-links to relevant dependencies for frontend
+node_modules
+
+# ignore logs cos they are logs
+npm-debug.log.*
+.DS_Store
+*.log
+
+# ignore some sublime artifacts
+*.sublime-project
+*.sublime-workspace
+
+# browserify creates this, another conflict-heavy file
+browserify-cache.json

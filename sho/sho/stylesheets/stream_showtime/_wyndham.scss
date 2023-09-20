@@ -1,0 +1,277 @@
+// rules for the wyndham landing page
+// stream-showtime might not be the best place for this (more of a bulk tactic)
+// but the page borrows from some of the stream-showtime components ie site catalog
+// and we need to get this up very quicly..
+.stream-showtime--wyndham .section--inner {}
+
+// =:01
+// =:hero, =:tallboy
+// .stream-showtime--wyndham .hero--stream-showtime.hero--tallboy
+.stream-showtime--wyndham .hero--tallboy {
+  .hero__headline,
+  .hero__copy,
+  & + .hero__popover .hero__headline,
+  & + .hero__popover .hero__copy {
+    color:$colors-pure-white 
+  }
+
+  & + .hero__popover .hero__copy {
+    line-height: 30px;
+  }
+
+  .hero__inner {
+    background-color: transparent; // don't obscure the extra tall image
+    margin-top: 170px;
+    @include from-medium {
+      margin-top: 50vmin;
+    }
+  }
+}
+
+@mixin small-reg-symbol {
+  position: relative;
+  font-size:0.6em;
+  top:-4px
+}
+
+// =:02
+// =:bundles, =:glossy-card
+.stream-showtime--wyndham .bundle-offers {
+  padding: 0 $size-m;
+  margin-bottom: $size-xl;
+  &::after {
+    display: none; // undo clearfix on section
+  }
+  .symbol--reg {
+    @include small-reg-symbol;
+    top:-6px
+  }
+  .nowrap {
+    white-space: nowrap;
+  }
+  
+  @include from-medium {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .bundle-offer { 
+    @include at-medium {
+      width: 40%;
+    }
+  
+    @include from-large {
+      width:35% 
+    }
+
+    @include from-extra-large {
+      // width: 40%;
+    }
+  }
+
+  @include from-extra-large {
+    padding: 0 150px;
+  }
+
+  .bundle-offer--single {
+    width: 100%;
+    
+    @include from-large {
+      width: 50%;
+    }
+  }
+
+}
+
+// =:03
+// =:block-text, =:section-break
+.wyndham-block-text {
+  text-align: center;
+  margin-bottom: $size-xl;
+  
+  &__headline {
+    @include header("beta");
+    margin-bottom:$size-xl;
+    font-weight: 700 !important;
+  }
+
+  &__copy {
+    @include header("gamma");
+    @include from-medium {
+      padding: 0 15%; // force wrap
+    }
+  }
+
+  &__copy--sub {
+    text-align: left;
+    @include header("gamma");
+    @include from-medium {
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &--first {
+    margin-top: 20px;
+    margin-bottom: 0;
+    @include from-medium {
+      position: relative;
+      top:-50px;
+      margin-top: 0;
+    }
+  }
+  &--last {
+    margin-bottom: $size-xxl;
+  }
+}
+
+// =:04
+// =:feature-block, =:conan, =:magazine
+.wyndham-feature-block {
+  &__image {
+    margin-right: 30%;
+    margin-bottom: $size-xl;
+    width: 70%;
+    height: auto;
+
+    @include from-medium {
+      margin-right: 0;
+      width: 50%;
+    }
+  }
+
+
+  @include from-medium {
+    @include clearfix;
+    margin-bottom: $size-xl;
+    
+    &__body {
+      width: 50%;
+      float: right;
+      padding-left: $size-m;
+    }
+ 
+    &--pull-right &__body {
+      text-align: right;
+      float: left;
+      padding-left: 0;
+      padding-right: $size-m;
+    }
+  }
+ 
+  &__headline,
+  &__copy {
+    @include din(300);
+  }
+  &__headline {
+    margin-bottom: $size-l;
+    @include upcase;
+    @include header("theta");
+
+    sup {
+      top:-0.45em;
+      font-size: 18px;
+    }
+
+  }
+
+  &__copy {
+    @include header("epsilon");
+    margin-bottom: $size-xxl;
+  }
+}
+
+// =:05
+// =:video-player
+.stream-showtime--wyndham {
+  .stream-showtime__video-section__header {
+    @include from-medium {
+      width: 75%;
+    }
+  }
+
+  // =:06
+  // =:red-banner, =:black-banner
+  .stream-showtime__red-banner {
+    background-color: $colors-pure-black !important;
+    color: $colors-pure-white !important;
+    padding-bottom: $size-m;
+
+    &__header,
+    &__copy {
+      @include font(36, 48);
+      @include from-medium {
+        @include font(44, 50);
+      }
+    }
+
+    &__header {
+      @include from-large {
+        padding: 0 10%;
+      }
+      margin-bottom: $size-xl;
+    }
+    
+    &__copy,
+    &__sub {
+      font-weight: 300;
+    }
+
+    &__copy {
+      @include until-medium {
+        text-transform: uppercase
+      }
+    }
+
+    &__sub {
+      @include font(24,32);
+      margin-bottom: $size-xl;
+    }
+  }
+  
+  .stream-showtime__red-banner--subdued {
+    .stream-showtime__red-banner__header {
+      margin-bottom: $size-m;
+    }
+  }
+}
+
+// =:07
+.stream-showtime__legal {
+  .symbol--reg {
+    @include small-reg-symbol
+  }
+}
+
+.wyndham-dealer {
+  position: relative;
+  top: 40px;
+
+  @include from-medium {
+    top: -68px;
+  }
+}
+
+.wyndham-dealer-table {
+  margin: 0 auto;
+
+  @include until-medium {
+    margin-bottom: $size-xxl;
+  }
+
+  td,
+  th {
+    padding: 5px 20px;
+    text-align: left;
+  }
+}
+
+.hidden-line-break {
+  @include until-small {
+    display: none;
+  }
+}
+
+
+

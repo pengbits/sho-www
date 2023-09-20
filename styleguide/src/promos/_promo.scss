@@ -1,0 +1,327 @@
+// notes about stacking (z-index)
+// gradient or flat overlay: 1
+// promo__body, promo__icon: 2
+// promo__link: 3
+
+.promo {
+  @extend .card;
+}
+
+// promo elements
+.promo__body {
+  @extend .card__body;
+  position: relative;
+  z-index: 2;
+  padding: $size-s $size-m;
+  color: $colors-pure-white;
+  background-color: transparent;
+  transition: color 0.6s ease-in-out;
+}
+
+.promo__image {
+  @extend .card__mask;
+  position: relative;
+  background-color: $colors-pure-black;
+  background-repeat: no-repeat;
+  @include overlay;
+}
+
+.promo__headline {
+  @include header--delta;
+  margin: 0;
+
+  .promo--large & {
+      @include header--delta;
+  }
+
+  .promo--large.promo--square & {
+      @include header--gamma;
+  }
+}
+
+.promo__copy {
+  @include body-text;
+  margin: 0;
+  padding-top: 2px;
+  color: $colors-light-grey;
+}
+
+.promo__topline {
+  @include header--epsilon;
+  color: $colors-text-med;
+}
+
+.promo__link {
+  // some styles only needed for promo-group--from-list variant
+  // otherwise the text is hidden
+  @include header--beta;
+  @include upcase;
+  overflow: hidden;
+  z-index: 3;
+  text-indent: 200%;
+  white-space: nowrap;
+  background: transparent;
+  opacity: 0;
+  cursor: pointer;
+  @include pin-cover;
+
+  .promo-group--from-list &:after {
+    content: '';
+    @include pin-top-right;
+    @include icon('next-grey', 'medium');
+  }
+
+  .promo-group--from-list-small &:after {
+    content: '';
+    @include pin-top-right;
+    @include icon(next, 'small');
+    margin-top: 3px;
+  }
+} 
+
+.pplus-bundle .promo__link {
+  cursor: auto;
+}
+
+.promo__copy__date {
+  color: $colors-light-grey;
+
+  // add bullet character
+  &:after {
+    content: ' \2022';
+  }
+}
+
+// docked
+.promo--docked {
+  @extend .card--docked;
+
+  .promo__body {
+    padding: $size-m $size-l $size-m $size-m;
+  }
+
+  @include from-large {
+    .promo__body {
+      padding: $size-l;
+    }
+
+    &.promo--large .promo__body {
+      padding: $size-l ($size-l + $size-s);
+    }
+  }
+}
+
+// proportions
+.promo--square {
+  .promo__image {
+    @include proportions--square;
+  }
+}
+
+.promo--landscape-to-square {
+  @extend .card--landscape-to-square;
+}
+
+.promo--fourbythree {
+  .promo__image {
+    @include proportions--fourbythree;
+  }
+}
+
+.promo--portrait {
+  .promo__image {
+    @include proportions--portrait;
+  }
+}
+
+// layout
+.promo--split-below {
+  @include from-medium {
+    .promo__image {
+      @include overlay;
+    }
+
+    .promo__body {
+      padding: $size-l;
+      @include dock-card-body;
+    }
+  }
+}
+
+.promo--split-right {
+  @extend .card--split-right;
+
+  @include until-medium {
+    .promo__body {
+      padding-top: 0;
+    }
+  }
+}
+
+// grayed out promo
+.promo--diminish {
+  .promo__body {
+    color: $colors-mid-grey;
+  }
+
+  @include overlay(flat);
+}
+
+// no-overlay
+.promo--no-overlay {
+  .promo__image:before {
+    display: none;
+  }
+}
+
+// content types
+.promo--season {
+  @extend .card--square-to-landscape;
+  @extend .promo--reveal;
+  @extend .promo--docked;
+}
+
+.promo--episode {
+  @extend .promo--fourbythree;
+  @extend .promo--reveal;
+  @extend .promo--docked;
+}
+
+//styles specific to episodes in season landing page
+
+.promo-season-group {  
+  @include from-medium {
+    @include display(flex);
+    @include flex-wrap(wrap);
+  }
+
+  .promo {
+    float:left;
+    @include span-columns(12);
+    @include from-large {
+      @include span-columns(4);
+      margin-bottom: $size-xl + $size-l;
+    }
+  }
+  .promo__body {
+    float: none;
+    padding-bottom: $size-xl + $size-l;  
+    padding-left: 0;
+    @include from-large {
+      @include span-columns(8);
+      float: left;
+      padding-top: 0;      
+      margin-right: 0px;
+    }
+  } 
+
+  .promo__headline {    
+    @include header--delta;
+    padding-top: $size-l;
+    color: $colors-pure-white;
+    @include from-medium {
+      padding-top: 0;
+    }
+    &::after {
+      @include icon('next','small');  
+      content: '';
+      margin-right: -$size-xl;
+      position: relative;
+      top: 0;
+      left: 2px;
+
+      @include from-large {
+        top: -1px;
+      }
+    }
+  }
+  
+  .promo__image:before {
+    background: none;
+  }
+
+  .promo__date_time {
+    padding: $size-s 0;
+  }
+
+  .promo__copy {
+    padding-bottom: $size-l;
+  }
+
+  .promo__copy, .promo__date_time {
+    @include body-text;
+    margin: 0;
+    color: $colors-pure-white;
+  }
+}
+
+.promo--cast {
+  @extend .card--from-portrait;
+  @extend .promo--square;
+  @extend .promo--no-overlay;
+
+  .promo__headline {
+    @include header--delta;
+  }
+
+  .promo__body {
+    padding: $size-s 0;
+  }
+
+  .promo__copy {
+    color: $colors-text-med;
+  }
+}
+
+// alternate style, seen in entire-sho-library
+.promo-group--from-list .promo.promo--square .promo__headline {
+  @include header--gamma;
+  text-transform: none;
+}
+
+// This an alternate version of the promo group that collapses into a list view below large,
+// similar in appearance to the link banner component. This is used  in the all fights page.
+// this could probably be refactored into a variant of `promo-group--from-list` above.
+.promo {
+  .promo--list-view__item {
+    display: block;
+    position: relative;
+    margin-bottom: $size-s;
+  	padding-left: $size-l;
+    height: $size-xxl;
+    cursor: pointer;
+    @include display("flex");
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include from-medium {
+      display: none;
+    }
+
+    &__title {
+      @include header--delta;
+    }
+    
+    &__title--ellipsis {
+  		@include until-medium {
+  			width: 89%;
+  			white-space: nowrap;
+  			overflow: hidden;
+  			text-overflow: ellipsis;
+  		}
+    }
+
+    &__sub-title {
+      @include header--epsilon;
+      color: $colors-mid-grey;
+    }
+
+    &__more {
+      @include icon('next','small');
+    	@include display("flex");
+      position: absolute;
+      top: 33px;
+      right: $size-l;
+      cursor: pointer;
+    }
+   }
+} 

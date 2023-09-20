@@ -1,0 +1,104 @@
+.tv-providers-modal {
+  -webkit-overflow-scrolling: auto // SITE-17280
+}
+
+.modal-open {
+  .tv-providers-modal {
+    .modal__inner {
+      width: $max-width;
+      margin: $size-m 0;
+      animation: none;
+
+      @include from-medium {
+        margin:  $size-xl 0;
+      }
+    }
+
+    &__content {
+      @include body-text;
+      padding: 0 $size-xl ($size-xl + $size-l) $size-xl;
+      background-color: $colors-pure-white;
+    }
+    
+    .modal__header .modal__close {
+      @include icon('close-black','medium');
+      top: 35px; 
+    }
+    
+    .modal__footer .modal__close {
+      left: $size-xl;
+      width: auto !important;
+      @include body-text;
+      cursor: pointer;
+      color: $colors-pure-black;
+    }
+    
+    .order-card {
+      padding-top: 0px;
+      padding-bottom: $size-m * 2;
+      background-image: none;
+      border-radius: 0px;
+    }
+
+    // &__close {
+      // position: relative;
+      // text-transform: uppercase;
+      // padding-top: $size-xl;
+    // }
+  }
+}
+
+ 
+ // overrides for the loading state
+.modal-open .tv-providers-modal--loading .modal__inner {
+  & {
+    
+    max-width: 90%;
+    @include from-medium { max-width: 400px; }
+    height: 400px;
+  }
+  
+  .loading-animation {
+    margin-top: (200px - 15px);
+  }
+  
+  // our universal loading animation seems to want a dark background
+  .modal__header .modal__close {
+    @include icon('close','medium'); 
+    top: 20px
+  }
+  
+  .modal__footer .modal__close {
+    display: none
+  }
+}
+
+// rules for the list of tv providers: previously saved as `order-tray/_card-partner-list.scss`
+// partner is admitedly not a great name, but need something to handle the case where Cable is a 'provider' in the tray,
+// but contains numerous Provider logos as content
+.partner-list {
+  margin: 0;
+  @include unstyled-ul;
+
+  &__divider {
+    @include header('delta');
+    margin-top: $size-xl;
+    margin-bottom: $size-s;
+    color: $colors-pure-black;
+    border-bottom: #500207 solid $size-border-width-s;
+  }
+
+  &__link {
+    @include header('epsilon');
+    display: inline-block;
+    padding: $size-xs 0;
+    color: $colors-mid-grey;
+  }
+}
+
+.partner-list-header {
+  @include header('delta');
+
+  padding-top: $size-xl;
+  color: $colors-pure-black;
+}

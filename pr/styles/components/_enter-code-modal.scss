@@ -1,0 +1,109 @@
+.enter-code-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include background(linear-gradient(to right, #297EAE, #164867));
+  @include transition(.5s ease-in-out);
+  @include transform(translateY(-101%));
+  overflow-y: auto;
+  z-index: 1000;
+
+  &__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 384px;
+    @include transform(translate(-50%, -50%));
+    padding: $size-m;
+  }
+
+  &__title {
+    margin-bottom: $size-l;
+    text-align: center;
+
+    &__logo {
+      display: block;
+      width: 144px;
+      height: 52px;
+      margin: 0 auto $size-m;
+      text-indent: -9000px;
+      overflow: hidden;
+      background: url("#{$icon-base-path}/showtime-logo.svg");
+      background-size: 144px 52px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__form {
+    margin-bottom: $size-xl;
+
+    &__error {
+      @include body-text;
+      width: 100%;
+      padding: $size-s;
+      margin-bottom: $size-l;
+      background: $colors-red;
+      display: none;
+    }
+
+    &__input {
+      @include body-text;
+      width: 100%;
+      height: 44px;
+      line-height: 44px;
+      padding: 0 $size-s;
+      margin-bottom: $size-l;
+      color: $colors-pure-black;
+      border: none;
+    }
+
+    &__submit-btn {
+      width: 100%;
+      cursor: pointer;
+      @extend .button--solid-dark-blue;
+      @include appearance(none);
+    }
+  }
+
+  &__links {
+    text-align: center;
+
+    .enter-code-modal__link {
+      display: block;
+      @include header--zeta;
+      color: $colors-pure-black;
+      text-decoration: none;
+      margin: 0 auto $size-l;
+      padding: 0;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .enter-code-modal__link:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  input {
+    text-transform: uppercase;
+
+    @include placeholder {
+      text-transform: none;
+    }
+  }
+
+
+  &--show-error {
+    display: block;
+  }
+
+  &--show-modal {
+    @include transform(translateY(0));
+  }
+}

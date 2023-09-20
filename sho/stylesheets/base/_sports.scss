@@ -1,0 +1,114 @@
+
+.all-fights--upcoming,
+.all-podcasts {
+  margin-top: $size-xl;
+}
+
+ @include until-medium {
+  .sports-all-fights .section--gradient {  
+    background: transparent;
+    .section--inner {
+      border: 0; // undo inner-container styles at mobile
+    }
+  }
+}
+
+//streak farewell page styles
+.streak-farewell .legal__sub-headline {
+  margin-bottom: 0px;
+}
+
+// wilder vs fury custom event page
+.event-provider-group .promo-group-header {
+  margin-bottom: 0;
+}  
+
+.event-variation-2,
+.event-variation-3 {
+  // force smaller heading size in other versions
+  .promo-group-header__title {
+    @include header('gamma');
+  }
+}
+
+.event-provider-group {  
+  
+  .section-header {
+    margin-top: $size-m;
+  }
+  
+  & > div:last-child {
+    margin-bottom: 80px
+  }
+}
+
+.provider-grid__footer {
+  &__headline {
+    @include header('epsilon');
+  }
+  &__legal {    
+    @include header('zeta');
+    color: $colors-text-dark
+  }
+}
+
+// for see-all providers
+.provider-list-container {
+  text-align: left;
+}
+
+// betting-partner logo for ppv event pages,
+// can be set in Phil with the following properties
+// - logo
+// - text
+// - link
+// now that this is dynamic, we have to account for just the the logo, or the logo and text in combination
+// previously the logo was absolutely positioned, but moving to flex to make it handle both cases gracefully.
+.event-hero__bout--betting-partner {
+  display: block;
+  margin-bottom: 15px;
+
+  @include from-medium {  
+    position: relative;
+    padding-top: 12px;
+  }
+}
+
+.event-hero__bout--betting-partner-with-text {
+  @include from-medium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.event-hero__bout--betting-partner-with-blank-text {
+  display: none;
+
+  &.event-hero__bout--betting-partner-with-logo {
+    display: block;
+  }
+}
+
+.event-hero__betting-partner-logo {  
+  display: block;  // could be <a> or </span> depending on if url is provided
+  width: 200px;
+  height:65px;
+  
+  @include from-medium {
+    display: inline-block; 
+    width: 225px;
+    height: 75px;
+  }
+
+  background-color: transparent;
+  background-position: center center;
+  background-size: contain;
+  // background-image; url(https://www.sho.com/assets/images/sports/events/logos/draft-kings_600x200.png) // set in jsp
+  background-repeat: no-repeat;
+  @include hide-text;
+} 
+
+.event-hero__betting-partner-text {
+  margin-right: $size-m;
+}

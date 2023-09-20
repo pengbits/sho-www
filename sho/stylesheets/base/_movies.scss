@@ -1,0 +1,32 @@
+.movie-title,
+.movies-genre {
+  .hero__headline {
+    color: $colors-pure-white;
+  }
+  .hero__headline__link::after {
+    @include icon-image('next')
+  }
+}
+
+// movies secondary nav (genre) currently absolutely positioned
+// due to presence of non-sticky global banner on this page (this is only secondary nav page that has one)
+// but z-index bug now exists
+.movies-genre {
+  .secondary-nav {
+    position: absolute;
+
+    @include from-large {
+      top: 64px;
+      z-index: 100;
+    }
+
+    ~ .global-nav.global-nav--flyout-open {
+      display: none;
+    }
+  }
+
+  // darker shade needed on genre pages because of extra tier of navigation
+  .global-nav__gradient {
+    @include background(linear-gradient(rgba(0,0,0,.9) 0%,rgba(0,0,0,.8) 35%,rgba(0,0,0,.4) 70%,rgba(0,0,0,0) 100%));
+  }
+}

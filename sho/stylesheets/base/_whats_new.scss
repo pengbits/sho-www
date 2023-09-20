@@ -1,0 +1,52 @@
+.whats-new {
+
+	&__header {
+		@include header--beta;
+		margin-bottom: $size-m;
+	}
+
+	&__title {
+		margin-top: $size-xl;
+		margin-bottom: $size-l;
+		@include header--beta;
+	}
+
+	&__line {
+		margin-top: $size-l;
+		margin-bottom: 60px;
+	}
+
+	&__video-player {
+		margin: 0 auto ($size-l + $size-s) auto;
+		width: 90%;
+	}	
+
+	&__img {
+		float: left;
+		width: 40%;
+		max-width: 135px;
+		margin-bottom: $size-s;
+	}
+  
+  &__sub-title {
+    clear: both;
+  }
+
+	.striped-data-table {
+	
+		&__item {
+      color: $colors-pure-white;
+			@include header--epsilon;
+			max-width: none;
+		}
+
+		&__title {
+			@include header--zeta;
+		}
+
+		&__row:nth-child(odd):nth-last-child(1) {
+			padding-bottom: 0px;
+		}
+	}
+
+}

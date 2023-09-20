@@ -1,0 +1,64 @@
+
+// Podcast Episode List  Meta Data
+
+.metaname-example {
+	background-color: $colors-pure-black;
+	@include span-columns(6);
+  @include from-large {
+    padding-top: $size-xl;
+  }
+}
+.podcast-list__divider {
+  border-bottom: 1px solid $colors-bg-light;
+  margin: $size-s 0 $size-s 0;
+}
+
+.podcast-list__item {
+	display: grid;
+  //grid-template-columns: 50px auto 1fr; //used when play btn comes back
+  grid-template-columns: auto 1fr;  
+  grid-template-rows: 1fr auto;
+  padding: 0 $size-l 0 0;  
+  @include from-medium {
+    display: flex;
+    align-items: center;
+  }
+
+  &__field--title { 
+    grid-column: span 2;
+    @include header('epsilon');
+    @include from-medium {
+      flex-basis: 60%;
+      flex-grow: 2;
+      padding-right: $size-l;
+    }
+  }
+
+  &__field--play {
+    grid-area: span 2/span 1;
+    padding-right: $size-m;
+    @include from-medium {
+      flex-basis: 32px;
+      padding-right: 0px;
+      order: 1;
+    }
+  }
+
+  &__field--date, 
+  &__field--time {   
+    @include header('zeta');
+    color: $colors-text-med;
+    @include from-medium {
+      flex-basis: 15%;
+      flex-grow: 1;
+    }
+  }  
+  
+  &--separator {
+    padding: 0 $size-m 0 $size-m;
+    @include from-medium {
+      display: none;
+    }
+   }
+} 
+  

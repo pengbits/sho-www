@@ -1,0 +1,24 @@
+$icon-base-path: '/assets/svg' !default;
+
+$colors-blue: #13527C;
+$colors-light-blue: #678CA2;
+$colors-dark-blue: #0A3854;
+$colors-text-blue: #001E2F;
+$colors-red: #B10000;
+$colors-smith-red: #CA2200;
+
+$smith-ff: "'Gotham SSm A', 'Gotham SSm B', Arial ,sans-serif";
+
+$breakpoint-map: (
+  'small':              480px,
+  'medium':             768px,
+  'large':              1042px,
+  'extra-large':        1200px,
+  'extra-extra-large':  1850px,
+
+  'extra-short':        450px,
+  'short':              550px,
+  'medium-tall':        650px,
+  'tall':               750px,
+  'extra-tall':         1200px
+);

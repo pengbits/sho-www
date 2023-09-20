@@ -1,0 +1,101 @@
+.cart-modal {
+	&--default {
+		position: relative;
+		max-width: 440px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		@include body-text;
+		background-color: $colors-pure-black;
+		@include from-large {
+			max-width: 640px;
+		}
+	}
+		
+	&__image {
+		width: 100%;
+		height: auto;
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		background-size: contain; // the real image path is set inline in js layer
+		background-image: url("https://www.sho.com/assets/images/favicon/clear_320x180.gif"); // TODO move to WWW webroot
+	}
+	&--default &__image {
+		padding-top: 56.25%; // 640x360 ratio needed for this version, lower-third uses explicit dimensions
+	}
+
+	&__headline {
+		@include header('beta');
+		text-transform: uppercase;
+		padding: 0 $size-l;
+		@include from-medium {
+			padding-right: $size-xl;
+			padding-left: $size-xl;
+		}
+		text-align: center;
+		margin-bottom: $size-m;
+		width: 100%;
+	}
+
+	&__note {
+		margin-top: $size-l;
+		@include header('zeta');
+    @include from-large {font-weight: bold;}
+		color: #ADA8A8;// $colors-mid-grey;
+	}
+
+	&__copy {
+		margin-top: $size-m * 2;
+		margin-bottom: $size-s;
+		text-align: center;
+	}
+
+	&__line {
+		height: 1px;
+		border-top: 1px solid #2D2D33;
+		width: 280px;
+		@include from-medium {
+			width: 340px;
+		}
+		@include from-large {
+			width: 440px;
+		}
+	}
+
+	&__list {
+		padding: 0 $size-l;
+		margin-left: $size-m * 2;
+		margin-top: $size-l;
+		width: 100%;
+		@include from-medium {
+			margin-left: 0px;
+			padding: 0 $size-l 0 $size-xl;
+		}
+		@include from-large {
+			margin-left: 0px;
+			padding: 0 $size-xl * 2;
+		}
+
+		&__item {
+			margin-bottom: $size-l;
+		}
+	}
+} 
+
+// this abbreviated version is triggered when description is null/blank
+.cart-modal--no-description .cart-modal__line {
+  visibility: hidden;
+  margin-bottom: $size-m;
+}
+
+
+.modal-open .cart-modal__loader {
+	$loader-size: 300px;
+	$loading-animation-ball-size: 15px;
+	@include size($loader-size);
+	
+	.loading-animation {
+		top:(($loader-size / 2) - $loading-animation-ball-size)
+	}
+}

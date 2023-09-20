@@ -1,0 +1,52 @@
+table {
+  border-collapse: collapse;
+  border-color: #000;
+  
+  td {
+    padding: ($size-l + $size-xl) $size-m;
+    vertical-align: baseline;
+  }
+  
+  th {
+    text-align: left;
+    @include header('gamma');
+    border: $colors-warm-grey solid 1px;
+    border-width: 0;
+    padding: ($size-l + $size-s) $size-m;
+    vertical-align: baseline;
+    
+    span {
+      font-weight: normal;
+      @include header('epsilon');
+    }
+  }
+  
+  td {
+    border: $colors-warm-grey solid 1px;
+    border-width: 0;
+    @include from-medium {
+      border-width: 0 1px 0 0;
+    }
+    @include body-text; 
+    img {
+      margin-bottom: $size-l;
+    }
+  }
+  
+  td:last-child {
+    border-width: 0 0px 1px 1px;    
+  }
+
+  tr {
+    border-bottom: 1px solid $colors-warm-grey;
+  }
+
+  tr:last-child {
+    border-bottom-color:  #000;
+  }
+  
+  tr > td:last-child {
+    border-color: #000;
+  }
+  
+}

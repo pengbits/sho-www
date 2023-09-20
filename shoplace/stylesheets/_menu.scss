@@ -1,0 +1,17 @@
+.menu {
+  @include unstyled-list;
+  margin-bottom: $size-xl;
+  
+  &__item {
+    margin-bottom: $size-m;
+
+    a { 
+      color: $colors-crisp-grey;
+      text-decoration:none;
+    }
+  }
+  
+  &__item:first-child a {
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,193 @@
+.bulk {
+
+  .section--large {
+    margin-bottom: 30px;
+  }
+
+  nav {
+    position: relative; 
+  }
+
+  .hero--package .hero__headline {
+    @include header('alpha');
+    color: $colors-red;
+  }
+  
+  .hero--package .section-header {
+    @include header('beta');
+    color: $colors-red;
+  }
+
+  .hero__body {
+    padding-bottom: $size-xl;
+	}
+  
+  .hero--chunky .hero__body { 
+    padding-bottom:  $size-xxl;
+  }
+
+  .section__description {
+    @include from-medium {
+      width: 80%;
+    }
+
+    &--disclaimer {
+      @include header--zeta;
+      color: $colors-text-dark;
+    }
+  }
+
+  .download-button {
+    @include until-large {
+      display: block;
+      min-width: 270px;
+      margin: 0 auto;
+    }
+  }
+
+  .download-button,
+  .contact-button {
+    @include until-small {
+      width: 80%;
+    }
+
+    @include at-small {
+      width: 50%;
+    }
+  }
+
+  .contact-section {
+    @include until-medium {
+      margin: 0 $size-m $size-xl;
+      padding: $size-xl 0;
+      border: 1px solid $colors-pure-white;
+      text-align: center;
+    }
+
+    .promo-group-header {
+      margin-bottom: $size-l;
+
+      @include until-medium {
+        border: none;
+
+        &__title {
+          margin: 0 auto;
+          padding: 0 $size-xs;
+        }
+
+        &__title:before {
+          display: none;
+        }			
+      }
+    }
+  }
+
+  .section__subtitle {
+    @include header--gamma;
+    margin-bottom: $size-l;
+
+    &--emphasis {
+      color: $colors-red;
+    }
+  }
+
+  .back-link {
+    position: absolute;
+    top: $size-m * 2;
+    z-index: 200;
+    @include header--delta;
+  }
+  	
+	.footer {
+		background: $colors-bg-dark;
+		padding: $size-xl 0;
+
+		&__inner {
+			@include full-width-container__inner;
+			@include header--zeta;
+			color: $colors-text-dark;
+		}
+	}
+
+	.modal__inner {
+		@include at-medium {
+			width: 50%;
+		}
+
+		@include at-large {
+			width: 40%;
+		}
+
+		@include from-extra-large {
+			width: 33%;
+		}
+	}
+}
+
+.hotel-app {
+  .section--large {
+    margin-bottom: 30px;
+  }
+
+  .section {
+    margin-bottom: 0;
+  }
+
+	.hero__inner {
+		@include until-medium {
+			@include hero-offset(60vmin);
+    }
+    @include from-extra-large {
+      padding-top:30px;
+		}
+	}
+
+	.hero__top-line {
+		text-transform: none;
+	}
+
+	.hero__top-line--logo {
+		background: url(https://www.sho.com/assets/images/bulk/showtime-hotel-app-logo.png) no-repeat;
+    background-size: contain;
+    height: 95px;
+    width: 300px;
+		@include until-small {
+			width: 100%;
+		}
+  }
+  
+  .hero__image:before {
+    @include until-medium {
+      background: none;
+    }
+  }
+
+	.hero__body {
+		padding-bottom: $size-l;
+	}
+
+	.provider-grid {
+		margin-top: $size-m * 2;
+
+		&__entry {
+			@include until-small {
+				width: 100%;
+			}
+		}
+
+		&__entry:not(:last-child) {
+			@include until-medium {
+				margin-bottom: $size-l;
+			}
+		}
+  }
+  
+  .additional-features {
+    padding: 0 15px;
+  
+    li {
+      margin: 12px 0;
+      padding-left: 15px;
+    }
+  } 
+}

@@ -1,0 +1,25 @@
+{
+  "headline": "",
+  "subheadline": "",
+  "APIkey": "DIGITAL_MEDIA",
+  "trackingPrefix": "pr:digital media:",
+  "defaultImagePath": "https://www.sho.com/site/image-bin/images/0_0_0/0_0_0_01",
+  "brightcove": {
+    "accountId": 63128,
+    "playerId": "KgjeMJquE",
+    "playerName": "showtime digital media"
+  },
+  "codeInputRequired": true,
+  "authorizationRequired": true,
+  "streamlinedTitleInfo": true,
+  "largePromos": true,
+  "hasCategoriesPage": false,
+  "hasEntireShoLibrary": false,
+  "legal": "&copy; 2023 Showtime Networks Inc. All rights reserved. SHOWTIME and related marks are trademarks of Showtime Networks Inc., a CBS Company. <a href=\"https://www.sho.com/closedcaptioning\">Closed Captioning.</a>",
+  "header": {
+    "siteName": "Showtime",
+    "siteTagLine": "",
+    "logOutLink": null,
+    "bannerOnly": true
+  }
+}

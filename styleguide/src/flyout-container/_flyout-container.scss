@@ -1,0 +1,28 @@
+.flyout-container {
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  display: none;
+  z-index: 103;
+  background-color: $colors-pure-black;
+  box-shadow: 0 $size-l $size-xxl $colors-pure-black;
+  @include transform(translateY(-101%));
+  @include transition(0.25s ease-in-out);
+
+  .flyout-container__inner{
+    padding-top: $size-xxl + $size-xxs + $size-xxs + $size-xxs;
+    margin: $size-l 0 $size-xl 0;
+  }
+
+  @include from-large {
+    display: block;
+  }
+
+  .flyout-container__icon-close {
+	  @include icon('close','medium');
+    float: right;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,163 @@
+@mixin button--solid-blue {
+  @include round-button;
+  background-color: $colors-blue;
+  border-color: $colors-blue;
+}
+
+@mixin button--smith-red {
+  @include round-button;
+  background-color: $colors-smith-red;
+  border-color: $colors-smith-red;
+}
+
+@mixin no-scroll {
+  overflow: hidden;  //this class is placed on the body when the mobile menu is opened so that the body behind the mobile menu does not scroll
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  -ms-overflow-style: scrollbar;
+}
+
+body {
+  background: black;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.no-scroll {
+  @include until-large {
+    @include no-scroll;
+  }
+}
+
+.no-scroll--modal {
+  @include no-scroll;
+}
+
+.no-scroll collection{
+  -webkit-transform: translate3d(0,0,0); //this seemed to have help solve the background of content sporadically appearing when nav overlay isopen
+}
+
+.loading-animation {
+  position: relative;
+  z-index: 1;
+}
+
+.full-width-container__inner {
+  @include full-width-container__inner;
+
+  @include from-large {
+    margin-bottom: $size-xl;
+  }
+}
+
+analytics * {
+  // for DTM use
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+sup {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5em;
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+.content {
+  @include full-width-container__inner;
+}
+
+.content, .collection, .collection-title {
+  margin-top: 55px;
+
+  @include from-small {
+    margin-top: 55px;
+  }
+
+  @include from-medium {
+    margin-top: 0;
+  }
+}
+
+.entire-sho-library {
+  padding-top: $size-xl;
+  background-color: $colors-bg-dark;
+
+  @include from-medium {
+    padding: $size-xxl 0 ($size-s + $size-xl);
+  }
+
+  & > * {
+    @include full-width-container__inner;
+  }
+
+  .promo-group {
+    margin-bottom: 0;
+  }
+}
+
+// styleguide overrides
+.promo__link,
+.order-promo__button {
+  text-decoration: none;
+}
+
+.promo-group-header {
+  padding-top: $size-xl;
+
+  @include from-medium {
+    padding-top: $size-xxl;
+  }
+}
+
+.promo-group-header__title:before {
+    margin-bottom: $size-m;
+}
+
+.promo-group-header__sub-title {
+  padding-top: $size-xs;
+  @include header--delta;
+}
+
+// move into styleguide?
+// why is --item a variant?
+.cta--item {
+  text-decoration: none;
+  margin-left: $size-l;
+  color: #fff;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @include until-medium {
+    margin-left: 0;
+  }
+}
+
+.section--title {
+   margin-bottom: $size-xl;
+
+  @include from-medium {
+    margin-bottom: $size-xxl;
+  }
+}
+
+.wysiwyg {
+  b, strong {
+    font-weight: bold;
+  }
+
+  i, em {
+    font-style: italic;
+  }
+
+  u, ins {
+    text-decoration: underline;
+  }
+}

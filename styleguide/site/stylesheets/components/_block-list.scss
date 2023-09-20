@@ -1,0 +1,13 @@
+.block-list-example {
+  margin-bottom: $size-xl;
+}
+.block-list {
+  padding-left: 0;
+}
+.block-list-example--white {
+  background-color: $colors-pure-white;
+  
+  .block-list__item p {
+    color: $colors-pure-black;
+  }
+}

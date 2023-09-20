@@ -1,0 +1,132 @@
+// misc layout tweaks and quirks for sections in the video player and about the series pages
+// these rules define some simple two-col layout and handle the hide/show of order promo/banner
+// but as a collection of styles, feels arbitrary and would better be served by rolling up into a component
+
+// something like
+// .primary-description-with-order-promo
+// .switcheroo-banner (in the tradition of peekaboo)
+// .order-banner-at-mobile .order-promo-at-desktop 
+
+/// for all cases
+// 1a. hide order-promo on mobile 
+// 2a. hide order-banner on desktop
+// 3a. order-promo inner ui quirks
+// 4a. inner-two-col layout for video-meta
+
+// for 2-col video-player
+// 1b. undo inner-width-container styles on video-metadata-section
+// 2b. undo flex on order-promo
+// 3b. match existing section-header--border styles on 'related videos' header on mobile
+// 4b. remove border on 'related videos' section-header at desktop
+
+// below-the-fold layout in series homepage (see series-secondary.scss in styleguide)
+// 5. about the series, series updates and next-episode get a 3 col layout if there are series updates and next episode content present
+// 5. otherwise, they get a 2 col layout with whatever can be displayed. 
+// 5. If only about the series is available, draw an order-promo into last column and hide standard order banner.
+
+.video-metadata-section {
+  @include full-width-container__inner;
+  margin-bottom: $size-xxl;
+  
+  @include until-large {
+    margin-bottom: $size-xl;
+  }
+}
+
+.video-metadata-section{
+  @include from-large {
+    display: flex;
+  }
+}
+
+.video-metadata-section.video-metadata--short-form { 
+  border: 0; // undo inner-width-container // 1b)
+  @include from-large {
+    display: block;
+    
+    .video-metadata,
+    .video-metadata__inner {
+      background-color: transparent !important;
+    }
+    .video-metadata__inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.video-metadata-section.video-metadata--full-episode { 
+  @include until-large {
+    .refresh-order-banner--no-image {
+      margin-top: $size-xl + $size-l;
+    }
+  }
+
+  @include from-large {
+    .video-metadata {
+      @include span-columns(8); // 4a)
+      padding-right: $size-l;
+    }
+      
+    .refresh-order-banner--no-image {
+      @include span-columns(4); // 4a)
+      @include omega();
+      
+      @include display(flex);
+      @include flex-direction(column);
+      margin-top: 0;
+    }
+  }
+}
+
+.video-metadata-section,
+.video-metadata-section.video-metadata--full-episode { 
+  margin-bottom: $size-l;
+
+  .refresh-order-banner--no-image {
+    margin: 0 0 $size-xl;
+  }
+}
+
+.video-metadata-section.video-metadata--full-episode { 
+ .video-metadata {
+    padding-top: 0;
+  }
+}
+
+.video-player__secondary__header {
+  @extend .section-header; // 3b
+  @extend .section-header--border; // 3b
+  border: 0;
+  
+  @include from-large  {
+    padding-bottom: 0;  // 4b
+    &:after { 
+      display: none // 4b
+    }
+  }
+}
+
+// do we need to restore this?
+// .refresh-order-banner--no-image {
+//   margin-top: $size-xl + $size-l;
+
+// }
+
+// see series-secondary in styleguide
+// 5
+@include until-large {
+  .about-the-series__order-promo {
+    display: none;
+  }
+}
+
+.about-the-series-section--has-synapsis-only + .order-banner-section {
+  @include from-large {
+    display: none;
+  }
+}
+
+.section--spotify-embed .series-spotify-embed {
+  @include full-width-container__inner
+}
