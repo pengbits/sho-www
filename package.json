@@ -7,6 +7,7 @@
     "dev": "./bin/webpack.js",
     "develop": " ./bin/webpack.js",
     "dev:sho": "entry=sho ./bin/webpack.js",
+    "serve:sho": "python3 -m http.server 3000",
     "dev:shoplace": "entry=shoplace ./bin/webpack.js",
     "dev:stream-showtime": "entry=stream-showtime ./bin/webpack.js",
     "dev:styleguide": "DEBUG=metalsmith,webpack,browsersync ./bin/dev-server.js",

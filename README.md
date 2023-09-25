@@ -5,7 +5,13 @@ This is a stripped-down version of the sho.com front-end repository. It serves p
 To see the styleguide in action, run this task, then browse http://localhost:4000:
 
 ```
-npm run dev:styleguide
+npm run dev:styleguide # kicks off webpack watcher task
+```
+
+To view a locally served (static) instance of the sho.com homepage, run this task, then browse http://localhost:3000:
+
+```
+npm run serve:sho # runs simple server with python, assumes flattened index.html in directory
 ```
 
 # Notes
